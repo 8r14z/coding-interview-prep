@@ -1,0 +1,253 @@
+import queue
+import collections
+
+def binary_search(list, key):
+    low = 0
+    high = len(list) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        cur_value = list[mid]
+
+        if cur_value == key:
+            return mid
+        if cur_value > key:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return -1
+# print(binary_search([1,2,3,4,5], 6))
+
+graph = {
+    'a': ['b', 'c'],
+    'b': ['a', 'c'],
+    'c': ['b', 'a', 'd', 'e'],
+    'd': ['c'],
+    'e': ['c']}
+
+def bfs(graph):
+    reached = set()
+    queue = collections.deque()
+    queue.append('a')
+
+    while queue:
+        v = queue.popleft()
+        if v not in reached:
+            reached.add(v)
+            # c = [i for i in graph[v] if i not in reached]
+            print(v)
+            # print(c)
+            queue += graph[v]
+
+    print(reached)
+
+def dfs(graph):
+    reached = set()
+    stack = collections.deque()
+    stack.append('a')
+
+    while stack:
+        v = stack.pop()
+        if v not in reached:
+            reached.add(v)
+            print(v)
+            stack += graph[v]
+
+    print(reached)
+
+def partition(array, left, right):
+    pivot = array[right]
+    i = left # i is the last position where arra[i] > pivot
+    for j in range(left, right):
+        if array[j] <= pivot:
+            array[i], array[j] = array[j], array[i]  # swap arr[i] arr[j]
+            i += 1
+
+    array[i], array[right] = array[right], array[i]
+    return i
+
+def quicksort(array):
+    quicksort_helper(array, 0, len(array) - 1)
+
+def quicksort_helper(array, left, right):
+    if left < right:
+        pivotIndex = partition(array, left, right)
+        quicksort_helper(array, left, pivotIndex - 1)
+        quicksort_helper(array, pivotIndex + 1, right) 
+
+def insertion_sort(array):
+    for i in range(len(array)):
+        j = i
+        while j > 0 and array[j] < array[j-1]:
+            array[j], array[j-1] = array[j-1], array[j]
+            j -= 1
+    return array
+# print(insertion_sort([5, 7, 2, 3, 4, 1, 6]))
+
+def selection_sort(array):
+    for i in range(len(array)):
+        minIndex = -1
+        for j in range(i, len(array)):
+            if minIndex == -1 or array[j] < array[minIndex]:
+                minIndex = j
+        array[i], array[minIndex] = array[minIndex], array[i]
+    return array
+# print(selection_sort([5, 7, 2, 3, 4, 1, 6]))    
+
+def greatestCommonDivisor(a, b):
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+
+    remainder = a % b
+    return greatestCommonDivisor(b, remainder)
+
+def longest_common_subsequence(str1, str2):
+    if not str1 or not str2:
+        return 0
+
+    newStr1 = str1[0:len(str1) - 1]
+    newStr2 = str2[0:len(str2) - 1]
+
+    if str1[-1] == str2[-1]:
+        return 1 + longest_common_subsequence(newStr1, newStr2)
+    else:
+        return max(longest_common_subsequence(newStr1, str2), longest_common_subsequence(str1, newStr2))
+# print(longest_common_subsequence('abdjsh', 'ads')) # a d s
+
+def longest_common_subsequence_dp(str1, str2):
+    res = 0
+    dp = [[0] * (len(str2) + 1) for _ in range(len(str1) + 1)]
+
+    for i in range(1, len(str1)+1):
+        for j in range(1,len(str2)+1):
+            if str1[i-1] == str2[j-1]:
+                dp[i][j] = 1 + dp[i-1][j-1]
+            else:
+                dp[i][j] = max(dp[i][j-1], dp[i-1][j])
+            res = max(res, dp[i][j])   
+    print(dp)
+    return res
+# print(longest_common_subsequence_dp('fort', 'fosh')) # a d s
+
+def longest_common_substring(str1, str2):
+    res = 0
+    dp = [[0] * len(str2) for _ in range(len(str1))]
+
+    for i in range(len(str1)):
+        for j in range(len(str2)):
+            if str1[i] == str2[j]:
+                dp[i][j] = 1 + (dp[i-1][j-1] if i > 0 and j > 0 else 0)
+            else:
+                dp[i][j] = 0
+            res = max(res, dp[i][j])   
+    print(dp)
+    return res
+# print(longest_common_substring('fish', 'hish'))
+# print(longest_common_substring('fisdishe', 'hishefcd'))
+
+def findKthLargest(arr, k):
+    left = 0
+    right = len(arr) - 1
+
+    while left <= right:
+        pivotIndex = partition(arr, left, right)
+
+        if pivotIndex == len(arr) - k:
+            return pivotIndex
+        elif pivotIndex > len(arr) - k:
+            right = pivotIndex - 1
+        else:
+            left = pivotIndex + 1
+    return -1
+# print(findKthLargest([5,7,2,3,4, 1,6], 3))
+
+def merge2sorted(arr1, arr2):
+    newArr = []
+    n1 = len(arr1)
+    n2 = len(arr2)
+    i = 0
+    j = 0
+
+    while i + j < n1 + n2:
+        if i < n1 and j < n2:
+            if arr1[i] <= arr2[j]:
+                newArr.append(arr1[i])    
+                i+=1
+            else:
+                newArr.append(arr2[j])
+                j+=1
+        elif i >= n1:
+            newArr.append(arr2[j])
+            j+=1
+        else:
+            newArr.append(arr1[i])            
+            i+=1
+    
+    return newArr
+# print(merge2sorted([1,4,5, 7], [2,3,4,6]))
+
+# Sliding window 
+def max_sum_subarray(arr, k):
+    max_sum = -1
+    start = 0
+    cur_sum = 0
+
+    for end, val in enumerate(arr):
+        cur_sum += val
+        if end - start + 1 == k:
+            max_sum = max(max_sum, cur_sum)
+            cur_sum -= arr[start]
+            start += 1
+
+    return max_sum
+print(max_sum_subarray([2,3,4,1,5], 3))
+
+def smallest_size_subarray(arr, k):
+    min_size = -1
+    start = 0
+    cur_sum = 0
+    for end, val in enumerate(arr):
+        cur_sum += val
+        while cur_sum >= k:
+            min_size = end - start + 1 if min_size == -1 else min(min_size, end - start + 1)
+            cur_sum -= arr[start]
+            start += 1
+
+    return min_size
+print(smallest_size_subarray([2,4,2,5,1], 7))
+
+def find_max_price(price_arr, weight_arr, max_weight):
+    max_price = float('-inf')
+    start = 0
+    cur_weight = 0
+    cur_price = 0
+
+    for end in range(len(price_arr)):
+        cur_weight += weight_arr[end]
+        cur_price += price_arr[end]
+        while cur_weight > max_weight:
+            cur_weight -= weight_arr[start]
+            cur_price -= price_arr[start]
+            start += 1
+        
+        max_price = max(cur_price, max_price)
+        
+    return max_price
+print(find_max_price([3000, 3000,2000, 1500], [36, 30, 20, 15], 35))
+
+# collections
+q = collections.deque()
+s = set()
+m = dict()
+s.add(1)
+m['1'] = 1
+if 1 in s:
+    print('abc')
+
+if '1' in m:
+    print('haha')
+
+#[[0] * m for i in range(n)] matrix
