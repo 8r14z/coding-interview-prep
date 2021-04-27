@@ -330,5 +330,4 @@ def isValidBTS(a):
 
     return 'YES'
 
-
-print(isValidBTS([1, 3, 4, 2]))
+# print(isValidBTS([1, 3, 4, 2]))
