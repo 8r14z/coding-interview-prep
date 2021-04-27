@@ -138,7 +138,7 @@ def longest_common_subsequence_dp(str1, str2):
             else:
                 dp[i][j] = max(dp[i][j-1], dp[i-1][j])
             res = max(res, dp[i][j])
-            
+
     return res
 
 # print(longest_common_subsequence_dp('fort', 'fosh')) # a d s
@@ -157,6 +157,7 @@ def longest_common_substring_dp(str1, str2):
             res = max(res, dp[i][j])
     print(dp)
     return res
+
 # print(longest_common_substring('fish', 'hish'))
 # print(longest_common_substring('fisdishe', 'hishefcd'))
 
@@ -175,6 +176,7 @@ def findKthLargest(arr, k):
         else:
             left = pivotIndex + 1
     return -1
+
 # print(findKthLargest([5,7,2,3,4, 1,6], 3))
 
 
@@ -201,6 +203,7 @@ def merge2sorted(arr1, arr2):
             i += 1
 
     return newArr
+
 # print(merge2sorted([1,4,5, 7], [2,3,4,6]))
 
 
@@ -312,6 +315,7 @@ def removeinvalidparentheses(s):
 #      4
 #     2
 # invalid BTS 2 < 3
+# input is an array that presents BTS in pre-order
 def isValidBTS(a):
     min_val = -1
     stack = []
