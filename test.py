@@ -311,7 +311,11 @@ def removeinvalidparentheses(s):
 
 print(removeinvalidparentheses("lee(t(c)o)de)"))
 
-
+#   1 
+#     3
+#      4
+#     2
+# invalid BTS 2 < 3
 def isValidBTS(a):
     min_val = -1
     stack = []
