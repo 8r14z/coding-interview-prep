@@ -17,6 +17,7 @@ def binary_search(list, key):
             low = mid + 1
 
     return -1
+    
 # print(binary_search([1,2,3,4,5], 6))
 
 
@@ -41,8 +42,7 @@ def bfs(graph):
             print(v)
             # print(c)
             queue += graph[v]
-
-    print(reached)
+    return reached
 
 
 def dfs(graph):
@@ -56,8 +56,7 @@ def dfs(graph):
             reached.add(v)
             print(v)
             stack += graph[v]
-
-    print(reached)
+    return reached
 
 
 def partition(array, left, right):
@@ -90,7 +89,6 @@ def insertion_sort(array):
             array[j], array[j-1] = array[j-1], array[j]
             j -= 1
     return array
-# print(insertion_sort([5, 7, 2, 3, 4, 1, 6]))
 
 
 def selection_sort(array):
@@ -101,9 +99,9 @@ def selection_sort(array):
                 minIndex = j
         array[i], array[minIndex] = array[minIndex], array[i]
     return array
-# print(selection_sort([5, 7, 2, 3, 4, 1, 6]))
 
 
+################################################################################################################################
 def greatestCommonDivisor(a, b):
     if a == 0:
         return b
@@ -125,6 +123,7 @@ def longest_common_subsequence(str1, str2):
         return 1 + longest_common_subsequence(newStr1, newStr2)
     else:
         return max(longest_common_subsequence(newStr1, str2), longest_common_subsequence(str1, newStr2))
+
 # print(longest_common_subsequence('abdjsh', 'ads')) # a d s
 
 
@@ -139,8 +138,9 @@ def longest_common_subsequence_dp(str1, str2):
             else:
                 dp[i][j] = max(dp[i][j-1], dp[i-1][j])
             res = max(res, dp[i][j])
-    print(dp)
+            
     return res
+
 # print(longest_common_subsequence_dp('fort', 'fosh')) # a d s
 
 
@@ -203,8 +203,6 @@ def merge2sorted(arr1, arr2):
     return newArr
 # print(merge2sorted([1,4,5, 7], [2,3,4,6]))
 
-# Sliding window
-
 
 def max_sum_subarray(arr, k):
     max_sum = -1
@@ -220,8 +218,7 @@ def max_sum_subarray(arr, k):
 
     return max_sum
 
-
-print(max_sum_subarray([2, 3, 4, 1, 5], 3))
+# print(max_sum_subarray([2, 3, 4, 1, 5], 3))
 
 
 def smallest_size_subarray(arr, k):
@@ -238,8 +235,7 @@ def smallest_size_subarray(arr, k):
 
     return min_size
 
-
-print(smallest_size_subarray([2, 4, 2, 5, 1], 7))
+# print(smallest_size_subarray([2, 4, 2, 5, 1], 7))
 
 
 def find_max_price(price_arr, weight_arr, max_weight):
@@ -260,8 +256,7 @@ def find_max_price(price_arr, weight_arr, max_weight):
 
     return max_price
 
-
-print(find_max_price([3000, 3000, 2000, 1500], [36, 30, 20, 15], 35))
+# print(find_max_price([3000, 3000, 2000, 1500], [36, 30, 20, 15], 35))
 
 
 def longestPalindromeDp(s):
@@ -285,6 +280,7 @@ def longestPalindromeDp(s):
                 max_end = i
 
     return s[max_end - max_len + 1: max_end+1]
+
 # print(longestPalindrome("babad"))
 
 
@@ -308,8 +304,8 @@ def removeinvalidparentheses(s):
 
     return res
 
+# print(removeinvalidparentheses("lee(t(c)o)de)"))
 
-print(removeinvalidparentheses("lee(t(c)o)de)"))
 
 #   1 
 #     3
