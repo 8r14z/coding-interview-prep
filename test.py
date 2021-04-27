@@ -287,7 +287,7 @@ def longestPalindromeDp(s):
 # print(longestPalindrome("babad"))
 
 
-def removeinvalidparentheses(s):
+def removeInvalidParentheses(s):
     invalid_indices = set()
     parentheses = []
 
@@ -307,7 +307,7 @@ def removeinvalidparentheses(s):
 
     return res
 
-# print(removeinvalidparentheses("lee(t(c)o)de)"))
+# print(removeInvalidParentheses("lee(t(c)o)de)"))
 
 
 #   1 
