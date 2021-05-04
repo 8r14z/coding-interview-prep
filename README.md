@@ -23,7 +23,7 @@ Insertion Sort can be more efficient as nlog(n) complexity by using binanry sear
 
 This is called Binary Insertion Sort. In the end, the complexity for this algo still be O(n^2) but the constant factor for comparation as comparing will cost more than swap. 
 - Comparation cost: O(nlogn)
-- Swapping cost: O(n^)
-- Worst case: O(n^)
+- Swapping cost: O(n^2)
+- Worst case: O(n^2)
       
 
