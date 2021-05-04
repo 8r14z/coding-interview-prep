@@ -25,4 +25,4 @@ def heapSort(array):
 
     return array
 
-print(heapSort([10,6,7,5,15,17,12]))
+print(heapSort([10,6,7,5,15,17,12])) # [5, 6, 7, 10, 12, 15, 17]
