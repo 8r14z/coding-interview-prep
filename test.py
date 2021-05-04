@@ -373,8 +373,12 @@ class Solution:
         prefix = ''
         for i in range(n):
             if str1[i] != str2[i]:
-                break;
+                break
             prefix += str1[i]
         return prefix
 
 print(Solution().longestCommonPrefix(['dog', 'racecard', 'card']))
+
+
+# Heap sort
+
