@@ -1,4 +1,4 @@
-# Coding Interview Prep
+# Prep
 
 ## Materials:
 I. [MIT 6.006 Introduction to Algorithms](#introduction)
