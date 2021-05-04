@@ -1,54 +1,6 @@
 import collections
+from source.algorithms.quick_sort import partition
 
-
-
-
-
-graph = {
-    'a': ['b', 'c'],
-    'b': ['a', 'c'],
-    'c': ['b', 'a', 'd', 'e'],
-    'd': ['c'],
-    'e': ['c']}
-
-
-def bfs(graph):
-    reached = set()
-    queue = collections.deque()
-    queue.append('a')
-
-    while queue:
-        v = queue.popleft()
-        if v not in reached:
-            reached.add(v)
-            # c = [i for i in graph[v] if i not in reached]
-            print(v)
-            # print(c)
-            queue += graph[v]
-    return reached
-
-
-def dfs(graph):
-    reached = set()
-    stack = collections.deque()
-    stack.append('a')
-
-    while stack:
-        v = stack.pop()
-        if v not in reached:
-            reached.add(v)
-            print(v)
-            stack += graph[v]
-    return reached
-
-
-
-
-
-
-
-
-################################################################################################################################
 def greatestCommonDivisor(a, b):
     if a == 0:
         return b
