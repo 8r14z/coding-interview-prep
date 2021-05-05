@@ -32,4 +32,16 @@ Heap: An array visualized as a complete binary tree
 
 Application: priority queue, heap sort,...
 
+- parent(i) = i/2
+- left(i) = i*2 + 1
+- right(i) = i*2 + 2 (if existed)
+
+Max heap: parent >= its children
+
+Pre-condition of heapify at a node: its left and right children are max-heaps
+
+
+
+
+
 
