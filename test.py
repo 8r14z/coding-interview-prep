@@ -1,25 +1,10 @@
 import collections
-from source.algorithms.quick_sort import partition
 
 
 
 
-def findKthLargest(arr, k):
-    left = 0
-    right = len(arr) - 1
 
-    while left <= right:
-        pivotIndex = partition(arr, left, right)
 
-        if pivotIndex == len(arr) - k:
-            return pivotIndex
-        elif pivotIndex > len(arr) - k:
-            right = pivotIndex - 1
-        else:
-            left = pivotIndex + 1
-    return -1
-
-# print(findKthLargest([5,7,2,3,4, 1,6], 3))
 
 
 def merge2sorted(arr1, arr2):
