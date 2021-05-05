@@ -6,42 +6,50 @@
 def findClosestSumBetweenArrayAndKey(a, k, target):
     left = 0
     right = len(a) - 1
-    minDis = float('inf')
+    minDiff = -1
     index = -1
 
     while left <= right:
         mid = (left + right)//2
-        sum = a[mid] + k
+        diff = abs(a[mid] + k - target)
 
-        dis = abs(sum-target)
-        if dis < minDis:
-            minDis = dis
-            index = mid
-    
-        if sum > target:
+        if diff > target:
             right = mid - 1
-        elif sum < target:
+        elif diff < target:
             left = mid + 1
         else:
-            return mid, minDis
+            return mid
 
-    return [index, minDis]
+        if diff < minDiff:
+            minDiff = diff
+            index = mid
 
+    return index
 
 def findClosetSumBetweenTwoArrays(array1, array2, target):
-
     if len(array1) < 1 or len(array2) < 1: return None
     
-    minDis = float('inf')
+    minDiff = float('inf')
     pair = (-1,-1)
     array2.sort()
 
     for i, key in enumerate(array1):
-        res = findClosestSumBetweenArrayAndKey(array2, key, target)
-        if res[1] < minDis:
-            minDis = res[1]
-            pair = (array1[i], array2[res[0]])
+        j = findClosestSumBetweenArrayAndKey(array2, key, target)
+        curDiff = abs(array1[i] + array2[j] - target)
+        if curDiff < minDiff:
+            minDiff = curDiff
+            pair = (array1[i], array2[j])
 
     return pair
 
-print(findClosetSumBetweenTwoArrays([-1,3,8,2,9,5], [4,1,2,10,5,20], 24))
+print(findClosetSumBetweenTwoArrays([-1, 3, 8, 2, 9, 5], [4, 1, 2, 10, 5, 20], 24)) 
+# should return (5, 20) or (3, 20).
+
+print(findClosetSumBetweenTwoArrays([7, 4, 1, 10], [4, 5, 8, 7], 13)) 
+# should return (4,8), (7, 7), (7, 5), or (10, 4).
+
+print(findClosetSumBetweenTwoArrays([6, 8, -1, -8, -3], [4, -6, 2, 9, -3], 3)) 
+# should return (-1, 4) or (6, -3).
+
+print(findClosetSumBetweenTwoArrays([19, 14, 6, 11, -16, 14, -16, -9, 16, 13], [13, 9, -15, -2, -18, 16, 17, 2, -11, -7], -15)) 
+# should return (-16, 2) or (-9, -7).
