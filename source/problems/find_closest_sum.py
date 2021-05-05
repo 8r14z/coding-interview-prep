@@ -7,7 +7,6 @@ def findClosestSumBetweenArrayAndKey(a, k, target):
     left = 0
     right = len(a) - 1
     minDis = float('inf')
-
     index = -1
 
     while left <= right:
@@ -24,9 +23,9 @@ def findClosestSumBetweenArrayAndKey(a, k, target):
         elif sum < target:
             left = mid + 1
         else:
-            return mid
+            return mid, minDis
 
-    return [index, dis]
+    return [index, minDis]
 
 
 def findClosetSumBetweenTwoArrays(array1, array2, target):
