@@ -28,7 +28,8 @@ This is called **Binary Insertion Sort**. In the end, the complexity for this al
 - Worst case: O(n^2)
 
 ### 4. Heaps and Heap Sort
-Heap's applications: priority queue, heap sort,...
+Heap: An array visualized as a complete binary tree
 
+Application: priority queue, heap sort,...
 
 
