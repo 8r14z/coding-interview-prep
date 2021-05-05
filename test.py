@@ -10,29 +10,6 @@ import collections
 
 
 
-def longestPalindromeDp(s):
-    rev = s[::-1]
-    n = len(s)
-    dp = [[0] * n for _ in range(n)]
-    max_len = 0
-    max_end = 0
-
-    for i in range(n):
-        for j in range(n):
-            if s[i] == rev[j]:
-                dp[i][j] = 1 + (dp[i-1][j-1] if i > 0 and j > 0 else 0)
-                cur += s[i]
-            else:
-                dp[i][j] = 0
-            if dp[i][j] > max_len and i - dp[i][j] + 1 == len(s) - 1 - j:
-                # start index of duplicated substring [x] should be same as index  on reversed string in revered order
-                # index x = 2 -> y = len(s) - 1 - x
-                max_len = dp[i][j]
-                max_end = i
-
-    return s[max_end - max_len + 1: max_end+1]
-
-# print(longestPalindrome("babad"))
 
 
 def removeInvalidParentheses(s):
