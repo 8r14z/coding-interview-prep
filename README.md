@@ -19,12 +19,10 @@ Explain: for example when moving left to column j-1, the find max on column j-1,
 ### 3. Insertion Sort, Merge Sort
 Insertion Sort can be more efficient as nlog(n) complexity by using binanry search while comparing a new item to the sorted list. Insertion Sort does 2 things to sort the array: compare an item with the previous items and swap.
 
-This is called Binary Insertion Sort. In the end, the complexity for this algo still be O(n^2) but the constant factor for comparation as comparing will cost more than swap. 
+This is called **Binary Insertion Sort**. In the end, the complexity for this algo still be O(n^2) but the constant factor for comparation as comparing will cost more than swap. 
 - Comparation cost: O(nlogn)
 - Swapping cost: O(n^2)
 - Worst case: O(n^2)
-
-
 
 ### 3. Insertion Sort, Merge Sort
 
