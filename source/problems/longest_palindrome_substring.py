@@ -22,6 +22,7 @@ def longestPalindromeDp(s):
 
     return s[max_end - max_len + 1: max_end+1]
 
+# O(n^2) with less constant factor
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         if s == '': 
