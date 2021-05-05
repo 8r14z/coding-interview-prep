@@ -5,52 +5,6 @@ import collections
 
 
 
-
-
-def merge2sorted(arr1, arr2):
-    newArr = []
-    n1 = len(arr1)
-    n2 = len(arr2)
-    i = 0
-    j = 0
-
-    while i + j < n1 + n2:
-        if i < n1 and j < n2:
-            if arr1[i] <= arr2[j]:
-                newArr.append(arr1[i])
-                i += 1
-            else:
-                newArr.append(arr2[j])
-                j += 1
-        elif i >= n1:
-            newArr.append(arr2[j])
-            j += 1
-        else:
-            newArr.append(arr1[i])
-            i += 1
-
-    return newArr
-
-# print(merge2sorted([1,4,5, 7], [2,3,4,6]))
-
-
-def max_sum_subarray(arr, k):
-    max_sum = -1
-    start = 0
-    cur_sum = 0
-
-    for end, val in enumerate(arr):
-        cur_sum += val
-        if end - start + 1 == k:
-            max_sum = max(max_sum, cur_sum)
-            cur_sum -= arr[start]
-            start += 1
-
-    return max_sum
-
-# print(max_sum_subarray([2, 3, 4, 1, 5], 3))
-
-
 def smallest_size_subarray(arr, k):
     min_size = -1
     start = 0
