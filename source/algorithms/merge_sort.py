@@ -1,3 +1,4 @@
+# merge routine
 def merge(a1, a2):
     newArray = []
     i = 0

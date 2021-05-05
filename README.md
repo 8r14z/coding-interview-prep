@@ -3,8 +3,9 @@ I. [MIT 6.006 Introduction to Algorithms](#introduction)
 
 ## [MIT 6.006 Introduction to Algorithms](https://youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb) <a name="introduction"></a>
 
-### 1. Algorithmic Thinking, Peak Finding
+Pro-tip: watch at 1.5 speed
 
+### 1. Algorithmic Thinking, Peak Finding
 **A peak in 1-D array**
 A peak is the number that larger than or equal the number in index-1 and index+1
 -> Binary search, to find a peak. If mid < left, go(a[0:left]), else if mid < right, go(a[mid+1, n]), else return mid
@@ -24,5 +25,8 @@ This is called **Binary Insertion Sort**. In the end, the complexity for this al
 - Swapping cost: O(n^2)
 - Worst case: O(n^2)
 
-### 3. Insertion Sort, Merge Sort
+### 4. Heaps and Heap Sort
+Heap's applications: priority queue, heap sort,...
+
+
 
