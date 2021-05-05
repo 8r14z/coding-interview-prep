@@ -3,7 +3,9 @@ I. [MIT 6.006 Introduction to Algorithms](#introduction)
 
 ## [MIT 6.006 Introduction to Algorithms](https://youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb) <a name="introduction"></a>
 
+```
 **Pro-tip**: watch at 1.5 speed
+```
 
 ### 1. Algorithmic Thinking, Peak Finding
 **A peak in 1-D array**
