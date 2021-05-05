@@ -40,7 +40,7 @@ Max heap: parent >= its children
 
 Pre-condition of heapify at a node: subtree rooted at its left and right children are max-heaps
 
-=> Build heap starts from the end towards the begin -> more exactly it starts from node n/2 - 1 to avoid unnecessary work on leaf nodes. 
+=> Heap build routine starts from the end towards the begin -> more exactly it starts from node n/2 - 1 to avoid unnecessary work on leaf nodes. 
 
 
 
