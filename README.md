@@ -1,6 +1,4 @@
-# Prep
-
-## Materials:
+# Materials:
 I. [MIT 6.006 Introduction to Algorithms](#introduction)
 
 ## [MIT 6.006 Introduction to Algorithms](https://youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb) <a name="introduction"></a>
@@ -25,5 +23,8 @@ This is called Binary Insertion Sort. In the end, the complexity for this algo s
 - Comparation cost: O(nlogn)
 - Swapping cost: O(n^2)
 - Worst case: O(n^2)
-      
+
+
+
+### 3. Insertion Sort, Merge Sort
 
