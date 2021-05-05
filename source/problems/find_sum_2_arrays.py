@@ -3,7 +3,7 @@
 # target 24
 # output: (3,20) or (5,20). Distance to 24 = 1
 
-def findMinDistance(a, k, target):
+def findClosestSumBetweenArrayAndKey(a, k, target):
     left = 0
     right = len(a) - 1
     minDis = float('inf')
@@ -29,20 +29,20 @@ def findMinDistance(a, k, target):
     return [index, dis]
 
 
-def findSum2Array(a1, a2, target):
+def findClosetSumBetweenTwoArrays(array1, array2, target):
 
-    if len(a1) < 1 or len(a2) < 1: return None
+    if len(array1) < 1 or len(array2) < 1: return None
     
     minDis = float('inf')
     pair = (-1,-1)
-    a2.sort()
+    array2.sort()
 
-    for i, value in enumerate(a1):
-        res = findMinDistance(a2, value, target)
+    for i, key in enumerate(array1):
+        res = findClosestSumBetweenArrayAndKey(array2, key, target)
         if res[1] < minDis:
             minDis = res[1]
-            pair = (a1[i], a2[res[0]])
+            pair = (array1[i], array2[res[0]])
 
     return pair
 
-print(findSum2Array([-1,3,8,2,9,5], [4,1,2,10,5,20], 24))
+print(findClosetSumBetweenTwoArrays([-1,3,8,2,9,5], [4,1,2,10,5,20], 24))
