@@ -44,7 +44,15 @@ Pre-condition of heapify at a node: subtree rooted at its left and right childre
 
 ### 5. Binary Search Trees, BST Sort
 
-### 6
+### 6. 6. AVL Trees, AVL Sort
+Height of tree = length of the longest path from root down to a leaf
+Height of a node = length of the longest path from it down to a lead
+
+height(node) = max(height(left), height(right)) + 1
+
+AVL invariant: height of left & right children of every node to differ by at most +/- 1
+=> maintain the balance.
+
 
 
 
