@@ -7,22 +7,37 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    node  = 0
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        stack = collections.deque()
+        # Solution 1
+        # stack = collections.deque()
+        # while True:
+        #     while root:
+        #         stack.append(root)
+        #         root =  root.left
 
-        while True:
-            while root:
-                stack.append(root)
-                root =  root.left
+        #     root = stack.pop()
+        #     k -= 1
+        #     if not k:
+        #         return root.val
 
-            root = stack.pop()
-            k -= 1
-            if not k:
-                return root.val
+        #     root = root.right
 
-            root = root.right
-
-
-
+        # Solution 2
+        res = [0, None]
+        self.inorder(root, res, k)
+        return res[1]
+    
+    def inorder(self, node: TreeNode, tracker: [], k: int):
+        if node is None: return
         
+        self.inorder(node.left, tracker, k)
+
+        tracker[0] += 1
+        if tracker[0] == k:
+            tracker[1] = node.val
+            return
+            
+        self.inorder(node.right, tracker, k)
+    
+        
+# NODE: Space complexity should be counted for stack calls as well

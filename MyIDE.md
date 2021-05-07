@@ -6,21 +6,15 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    node  = 0
+    
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        stack = collections.deque()
+        res = self.inorder(root, k)
+        return res[1]    
+    
+    def inorder(self, node: TreeNode, k) -> list:
+        
 
-        while True:
-            while root:
-                stack.append(root)
-                root =  root.left
-
-            root = stack.pop()
-            k -= 1
-            if not k:
-                return root.val
-
-            root = root.right
+    
 
 
 
