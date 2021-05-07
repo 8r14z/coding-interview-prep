@@ -42,7 +42,8 @@ Pre-condition of heapify at a node: subtree rooted at its left and right childre
 
 => Heap build routine starts from the end towards the begin -> more exactly it starts from node n/2 - 1 to avoid unnecessary work on leaf nodes. 
 
-
+### 5. Binary Search Trees, BST Sort
+to be watched again :) 
 
 
 

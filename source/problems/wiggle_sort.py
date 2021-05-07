@@ -27,4 +27,11 @@ def wiggle_sort_improve(a):
     return a
     
 print(wiggle_sort_improve([3, 5, 2, 1, 6, 4]))
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
     

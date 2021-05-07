@@ -14,7 +14,7 @@ def longestPalindromeDp(s):
             else:
                 dp[i][j] = 0
 
-            if dp[i][j] > max_len and i - dp[i][j] + 1 == len(s) - 1 - j:
+            if dp[i][j] > max_len and j - dp[i][j] + 1 == len(s) - 1 - i:
                 # start index of duplicated substring [x] should be same as index  on reversed string in revered order
                 # index x = 2 -> y = len(s) - 1 - x
                 max_len = dp[i][j]
@@ -46,4 +46,4 @@ class Solution:
         return r - l - 1 
         
 
-print(longestPalindromeDp("babad"))
+print(longestPalindromeDp("babcadcbab"))
