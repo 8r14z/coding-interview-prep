@@ -1,6 +1,5 @@
-#class Solution: 
-#    def circularArrayLoop(self, nums: List[int]) -> bool:
+class Solution:
+    def circularArrayLoop(self, nums: List[int]) -> bool:
         
 
-
-print([0] * 10)
+# 0 1(-2) 2 3 4 5
