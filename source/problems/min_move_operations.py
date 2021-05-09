@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/
+
+# O(n)
 def minOperations(boxes) -> [int]:
     n = len(boxes)
     ballCount = 0
@@ -21,7 +24,6 @@ def minOperations(boxes) -> [int]:
     return res
         
 print(minOperations("001011"))
-
 # [11,8,5,4,3,4]
 
 
