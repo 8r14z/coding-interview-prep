@@ -53,7 +53,9 @@ height(node) = max(height(left), height(right)) + 1
 AVL invariant: height of left & right children of every node to differ by at most +/- 1
 => maintain the balance.
 
+AVL Sort:
+- Insert n elements into tree -> O(nlogn)
+- in-order traversal -> O(n)
 
-
-
-
+### X. Dynamic Programming
+https://www.youtube.com/watch?v=YBSt1jYwVfU 
