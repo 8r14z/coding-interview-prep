@@ -1,30 +1,5 @@
 class Solution:
-    def nextIndex(self, nums: [int], index: int) -> int:
-        n = len(nums)
-        next = index + nums[index]
-        if next > n-1:
-            return next % n
-        elif next < 0:
-            return n - (next * -1) % 6
-        else:
-            return next
-
-    def circularArrayLoop(self, nums: [int]) -> bool:
-        n = len(nums)
-        for i in range(n):
-            k = 0
-            steps = 0
-            curIdx = i
-            while steps < n:
-                if steps != 0 and abs(steps) > abs(steps + nums[curIdx]): 
-                    break
-
-
-            if steps == n and k > 1:
-                return True
-
-        return False
-
+    def 
 
 # 0 1(-2) 2 3 4 5
 
