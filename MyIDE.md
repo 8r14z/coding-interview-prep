@@ -1,6 +1,13 @@
 class Solution:
-    def 
+    def detectCycle(self, head: ListNode) -> ListNode:
+        if head is None: return None
 
-# 0 1(-2) 2 3 4 5
-
-print(Solution().circularArrayLoop([2,-1,1,2,2]))
+        reached = set()
+        while head is not None:
+            reached.add(head)
+            if head.next in reached:
+                return head.next
+            head = head.next
+        
+        return None
+        

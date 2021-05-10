@@ -13,21 +13,12 @@ class Solution:
         slow = head
         fast = head
         
-        while True:
-            nextSlow = slow.next
-            nextFast = fast.next
-            if nextFast is not None:
-                nextFast = nextFast.next
-                
-            if nextSlow is None or nextFast is None:
-                break
-            
-            if nextSlow == nextFast:
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if fast is slow:
                 return True
-            
-            slow = nextSlow
-            fast = nextFast
-    
+
         return False
         
         
