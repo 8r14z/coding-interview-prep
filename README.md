@@ -87,7 +87,7 @@ while num != 0:
 ```
 num of digits of an integer k = `d` = log<sub>b</sub>(k) + 1
 
-Time complexity = O(n * d)
+Time complexity = O(n * d) = O(n * O(log<sub>b</sub>(k))
 
 **Step 2. Sort all integers by least significant digit (most left digit)** \
 . 
