@@ -31,6 +31,8 @@ def countingSort(nums: [int], d: int, base: int):
     # for example: output[pos[5]] = 5, pos[5] += 1
     #                      ^            ^
     #                      5            6
+    # https://youtu.be/9bkvws_vqLU?t=1537
+    
     n = base
     pos = [0] * n
     
