@@ -95,6 +95,13 @@ Time complexity = O(nlog<sub>b</sub>(k))
 . \
 Sort all integers by most significant degit
 
+```python
+for i in range(b): 
+    for j in range(n):
+        # countingSort a[0][i] -> a[n-1][i]
+
+```
+
 Sort using counting sort to sort and list of integers having value between [0, b].
 
 Time complexity to sort ints by each digits = O(n + b)
