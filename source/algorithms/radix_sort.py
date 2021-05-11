@@ -27,11 +27,12 @@ def radixSort(nums: [int]) -> [int]:
         digits += 1
         max //= base
 
+    output = nums
     for d in range(1, digits+1):
-        nums = countingSort(nums, d, base)
+        output = countingSort(output, d, base)
         print(nums)
 
-    return nums
+    return output
 
 
 radixSort([329, 457, 657, 839, 436, 720, 355])
