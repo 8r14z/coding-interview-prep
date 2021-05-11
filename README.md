@@ -45,7 +45,7 @@ Pre-condition of heapify at a node: subtree rooted at its left and right childre
 ### 5. Binary Search Trees, BST Sort
 
 ### 6. AVL Trees, AVL Sort
-Height of tree = length of the longest path from root down to a leaf
+Height of tree = length of the longest path from root down to a leaf \
 Height of a node = length of the longest path from it down to a lead
 
 height(node) = max(height(left), height(right)) + 1
@@ -56,6 +56,24 @@ AVL invariant: height of left & right children of every node to differ by at mos
 AVL Sort:
 - Insert n elements into tree -> O(nlogn)
 - in-order traversal -> O(n)
+
+### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
+**Counting sort**
+Sort a list of integers have value [0,...,k]
+L = [0] * (k + 1)
+for i in range(n):
+    L[a[i]].append(a[i])
+
+output = []
+for i range(k+1):
+    output += L[i]
+
+**Radix sort**
+Have a list of integers
+
+Decompose each integer into set of digits by %b 
+
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
