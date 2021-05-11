@@ -116,7 +116,7 @@ Min. when (b == n) then O(nlog<sub>n</sub>(k))
 
 if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 
-[Code][..source/algorithms/radix_sort.py]
+[Code](source/algorithms/radix_sort.py)
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
