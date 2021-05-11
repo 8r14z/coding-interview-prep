@@ -1,18 +1,5 @@
 import math
 def countingSort(nums: [int], d: int, base: int):
-    count = [0] * base
-
-    for num in nums:
-        countIndex = (num // (base ** (d-1))) % base
-        count[countIndex] += 1
-
-    output = []
-    for i in range(base):
-        if len(count[i]) > 0:
-            output += count[i]
-
-    return output
-
     n = base
     pos = [0] * n
     

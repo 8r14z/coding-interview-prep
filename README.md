@@ -118,5 +118,8 @@ if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 
 [Implementation](source/algorithms/radix_sort.py)
 
+### 8. Hashing with Chaining
+
+
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
