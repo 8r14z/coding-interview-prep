@@ -121,6 +121,15 @@ if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 
 ### 8. Hashing with Chaining
 
+### 9. Table Doubling, Karp-Rabin
+Grow table: m -> m'
+- Build new table of size m'
+- Build new hash function h'
+- rehash all items in m to m'
+
+Recommended: m' = 2m
+
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
