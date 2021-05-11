@@ -89,13 +89,7 @@ num of digits of an integer k = `d` = log<sub>b</sub>(k) + 1
 
 Time complexity = O(n * d) = O(n * O(log<sub>b</sub>(k))
 
-**Step 2. Sort all integers by least significant digit (most left digit)** \
-. 
-
-.
-
-. \
-Sort all integers by most significant degit
+**Step 2. Sort all integers by least significant digit (most left digit),..., sort all integers by most significant degit (most right digit)**
 
 ```python
 for i in range(d): 
