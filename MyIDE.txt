@@ -1,13 +1,10 @@
 import math
 def countingSort(nums: [int], d: int, base: int):
-    count = [[]] * base
+    count = [0] * base
 
     for num in nums:
         countIndex = (num // (base ** (d-1))) % base
-        if len(count[countIndex]) == 0:
-            count[countIndex] = [num]
-        else:
-            count[countIndex].append(num)
+        count[countIndex] += 1
 
     output = []
     for i in range(base):
@@ -16,6 +13,26 @@ def countingSort(nums: [int], d: int, base: int):
 
     return output
 
+    n = base
+    pos = [0] * n
+    
+    for num in nums: 
+        countIndex = (num // (base ** (d-1))) % base
+        pos[countIndex] += 1
+    
+    numOfNums = len(nums)
+    for i in range(n-1, -1, -1):
+        numAtPos = numOfNums - pos[i]
+        pos[i] = numAtPos
+        numOfNums = numAtPos
+
+    output = [0] * len(nums)
+    for num in nums:
+        countIndex = (num // (base ** (d-1))) % base
+        output[pos[countIndex]] = num
+        pos[countIndex] += 1
+    
+    return output
 
 def radixSort(nums: [int]) -> [int]:
     max = float('-inf')
