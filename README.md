@@ -59,14 +59,16 @@ AVL Sort:
 
 ### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
 **Counting sort**
-Sort a list of integers have value [0,...,k] \
-L = [0] * (k + 1) \
-for i in range(n): \
-    L[a[i]].append(a[i]) \
+Sort a list of integers have value [0,...,k]
+```python
+L = [0] * (k + 1) 
+for i in range(n):
+    L[a[i]].append(a[i])
 
-output = [] \
-for i range(k+1): \
-    output += L[i] \
+output = []
+for i range(k+1):
+    output += L[i] 
+```
 
 **Radix sort**
 Have a list of integers
