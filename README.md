@@ -101,7 +101,7 @@ Total time for this steps = O(log<sub>b</sub>(k) * (n + b))
 
 Min when b == n => O(nlog<sub>n</sub>(k))
 
-if k <= n<sup>c</sup> => O(n.c) 
+if k <= n<sup>c</sup> => O(n.c) (c: constant)
 
 
 ### X. Dynamic Programming
