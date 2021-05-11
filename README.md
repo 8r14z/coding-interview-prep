@@ -101,7 +101,7 @@ Total time for this steps = O(log<sub>b</sub>(k) * (n + b))
 
 Min when b == n => O(nlog<sub>n</sub>(k))
 
-$n^2$
+O(n<sup>2</sup>)
 
 
 
