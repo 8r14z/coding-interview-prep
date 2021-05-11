@@ -102,16 +102,13 @@ for i in range(b):
 
 ```
 
-Sort using counting sort to sort and list of integers having value between [0, b].
-
-Time complexity to sort ints by each digits = O(n + b)
+Sort using counting sort to sort and list of integers having value between [0, b]. Time complexity to sort ints by each digits = O(n + b)
 
 Total time for this steps = O(log<sub>b</sub>(k) * (n + b))
 
 Min when (b == n) then O(nlog<sub>n</sub>(k))
 
 if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
-
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
