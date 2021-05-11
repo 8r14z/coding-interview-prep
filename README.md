@@ -126,7 +126,11 @@ Direct-access table:
 
 Hash table:
 - prehash: maps keys to possitive integers
-- 
+- Reduce universe of all keys down to reasonable size m for table
+
+Resolve collision with chaining: use an assumption called "Simple uniform hashing" -> each key is likely to be hashed correctly. one key map to one slot 
+
+So the expected length of chain for n keys and m slots = n/m = a if m = O(n) => chain length = 1. So the time to search on hash table with chaining is O(a)
 
 ### 9. Table Doubling, Karp-Rabin
 Grow table: m -> m'
