@@ -3,6 +3,8 @@ I. [MIT 6.006 Introduction to Algorithms](#introduction)
 
 ## [MIT 6.006 Introduction to Algorithms](https://youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb) <a name="introduction"></a>
 
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/
+
 ```
 Pro-tip: watch at 1.5 speed
 ```
