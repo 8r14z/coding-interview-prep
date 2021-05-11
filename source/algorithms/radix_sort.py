@@ -1,14 +1,16 @@
-def countingSort(nums: [int], d: int, b: int):
-    count = [[]] * b
+import math
+def countingSort(nums: [int], d: int, base: int):
+    count = [[]] * base
+    n = len(nums)
     for num in nums:
-        countIndex = (num // (b ** (d-1))) % b
+        countIndex = (num // (base ** (d-1))) % base
         if len(count[countIndex]) == 0:
             count[countIndex] = [num]
         else:
             count[countIndex].append(num)
 
     output = []
-    for i in range(b):
+    for i in range(base):
         if len(count[i]) > 0:
             output += count[i]
 
@@ -22,16 +24,13 @@ def radixSort(nums: [int]) -> [int]:
         if num > max:
             max = num
     
-    digits = 0
-    while max != 0:
-        digits += 1
-        max //= base
+    digits = int(math.log10(max)) + 1
 
-    output = nums
     for d in range(1, digits+1):
-        output = countingSort(output, d, base)
+        nums = countingSort(nums, d, base)
         print(nums)
 
-    return output
+    return nums
+
 
 radixSort([329, 457, 657, 839, 436, 720, 355])
