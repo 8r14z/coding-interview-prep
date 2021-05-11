@@ -121,8 +121,12 @@ if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 
 ### 8. Hashing with Chaining
 Direct-access table:
- - Keys may not be integers
- - giantly wastful memory 
+- Keys may not be integers
+- giantly wastful memory 
+
+Hash table:
+- prehash: maps keys to possitive integers
+- 
 
 ### 9. Table Doubling, Karp-Rabin
 Grow table: m -> m'
