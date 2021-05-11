@@ -140,8 +140,10 @@ Grow table: m -> m'
 
 Recommended: m' = 2m => table doubling
 
-Amortization: 
-- 
+Search substring: have substring P and message M. Find P in M
+- hash(p) = h
+- Loop through M from i = 0 -> len(M)-1. At each step, calculates hash of substring [i, i+len(P)-1] = h'
+- Compare h and h'
 
 
 
