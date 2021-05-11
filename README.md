@@ -89,7 +89,7 @@ num of digits of an integer k = `d` = log<sub>b</sub>(k) + 1
 
 Time complexity = O(n * d) = O(n * O(log<sub>b</sub>(k))
 
--> The key of this step is to find `d`. Can interate the array to find max and decompose d from max -> O(n)
+-> The key of this step is to find `d`. Can interate the array to find max and decompose d from max -> O(n). Then extract digit by mod in the next step
 
 **Step 2. Sort all integers by least significant digit (most left digit),..., sort all integers by most significant degit (most right digit)**
 
