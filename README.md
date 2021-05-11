@@ -75,7 +75,9 @@ for i range(k+1):
 #### Radix sort
 Sort a list of integers
 
-**Step 1. Decompose each integer into set of digits by base b. For example:**
+**Step 1. Decompose each integer into set of digits by base b**
+
+For example:
 ```python
 num = 10
 digits = []
