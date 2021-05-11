@@ -75,7 +75,7 @@ for i range(k+1):
 #### Radix sort
 Sort a list of integers
 
-**Step 1. Decompose each integer into set of digits by base b**
+**Step 1. Decompose each integer into set of digits as base b**
 
 For example:
 ```python
@@ -98,7 +98,7 @@ Time complexity = O(n * d) = O(n * O(log<sub>b</sub>(k))
 Sort all integers by most significant degit
 
 ```python
-for i in range(b): 
+for i in range(d): 
     for j in range(n):
         # countingSort a[0][i] -> a[n-1][i]
 
