@@ -88,9 +88,9 @@ num of digits of an integer k = `d` = log<sub>b</sub>(k)
 Time complexity = O(nlog<sub>b</sub>(k))
 
 **Step 2. Sort all integers by least significant digit (most left digit)** \
-.
-.
-.
+. \
+. \ 
+. \
 Sort all integers by most significant degit
 
 Sort using counting sort to sort and list of integers having value between [0, b].
