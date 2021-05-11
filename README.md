@@ -83,9 +83,9 @@ while num != 0:
     digits.append(num%b)
     num /= b
 ```
-num of digits of an integer k = `d` = log<sub>b</sub>(k)
+num of digits of an integer k = `d` = log<sub>b</sub>(k) + 1
 
-Time complexity = O(nlog<sub>b</sub>(k))
+Time complexity = O(n * d)
 
 **Step 2. Sort all integers by least significant digit (most left digit)** \
 . 
@@ -104,7 +104,7 @@ for i in range(b):
 
 Sort using counting sort to sort and list of integers having value between [0, b]. Time complexity to sort ints by each digits = O(n + b)
 
-Total time for this steps = O(log<sub>b</sub>(k) * (n + b))
+Total time for this steps = ((log<sub>b</sub>(k) + 1) * (n + b))
 
 Min when (b == n) then O(nlog<sub>n</sub>(k))
 
