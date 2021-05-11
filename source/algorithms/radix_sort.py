@@ -19,7 +19,6 @@ def countingSort(nums: [int], d: int, base: int):
 
 def radixSort(nums: [int]) -> [int]:
     max = float('-inf')
-    base = 10
     for num in nums:
         if num > max:
             max = num
@@ -27,7 +26,7 @@ def radixSort(nums: [int]) -> [int]:
     digits = int(math.log10(max)) + 1
 
     for d in range(1, digits+1):
-        nums = countingSort(nums, d, base)
+        nums = countingSort(nums, d, 10)
         print(nums)
 
     return nums
