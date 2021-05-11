@@ -1,7 +1,7 @@
 import math
 def countingSort(nums: [int], d: int, base: int):
     count = [[]] * base
-    n = len(nums)
+
     for num in nums:
         countIndex = (num // (base ** (d-1))) % base
         if len(count[countIndex]) == 0:
