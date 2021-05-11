@@ -58,7 +58,7 @@ AVL Sort:
 - in-order traversal -> O(n)
 
 ### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
-**Counting sort**
+#### Counting sort
 Sort a list of integers have value between [0, k]
 ```python
 L = [0] * (k + 1) 
@@ -72,7 +72,7 @@ for i range(k+1):
 
 => Time complexity = O(n + k)
 
-**Radix sort**
+#### Radix sort
 Sort a list of integers
 
 Step 1. Decompose each integer into set of digits by base b. For example:
