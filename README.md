@@ -140,12 +140,10 @@ Grow table: m -> m'
 
 Recommended: m' = 2m => table doubling
 
-Search substring: have substring S and message M. Find P in M
+Search substring "Karp-Rabin": have substring S and message M. Find P in M
 - hash(S) = h
 - Loop through M from i = 0 -> len(M)-len(S). At each step, calculates hash of substring [i, i+len(S)-1] = h'
 - Compare h and h'
-
-
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
