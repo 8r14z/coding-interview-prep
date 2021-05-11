@@ -21,8 +21,9 @@ def countingSort(nums: [int], d: int, base: int):
     # [3,2,5,1,5,3,4] -> sorted [1,2,3,3,4,5,5]
     # 1 - build pos array with num of occurrence of on each index
     # [0,1,1,2,1,2]
-    # 2 - inplace transform to array of num of items that less than pos[i]
-    # [0,0,1,2,4,5] -> this is also the start index in the sorted array
+    # 2 - inplace transform it to array of num of items that less than pos[i]
+    #  = num of numbers - num of occurrence 
+    # [0,0,1,2,4,5] -> this is also the start index of the number in the sorted array
     # for example 5 in sorted array is started at index 5 
     #  0 1 2 3 4 5 6 <- index
     # [1,2,3,3,4,5,5]
@@ -31,8 +32,9 @@ def countingSort(nums: [int], d: int, base: int):
     # for example: output[pos[5]] = 5, pos[5] += 1
     #                      ^            ^
     #                      5            6
+    #
     # https://youtu.be/9bkvws_vqLU?t=1537
-    
+
     n = base
     pos = [0] * n
     
