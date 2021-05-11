@@ -92,7 +92,7 @@ while num != 0:
     digits.append(num%b)
     num /= b
 ```
-num of digits of an integer k = `d` = log<sub>b</sub>(k) + 1
+num of digits of an integer k = `d` = log<sub>b</sub>(k)
 
 Time complexity = O(n * d) = O(n * O(log<sub>b</sub>(k))
 
