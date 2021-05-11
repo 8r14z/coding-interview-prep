@@ -60,6 +60,7 @@ AVL Sort:
 - in-order traversal -> O(n)
 
 ### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
+To sort big array with small integers
 #### Counting sort
 Sort a list of integers have value between [0, k]. By using an empty array of k elemnts, and mark found emelements by +1 at a[i].
 
