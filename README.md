@@ -75,7 +75,7 @@ for i range(k+1):
 **Radix sort**
 Sort a list of integers
 
-1. Decompose each integer into set of digits by base b. For example:
+Step 1. Decompose each integer into set of digits by base b. For example:
 ```python
 num = 10
 digits = []
@@ -87,7 +87,7 @@ num of digits of an integer k = `d` = log<sub>b</sub>(k)
 
 Time complexity = O(nlog<sub>b</sub>(k))
 
-2. Sort all integers by least significant digit (most left digit)
+Step 2. Sort all integers by least significant digit (most left digit)
 .
 .
 .
