@@ -120,6 +120,9 @@ if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 [Implementation](source/algorithms/radix_sort.py)
 
 ### 8. Hashing with Chaining
+Direct-access table:
+ - Keys may not be integers
+ - giantly wastful memory 
 
 ### 9. Table Doubling, Karp-Rabin
 Grow table: m -> m'
@@ -127,7 +130,10 @@ Grow table: m -> m'
 - Build new hash function h'
 - rehash all items in m to m'
 
-Recommended: m' = 2m
+Recommended: m' = 2m => table doubling
+
+Amortization: 
+- 
 
 
 
