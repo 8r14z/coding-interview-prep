@@ -104,7 +104,7 @@ for i in range(b):
 
 Sort using counting sort to sort and list of integers having value between [0, b]. Time complexity to sort ints by each digits = O(n + b)
 
-Total time for this steps = ((log<sub>b</sub>(k) + 1) * (n + b))
+Total time for this steps = O(d * (n + b)) = O(log<sub>b</sub>(k) + 1)
 
 Min when (b == n) then O(nlog<sub>n</sub>(k))
 
