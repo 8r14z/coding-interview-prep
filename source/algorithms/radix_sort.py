@@ -1,6 +1,5 @@
 def countingSort(nums: [int], d: int, b: int):
     count = [[]] * b
-    n = len(nums)
     for num in nums:
         countIndex = (num // (b ** (d-1))) % b
         if len(count[countIndex]) == 0:
