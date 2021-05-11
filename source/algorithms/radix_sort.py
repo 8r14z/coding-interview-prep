@@ -34,5 +34,4 @@ def radixSort(nums: [int]) -> [int]:
     return nums
 
 
-radixSort([329, 3457, 657, 839, 436, 720, 355])
-# print(countingSort([3,2,3,1,5], 1, 10))
+radixSort([329, 457, 657, 839, 436, 720, 355])
