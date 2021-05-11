@@ -80,6 +80,8 @@ for i range(k+1):
 #### Radix sort
 Sort a list of integers
 
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec07.pdf
+
 **Step 1. Decompose each integer into set of digits as base b**
 
 For example:
