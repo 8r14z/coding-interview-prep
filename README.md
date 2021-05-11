@@ -59,7 +59,7 @@ AVL Sort:
 
 ### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
 **Counting sort**
-Sort a list of integers have value [0,...,k]
+Sort a list of integers have value between [0, k]
 ```python
 L = [0] * (k + 1) 
 for i in range(n):
@@ -70,10 +70,12 @@ for i range(k+1):
     output += L[i] 
 ```
 
+=> Time complexity = O(n + k)
+
 **Radix sort**
 Sort a list of integers
 
-Decompose each integer into set of digits by base b. For example:
+1. Decompose each integer into set of digits by base b. For example:
 ```python
 num = 10
 digits = []
@@ -81,7 +83,26 @@ while num != 0:
     digits.append(num%b)
     num /= b
 ```
-num of digits of an integer k = d = log<sub>b</sub>(k)
+num of digits of an integer k = `d` = log<sub>b</sub>(k)
+
+Time complexity = O(nlog<sub>b</sub>(k))
+
+2. Sort all integers by least significant digit (most left digit)
+.
+.
+.
+Sort all integers by most significant degit
+
+Sort using counting sort to sort and list of integers having value between [0, b].
+
+Time complexity to sort ints by each digits = O(n + b)
+
+Total time for this steps = O(log<sub>b</sub>(k) * (n + b))
+
+Min when b == n => O(nlog<sub>n</sub>(k))
+
+$n^2$
+
 
 
 ### X. Dynamic Programming
