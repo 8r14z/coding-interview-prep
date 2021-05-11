@@ -102,7 +102,7 @@ Sort using counting sort to sort and list of integers having value between [0, b
 
 Total time for this step = O(d * (n + b)) = O(log<sub>b</sub>(k) * (n + b))
 
-Min when (b == n) then O(nlog<sub>n</sub>(k))
+Min. when (b == n) then O(nlog<sub>n</sub>(k))
 
 if (k <= n<sup>c</sup>) then O(n.c) (c: constant)
 
