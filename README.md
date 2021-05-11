@@ -6,7 +6,7 @@ I. [MIT 6.006 Introduction to Algorithms](#introduction)
 https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/
 
 ```
-Pro-tip: watch at 1.5 speed
+Pro-tip: watch at 1.75 speed
 ```
 
 ### 1. Algorithmic Thinking, Peak Finding
