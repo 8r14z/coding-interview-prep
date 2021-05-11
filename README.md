@@ -59,7 +59,10 @@ AVL Sort:
 
 ### 7. Counting Sort, Radix Sort, Lower Bounds for Sorting
 #### Counting sort
-Sort a list of integers have value between [0, k]
+Sort a list of integers have value between [0, k]. By using an empty array of k elemnts, and mark found emelements by +1 at a[i].
+
+Final step is to iterate the k array to form the output.
+
 ```python
 L = [0] * (k + 1) 
 for i in range(n):
