@@ -71,10 +71,17 @@ for i range(k+1):
 ```
 
 **Radix sort**
-Have a list of integers
+Sort a list of integers
 
-Decompose each integer into set of digits by %b 
-
+Decompose each integer into set of digits by base b. For example:
+```python
+num = 10
+digits = []
+while num != 0:
+    digits.append(num%b)
+    num /= b
+```
+num of digits of an integer k = d = log<sub>b</sub>(k)
 
 
 ### X. Dynamic Programming
