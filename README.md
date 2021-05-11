@@ -87,7 +87,7 @@ num of digits of an integer k = `d` = log<sub>b</sub>(k)
 
 Time complexity = O(nlog<sub>b</sub>(k))
 
-**Step 2. Sort all integers by least significant digit (most left digit)**
+**Step 2. Sort all integers by least significant digit (most left digit)** \
 .
 .
 .
