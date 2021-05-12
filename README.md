@@ -146,6 +146,16 @@ Search substring "Karp-Rabin": have substring S and message M. Find P in M
 - Compare h and h'
 - hash function is using 'Rolling Hash'
 
+### 10. Open Addressing, Cryptographic Hashing
+Probling until there is an available slot
+- hash(key, 1) -> occupied
+- hash(key, 2) -> occupied
+- ...........
+- hash(key, m-1) -> available
+
+**Insert**: probing till there is available slot \
+**Search**: probing till found the key or "None" slot \
+**Delete**: search for the key and replace the deleted item with "DeleteMe", this is treated as non-None slot while searching but None slot while inserting
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
