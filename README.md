@@ -153,7 +153,7 @@ Probling until there is an available slot
 - ...........
 - hash(key, m-1) -> available
 
-**Insert**: probing till there is available slot \
+**Insert**: probing till there is available slot - "None" slot \
 **Search**: probing till found the key or "None" slot \
 **Delete**: search for the key and replace the deleted item with "DeleteMe" flag, this flag is treated as non-None slot while searching but None slot while inserting
 
