@@ -10,9 +10,9 @@ Pro-tip: watch at 1.75 speed
 ```
 
 ### 1. Algorithmic Thinking, Peak Finding
-Big O:
+Big O: The upper bound. Guarantee that the algorithm will run faster (below) than this
 
-Big Omega:
+Big Omega: The lower bound, the algorithm is always running slower than this
 
 Big Theta: represent both lower bound and upper bound and 2 bounds are differentiated by constant factor of the dominant factor in function
 
