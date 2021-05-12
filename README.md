@@ -18,7 +18,7 @@ Big Theta: represent both lower bound and upper bound and 2 bounds are different
 
 **g(x) = 1.1 x<sup>2</sup> + x<sup>1.5</sup> + 1000**
 
-Big Theta is θ(x<sup>2</sup>) and lower bound is x<sup>2</sup>, upper bound is 1.2x<sup>2</sup> as 1.2 > 1.1 and 1.1 x<sup>2</sup> is dominant g(x)
+Big Theta is θ(x<sup>2</sup>) and lower bound is x<sup>2</sup>, upper bound is 1.2x<sup>2</sup> as 1.2 > 1.1 and 1.1 x<sup>2</sup> is dominant factor g(x)
 
 **A peak in 1-D array**
 A peak is the number that larger than or equal the number in index-1 and index+1
