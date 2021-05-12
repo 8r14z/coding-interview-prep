@@ -20,6 +20,8 @@ Big Theta: represent both lower bound and upper bound and 2 bounds are different
 
 Big Theta is θ(x<sup>2</sup>) and lower bound is x<sup>2</sup>, upper bound is 1.2x<sup>2</sup> as 1.2 > 1.1 and 1.1 x<sup>2</sup> is dominant factor g(x)
 
+In most cases, Big Theta and Big O are using interchangably, most of the time we talking about Big O in engineering industry, it's the tighest bound of the algorithm and usually it means the same thing as Big Theta in academic.
+
 **A peak in 1-D array**
 A peak is the number that larger than or equal the number in index-1 and index+1
 -> Binary search, to find a peak. If mid < left, go(a[0:left]), else if mid < right, go(a[mid+1, n]), else return mid
