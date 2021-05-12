@@ -22,4 +22,13 @@ class Solution:
         #     nums[0], nums[nums[0]] = nums[nums[0]], nums[0]
 
         # return nums[0]
-        
+
+        # solution 3: binary search 1 -> n-1 
+        # binary search the list of possible element
+        # m = (1 + n-1)//2
+        # iterate the nums array to see how many numbers are <= m => called k
+        # if k > m -> find duplicate on 1 -> m
+        # if k <= m -> binary search m+1 -> n-1
+        # end of the loop, return l or r 
+
+# https://www.youtube.com/watch?v=zQ6eAdtDeqg

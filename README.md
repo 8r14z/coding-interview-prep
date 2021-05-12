@@ -166,7 +166,25 @@ Probling until there is an available slot
 #### Cryptographic Hashing
 One-way hashing: having q = hash(x), it's very hard to find x from q
 
-### 13. Integer Arithmetic, Karatsuba Multiplication
+### 13. Breadth-First Search (BFS)
+#### Graph
+```
+G = (V.E)
+```
+- V: set of vertices
+- E: set of edges
+
+Presentation of graph: adjacency matrix
+
+Graph Application:
+- Web crawling
+- Social networking
+- Network broadcast
+- Garbage collection
+- Model checking
+- Solve rubic cube 
+
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
