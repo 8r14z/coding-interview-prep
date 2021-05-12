@@ -15,9 +15,9 @@ Big O:
 Big Omega:
 
 Big Theta: represent both lower bound and upper bound and 2 bounds are differentiated by constant factor of the dominant factor in function
-```
-g(x) = 1.1 x<sub>2</sub> + x<sub>1.5</sub> + 1000
-```
+
+**g(x) = 1.1 x<sub>2</sub> + x<sub>1.5</sub> + 1000**
+
 Big Theta is θ(x<sub>2</sub>) and lower bound is x<sub>2</sub>, upper bound is 1.2x<sub>2</sub> as 1.2 > 1.1 and 1.1 x<sub>2</sub> is dominant g(x)
 
 **A peak in 1-D array**
