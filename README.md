@@ -155,7 +155,7 @@ Probling until there is an available slot
 
 **Insert**: probing till there is available slot \
 **Search**: probing till found the key or "None" slot \
-**Delete**: search for the key and replace the deleted item with "DeleteMe", this is treated as non-None slot while searching but None slot while inserting
+**Delete**: search for the key and replace the deleted item with "DeleteMe" flag, this flag is treated as non-None slot while searching but None slot while inserting
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
