@@ -44,7 +44,9 @@ Pre-condition of heapify at a node: subtree rooted at its left and right childre
 
 => Heap build routine starts from the end towards the begin -> more exactly it starts from node n/2 - 1 to avoid unnecessary work on leaf nodes. 
 
-### 5. Binary Search Trees, BST Sort
+### 5. Binary Search Trees
+https://youtu.be/9Jry5-82I68
+Augumented BST: add extra key in to each node that holds number of nodes below it. Modify when inserting or deleting. Similar approach is used to buid balanced BST AVL by storing height of substree instead of number of nodes
 
 ### 6. AVL Trees, AVL Sort
 Height of tree = length of the longest path from root down to a leaf \
@@ -156,6 +158,15 @@ Probling until there is an available slot
 **Insert**: probing till there is available slot - "None" slot \
 **Search**: probing till found the key or "None" slot \
 **Delete**: search for the key and replace the deleted item with "DeleteMe" flag, this flag is treated as "non-None" slot while searching but "None" while inserting
+
+#### Probing strategies
+- Linear hashing: if h(key, i) is occupied -> try h(key,i+1) and so on. 
+- Double hashing: if h(key, i) is occupied, do the second hashing with different hash func to find new slot
+
+#### Cryptographic Hashing
+One-way hashing: having q = hash(x), it's very hard to find x from q
+
+### 13. Integer Arithmetic, Karatsuba Multiplication
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
