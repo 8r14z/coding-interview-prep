@@ -34,4 +34,5 @@ class Solution:
 # https://www.youtube.com/watch?v=zQ6eAdtDeqg
 # in non-duplicate array [1,2,3,4] with index [0,1,2,3]
 # it's known that the value is unique so it will point to some other index in the array
-# if one element is duplicated it will make a cicle -> user 2 pointers technique
+# if one element is duplicated, the value in array will all valid to be index as k in [1, n-1]
+# it will make a circle -> user 2 pointers technique -> entry point circle is the duplicated value
