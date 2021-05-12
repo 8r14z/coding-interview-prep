@@ -32,3 +32,6 @@ class Solution:
         # end of the loop, return l or r 
 
 # https://www.youtube.com/watch?v=zQ6eAdtDeqg
+# in non-duplicate array [1,2,3,4] with index [0,1,2,3]
+# it's known that the value is unique so it will point to some other index in the array
+# if one element is duplicated it will make a cicle -> user 2 pointers technique
