@@ -239,6 +239,22 @@ Memorize visited nodes to not duplicate.
 
 [Implementation](source/algorithms/dfs.py)
 
+- forward edge: if a node can access descendant directly
+- backward edge: if a node can access ancestor directly
+
+{
+    a : {b, d},
+    b : {c},
+    c : {d},
+    d : {b}
+} \
+a -> d: forward edge \
+d -> b: backward edge
+
+
+#### Cycle detection
+Graph has a cycle if DSF has a backward edge 
+
 
 
 ### X. Dynamic Programming
