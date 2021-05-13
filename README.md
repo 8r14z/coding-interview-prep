@@ -201,11 +201,20 @@ Presentation of graph:
     b : {a, c},
     c : {a, b, d}
 }
+- Adjacency matrix
 
 Space Complexity for graph: O(V + E)
 
 #### BFS
-Time complexity: O(V + E)
+Time complexity: 
+- Adjacency list -> O(V + E)
+- Adjacency matrix -> O(V<sup>2</sup>)
+
+Undirected graph: each edge contribute 2 degrees to 2 nodes. Total number of degrees of all nodes are 2 times number of edges. 
+
+Directed graph: each node has in degree and out degree. sum of in degrees + sum of out degress = 2.E. `sum of in degrees = sum of out degress` - each edge contribute 1 out degree to one node and 1 in degree to another node. 
+
+-> This is handshaking lemma
 
 **NOTE**: Memorization to avoid duplicates -> run forever
 
