@@ -232,9 +232,12 @@ reach adjacencies of s in 1 level
 ```
 
 ### 14. Depth-First Search (DFS), Topological Sort
+#### DFS
 Recursively explore graph, backtracking as necessary OR use stack
 
- [Implementation](source/algorithms/dfs.py)
+Memorize visited nodes to not duplicate. 
+
+[Implementation](source/algorithms/dfs.py)
 
 
 
