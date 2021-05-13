@@ -260,8 +260,11 @@ Graph has a cycle if DSF has a backward edge
 #### Topological Sort
 https://youtu.be/AfSk24UTFS8?t=2727
 
-Problem: given directed acyclic graph, order vertices so that all edges point from lower oder to higher order. \
+Problem: given directed acyclic (no cycle) graph, order vertices so that all edges point from lower oder to higher order. \
 -> Run DFS, output reverse of finishing times of vertices
+
+This is a job scheduling problem. Start visiting by DFS, till we reach the end, so we can back track as the end node (e) is the job needed to be done first and parent[e] > parent[parent[e]]
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
