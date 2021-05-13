@@ -216,7 +216,7 @@ Save parent of v to back track for 'a' shortest path (there could be multiple pa
 end > parent[end] > parent[parent[end]] > .... > start
 ```
 The length of the shortest path is levels of the travel. For example: \
-s -> adj[s]... \
+s -> adj[s]...
       
       ^ 
 
