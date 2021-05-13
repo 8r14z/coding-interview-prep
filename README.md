@@ -231,7 +231,5 @@ s -> adj[s]...
 reach adjacencies of s in 1 level
 ```
 
-
- 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
