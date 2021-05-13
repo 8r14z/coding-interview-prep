@@ -186,8 +186,6 @@ G = (V.E)
 - V: set of vertices
 - E: set of edges
 
-Presentation of graph: adjacency matrix
-
 Graph Application:
 - Web crawling
 - Social networking
@@ -196,7 +194,33 @@ Graph Application:
 - Model checking
 - Solve rubic cube 
 
+Presentation of graph: 
+- Adjacency list
+{
+    a : {b, c},
+    b : {a, c},
+    c : {a, b, d}
+}
+
+Space Complexity for graph: O(V + E)
+
+#### BFS
+Time complexity: O(V + E)
+
+**NOTE**: Memorization to avoid duplicates -> run forever
+
+[Implementation][source/algorithms/bfs.py]
+
+Save parent of v to back track for 'a' shortest path (there could be multiple paths) \
+```
+end > parent[end] > parent[parent[end]] > .... > start
+```
+The length of the shortest path is levels of the travel. For example: \
+s -> adj[s]... \
+      ^ \
+reach adjacency of s in 1 level
 
 
+ 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
