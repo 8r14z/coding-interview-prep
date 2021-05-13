@@ -209,13 +209,13 @@ Time complexity: O(V + E)
 
 **NOTE**: Memorization to avoid duplicates -> run forever
 
-[Implementation][source/algorithms/bfs.py]
+[Implementation](source/algorithms/bfs.py)
 
 Save parent of v to back track for 'a' shortest path (there could be multiple paths) 
 ```
 end > parent[end] > parent[parent[end]] > .... > start
 ```
-The length of the shortest path is levels of the travel. For example: \
+The length of the shortest path is levels of the travel. For example:
 ```
 s -> adj[s]...   
       ^ 
