@@ -216,10 +216,10 @@ Directed graph: each node has in degree and out degree. sum of in degrees + sum 
 
 -> This is handshaking lemma
 
-**NOTE**: Memorization to avoid duplicates -> run forever
+**NOTE**: Memorization to avoid duplicates -> avoid running forever
 
 [Implementation](source/algorithms/bfs.py)
-
+ 
 Save parent of v to back track for 'a' shortest path (there could be multiple paths) 
 ```
 end > parent[end] > parent[parent[end]] > .... > start
@@ -239,8 +239,8 @@ Memorize visited nodes to not duplicate.
 
 [Implementation](source/algorithms/dfs.py)
 
-- forward edge: if a node can access descendant directly
-- backward edge: if a node can access ancestor directly
+- forward edge: an edge where a node can access descendant directly
+- backward edge: an edge where a node can access ancestor directly
 
 {
     a : {b, d},
@@ -255,7 +255,11 @@ d -> b: backward edge
 #### Cycle detection
 Graph has a cycle if DSF has a backward edge 
 
+#### Topological Sort
+https://youtu.be/AfSk24UTFS8?t=2727
 
+Problem: given directed acyclic graph, order vertices so that all edges point from lower oder to higher order. \
+-> Run DFS, output reverse of finishing times of vertices
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
