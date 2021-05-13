@@ -265,6 +265,8 @@ Problem: given directed acyclic (no cycle) graph, order vertices so that all edg
 
 This is a job scheduling problem. Start visiting by DFS, till we reach the end, so we can back track as the end node (e) is the job needed to be done first and parent[e] > parent[parent[e]]
 
+e has nothing depends on it -> it's safe to start with e first then e's parent
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
