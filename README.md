@@ -239,7 +239,7 @@ Memorize visited nodes to not duplicate.
 
 [Implementation](source/algorithms/dfs.py)
 
-- forward edge: an edge where a node can access descendant directly
+- forward edge: an edge where a node can access descendant directly. 
 - backward edge: an edge where a node can access ancestor directly
 
 {
@@ -250,6 +250,8 @@ Memorize visited nodes to not duplicate.
 } \
 a -> d: forward edge \
 d -> b: backward edge
+
+Child node means a node put later on DFS. For example DFS put `a` to the tree, and later `d`, a->d is a shortcut in the tree
 
 
 #### Cycle detection
