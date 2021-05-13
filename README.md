@@ -219,7 +219,7 @@ The length of the shortest path is levels of the travel. For example: \
 ```
 s -> adj[s]...   
       ^ 
-reach adjacency of s in 1 level
+reach adjacencies of s in 1 level
 ```
 
 
