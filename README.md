@@ -231,5 +231,12 @@ s -> adj[s]...
 reach adjacencies of s in 1 level
 ```
 
+### 14. Depth-First Search (DFS), Topological Sort
+Recursively explore graph, backtracking as necessary OR use stack
+
+ [Implementation](source/algorithms/dfs.py)
+
+
+
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
