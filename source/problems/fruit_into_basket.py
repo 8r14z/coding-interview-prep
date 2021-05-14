@@ -1,8 +1,8 @@
+# https://leetcode.com/problems/fruit-into-baskets/description/
 class Solution:
-    # [1,0,2,3,4]
     def totalFruit(self, tree: [int]) -> int:
-        lastAppearOfFruit1 = 0
-        lastAppearOfFruit2 = 0
+        lastIndexOfFruit1 = 0
+        lastIndexOfFruit2 = 0
         fruit1 = fruit2 = -1
         count = 0
         res = float('-inf')
@@ -11,21 +11,18 @@ class Solution:
             if fruit1 == -1 or fruit == fruit1:
                 count+=1
                 fruit1 = fruit
-                lastAppearOfFruit1 = i
+                lastIndexOfFruit1 = i
             elif fruit2 == -1 or fruit == fruit2:
                 count+=1
                 fruit2 = fruit
-                lastAppearOfFruit2 = i
+                lastIndexOfFruit2 = i
             else:
-                count = i - lastAppearOfFruit1
-                lastAppearOfFruit1 = lastAppearOfFruit2
-                lastAppearOfFruit2 = i
-                fruit1 = fruit2
+                count = i - min(lastIndexOfFruit1, lastIndexOfFruit2)
+                lastIndexOfFruit1 = max(lastIndexOfFruit1, lastIndexOfFruit2)
+                lastIndexOfFruit2 = i
+                fruit1 = tree[lastIndexOfFruit1]
                 fruit2 = fruit
 
             res = max(res, count)
 
         return res
-
-
-print(Solution().totalFruit([1,0,2,3,4]))
