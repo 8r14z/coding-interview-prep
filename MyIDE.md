@@ -1,31 +1,24 @@
 class Solution:
-    # [1,0,2,3,4]
     def totalFruit(self, tree: [int]) -> int:
-        lastAppearOfFruit1 = 0
-        lastAppearOfFruit2 = 0
-        fruit1 = fruit2 = -1
-        count = 0
         res = float('-inf')
+        fruitMap = {} 
+        start = 0
 
-        for i, fruit in enumerate(tree):
-            if fruit1 == -1 or fruit == fruit1:
-                count+=1
-                fruit1 = fruit
-                lastAppearOfFruit1 = i
-            elif fruit2 == -1 or fruit == fruit2:
-                count+=1
-                fruit2 = fruit
-                lastAppearOfFruit2 = i
+        for end, fruit in enumerate(tree):
+            if fruit in fruitMap or (fruit not in fruitMap and len(fruitMap) < 2):
+                fruitMap[fruit] = end
             else:
-                count = i - lastAppearOfFruit1
-                lastAppearOfFruit1 = lastAppearOfFruit2
-                lastAppearOfFruit2 = i
-                fruit1 = fruit2
-                fruit2 = fruit
+                lastOccurence = end-1
+                for key, value in fruitMap.items():
+                    if value < lastOccurence:
+                        lastOccurence = value
+                
+                fruitMap.pop(tree[lastOccurence])
+                fruitMap[fruit] = end
+                start = lastOccurence + 1
 
-            res = max(res, count)
+            res = max(res, end - start + 1)
 
         return res
-
 
 print(Solution().totalFruit([1,0,2,3,4]))

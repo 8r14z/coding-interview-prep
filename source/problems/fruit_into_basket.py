@@ -26,3 +26,29 @@ class Solution:
             res = max(res, count)
 
         return res
+
+
+class Solution:
+    def totalFruit(self, tree: [int]) -> int:
+        if tree is None or len(tree) < 1: return 0
+        
+        res = float('-inf')
+        basket = {} 
+        start = 0
+
+        for end, fruit in enumerate(tree):
+            if fruit in basket or (fruit not in basket and len(basket) < 2):
+                basket[fruit] = end
+            else:
+                minIndex = end-1
+                for key, value in basket.items():
+                    if value < minIndex:
+                        minIndex = value
+                
+                basket.pop(tree[minIndex])
+                basket[fruit] = end
+                start = minIndex + 1
+
+            res = max(res, end - start + 1)
+
+        return res
