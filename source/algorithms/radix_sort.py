@@ -35,15 +35,15 @@ def countingSort(nums: [int], d: int, base: int):
     #
     # https://youtu.be/9bkvws_vqLU?t=1537
 
-    n = base
-    pos = [0] * n
+    k = base
+    pos = [0] * k
     
     for num in nums: 
         countIndex = (num // (base ** (d-1))) % base
         pos[countIndex] += 1
     
     numOfNums = len(nums)
-    for i in range(n-1, -1, -1):
+    for i in range(k-1, -1, -1):
         numAtPos = numOfNums - pos[i]
         pos[i] = numAtPos
         numOfNums = numAtPos
