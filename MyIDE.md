@@ -1,4 +1,0 @@
-
-dicts = {}
-
-print(dicts['hahah'])
