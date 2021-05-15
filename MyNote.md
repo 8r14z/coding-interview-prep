@@ -1,4 +1,5 @@
 1. Read the problem carefully, every words in the problem statement could be a requirement/hint that needs to be covered
+IMPORTANT: read the input/output carefully, and think of different cases, dont assume that the input is unique and doesnt have any variant. For example: one integer/type can appear multiple times in an array
 2. Sometimes Binary Search Tree is hard to implement, Stack+Sort can come to rescue 
 3. Python List is not hashable bro! Remember :'(
 4. Rotate matrix 90 degree
