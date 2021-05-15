@@ -267,6 +267,17 @@ This is a job scheduling problem. Start visiting by DFS, till we reach the end, 
 
 e has nothing depends on it -> it's safe to start with e first then e's parent
 
+### 15. Single-Source Shortest Paths Problem
+- Dijstra: positive weight, no cycles -> O(V + E)
+- Bellmen-Ford:  positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
+
+Graph with negative weight: social network, like is positive, dislike is negative
+
+### 16. Dijstra
+Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue)
+
+### 17. Bellmean-Ford
+
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
