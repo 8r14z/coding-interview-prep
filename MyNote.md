@@ -12,4 +12,4 @@ for i in range(n):
     for j in range(m):
         newMatrix[j][n-1-i] = matrix[i][j]
 ```
-5. 
+5. 2 pointer problems.. 2 pointers usually start at the same position, one move faster than the other
