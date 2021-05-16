@@ -21,3 +21,5 @@ for i in range(n):
 5. 2 pointer problems.. 2 pointers usually start at the same position, one move faster than the other
 
 6. the prolem statement usually has some hint about input validation. for example: input is array of 0 and 1 and number of 0 and 1 are equal, output is array of alternating binary 0101... or 1010... So if there is one char (0 or 1) is not in correct possition so there is another (1 or 0) is either. meaning number of invalid positions are equal. it never has many invalid positions in one number and less invalid positions in the other cuz it will cause the imbalance in number of 0 and 1
+
+7. Repeated numnbers can be presented in a hash table with frequencies 
