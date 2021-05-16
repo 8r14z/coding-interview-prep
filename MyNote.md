@@ -32,4 +32,25 @@ for num1 in hashNums1:
         count += (hashNums1[num1] * hashNums2[target-num1])
 ```
 
-8. Number of subsets in a list with N elements = 2<sup>N</sup>
+8. Number of subsets in a list with N elements = 2<sup>N</sup>. if there is N numbers, there are 2<sup>N</sup>-1 reperesentation of their combination in bit mask. For example:
+
+arr=[1,2,3]
+
+Bit mask:
+Binary|Decimal
+0001|1
+0010|2
+0011|3
+0100|4
+0101|5
+0110|6
+0111|7
+...|...
+```python
+for mask in range(2**N):
+    sum = 0
+    for i in range(N): 
+        # at this step, it shifts index to match with the mask, so depends on the mask it will get combination of 1 or 2 or 3
+        if mask & (1 << i) > 0:
+           sum += arr[i] 
+```
