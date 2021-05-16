@@ -55,6 +55,7 @@ for mask in range(2**N):
         # each mask is used to filter out the combination of numbers
         # for example 0011 will be the combination of [a[0], a[1]]
         # 0100 will be the subset of [a[2]] and so on..
+        # 0111 is subset of [a[0], a[1], a[2]]
         if mask & (1 << i) > 0:
            sum += arr[i] 
 ```
