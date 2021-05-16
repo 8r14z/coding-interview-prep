@@ -31,3 +31,5 @@ for num1 in hashNums1:
     if target-num1 in hashNums2:
         count += (hashNums1[num1] * hashNums2[target-num1])
 ```
+
+8. Number of subsets in a list with N elements = 2<sup>N</sup>
