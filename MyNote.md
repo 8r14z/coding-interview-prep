@@ -52,7 +52,7 @@ for mask in range(2**N):
     sum = 0
     for i in range(N): 
         # at this step, it shifts index to match with the mask, so depends on the mask it will get combination of 1 or 2 or 3 elements together
-        # each mask is used to filter out a combination
+        # each mask is used to filter out the combination of numbers
         # for example 0011 will be the combination of [a[0], a[1]]
         # 0100 will be the subset of [a[2]] and so on..
         if mask & (1 << i) > 0:
