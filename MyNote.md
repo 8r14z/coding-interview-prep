@@ -37,14 +37,15 @@ for num1 in hashNums1:
 arr=[1,2,3]
 
 Bit mask:
-Binary|Decimal
-0001|1
-0010|2
-0011|3
-0100|4
-0101|5
-0110|6
-0111|7
+|Binary|Decimal|
+|-|-|
+|0001|1|
+|0010|2|
+|0011|3|
+|0100|4|
+|0101|5|
+|0110|6|
+|0111|7|
 ...|...
 ```python
 for mask in range(2**N):
