@@ -387,9 +387,9 @@ def dijkstra(graph, start):
 
     while queue:
         a = queue.extractmin()
-        for node in graph.neighbors(a):
-            if b not in cost or cost[a] + graph.weight(a,b) < cost[b]:
-                cost[b] = cost[a] + graph.weight(a,b)
+        for node,distance in graph.neighbors(a):
+            if b not in cost or cost[a] + distance < cost[b]:
+                cost[b] = cost[a] + distance
                 parent[b] = a
                 queue.update(b, cost[b])
     
