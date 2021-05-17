@@ -395,6 +395,7 @@ def dijkstra(graph, start):
 
 # use priority queue make it O(VlogV + ElogV)
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
+# so the complexity if using Fi heap is O(VlogV + E)
 # https://en.wikipedia.org/wiki/Fibonacci_heap
 ```
 
