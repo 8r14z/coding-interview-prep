@@ -357,7 +357,8 @@ def dfs_visit(start, parent, finished, graph):
 
 ### 15. Single-Source Shortest Paths Problem
 #### Dijstra: 
-Disallow negative weight, If you have negative weight edges, you might also have negative weight cycles => may make certain shortest paths undefined! \
+Disallow negative weight, and graph with cycle \
+If you have negative weight edges, you might also have negative weight cycles => may make certain shortest paths undefined! \
 Complexity: O(VlogV + E)
 
 #### Bellmen-ford
