@@ -361,7 +361,7 @@ Disallow negative weight and cycle \
 If you have negative weight edges, you might also have negative weight cycles => may make certain shortest paths undefined! \
 Complexity: O(VlogV + E)
 
-Graph has non-negative weight with cycle is ok as it's not gonna update the value.
+Graph has non-negative weight with cycle is ok as it's not gonna update the value anw
 
 #### Bellmen-ford
 positive/negative weight. Bellmen-Ford can detect cycle \
