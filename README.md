@@ -362,7 +362,11 @@ def dfs_visit(start, parent, finished, graph):
 Graph with negative weight example: social network, like is positive, dislike is negative
 
 ### 16. Dijstra
+Shortest path from one node to all the others on weighted graph. 
+
 Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue)
+
+
 
 ### 17. Bellmean-Ford
 
