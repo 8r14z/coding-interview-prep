@@ -290,6 +290,8 @@ if b in a.neighbors:
 ```
 Child node means a node put later on DFS. For example DFS put `a` to the tree, and later `d`, a->d is a shortcut in the tree
 
+There is no forward edge in un-directed graph as the time a node is reached it's can to back to it's ascendant node directly :) (there is no direct to constraint this)
+
 **WARNING** Memorized the visited node to avoid duplication and wrong result...on undirected graph or directed graph with cycle
 
 ```python
@@ -312,8 +314,6 @@ while stack/queue:
 
 #### Cycle detection
 Graph has a cycle if DSF has a backward edge. backward end when a node point to it's ancestor
-
-
 
 #### Topological Sort
 https://youtu.be/AfSk24UTFS8?t=2727
