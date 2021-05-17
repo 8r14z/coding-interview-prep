@@ -1,5 +1,5 @@
 # DISCLAIMER
-This note might only make sense to me :yaoming: 
+This note only makes sense to me :yaoming: 
 
 # Notes that i learned by heart while solving problems
 1. Read the problem carefully, every words in the problem statement could be a requirement/hint that needs to be covered
