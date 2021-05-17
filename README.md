@@ -361,7 +361,8 @@ Disallow negative weight, If you have negative weight edges, you might also have
 Complexity: O(VlogV + E)
 
 #### Bellmen-ford
-positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
+positive/negative weight. Bellmen-Ford can detect cycle \
+Complexity: O(V.E)
 
 Graph with negative weight example: social network, like is positive, dislike is negative
 
