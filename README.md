@@ -265,7 +265,9 @@ Memorize visited nodes to not duplicate.
 [Implementation](source/algorithms/dfs.py)
 
 - forward edge: an edge where a node can access descendant directly. 
+if a neighbor has parent already and the neighbor is downward the tree 
 - backward edge: an edge where a node can access ancestor directly
+if a neighbor has parent already and the neighbor is upward the tree 
 
 {
     a : {b, d},
@@ -276,6 +278,16 @@ Memorize visited nodes to not duplicate.
 a -> d: forward edge \
 d -> b: backward edge
 
+```python
+# naive -> travel the parent list to find the relationship
+if b in a.neighbors:
+    if b in a.ascendant:
+        return backward
+    elif b in an.descendant:
+        return forward
+    else
+        return crossEdge
+```
 Child node means a node put later on DFS. For example DFS put `a` to the tree, and later `d`, a->d is a shortcut in the tree
 
 **WARNING** Memorized the visited node to avoid duplication and wrong result...on undirected graph or directed graph with cycle
@@ -291,15 +303,17 @@ stack/queue.append(start)
 
 while stack/queue:
     node = stack.pop()/queue.popLeft()
-    children = graph[node]
-    for child in children:
-        if child not in parent:
-            parent[child] = node
-            stack/queue.append(child)
+    neighbors = graph[node]
+    for neighbor in neighbors:
+        if neighbor not in parent:
+            parent[neighbor] = node
+            stack/queue.append(neighbor)
 ```
 
 #### Cycle detection
-Graph has a cycle if DSF has a backward edge 
+Graph has a cycle if DSF has a backward edge. backward end when a node point to it's ancestor
+
+
 
 #### Topological Sort
 https://youtu.be/AfSk24UTFS8?t=2727
