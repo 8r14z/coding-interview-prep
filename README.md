@@ -225,6 +225,8 @@ Space Complexity for graph: O(V<sup>2</sup>). Can represent in bits as the value
 Trade off: time vs space
 
 #### BFS
+Shortest path in unweighted graph from start node to all the nodes
+
 Time complexity: 
 - Adjacency list -> O(V + E). Space O(V + E)
 - Adjacency matrix -> O(V<sup>2</sup>). Space: O(V<sup>2</sup>) bits
@@ -235,7 +237,7 @@ Directed graph: each node has in degree and out degree. sum of in degrees + sum 
 
 -> This is handshaking lemma
 
-**NOTE**: Memorization to avoid duplicates -> avoid running forever
+**WARNING**: Memorization to avoid duplicates -> avoid running forever. Avoid wrong result on on undirected graph or directed graph with cycle
 
 [Implementation](source/algorithms/bfs.py)
  
@@ -252,6 +254,8 @@ reach adjacencies of s in 1 level
 
 ### 14. Depth-First Search (DFS), Topological Sort
 #### DFS
+DFS might not find the shortest path due to memorized property of DFS. But it could be possible if we run DFS for the whole graph and update the latest value... -> this seems to be applied only when we tryna find something if it exists :) 
+
 Recursively explore graph, backtracking as necessary OR use stack
 
 Memorize visited nodes to not duplicate. 
@@ -272,6 +276,7 @@ d -> b: backward edge
 
 Child node means a node put later on DFS. For example DFS put `a` to the tree, and later `d`, a->d is a shortcut in the tree
 
+**WARNING** Memorized the visited node to avoid duplication and wrong result...on undirected graph or directed graph with cycle
 
 #### Cycle detection
 Graph has a cycle if DSF has a backward edge 
