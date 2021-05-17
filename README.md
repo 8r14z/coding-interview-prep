@@ -278,6 +278,10 @@ Child node means a node put later on DFS. For example DFS put `a` to the tree, a
 
 **WARNING** Memorized the visited node to avoid duplication and wrong result...on undirected graph or directed graph with cycle
 
+```
+For graph travel and memorization, we can use the hash to memorize the parent of the visited node and then we can use that to back track the path other than using it to check the visited status only
+```
+
 #### Cycle detection
 Graph has a cycle if DSF has a backward edge 
 
