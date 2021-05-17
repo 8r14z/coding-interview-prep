@@ -315,6 +315,17 @@ while stack/queue:
 #### Cycle detection
 Graph has a cycle if DSF has a backward edge. backward end when a node point to it's ancestor
 
+Have list to check whether a node is finished or not. A node is finished when all its neighbors are finished. For example:
+
+A -> B -> C 
+     | -> D
+
+finished = [C, D, B, A]
+```python
+if b in a.neighbors and b is not in finished:
+    return backward # cycle
+```
+
 #### Topological Sort
 https://youtu.be/AfSk24UTFS8?t=2727
 
@@ -325,12 +336,13 @@ This is a job scheduling problem. Start visiting by DFS, till we reach the end, 
 
 e has nothing depends on it -> it's safe to start with e first then e's parent
 
+**WARNING** Need to run DFS to detect the cycle first :) it doesnt work with a cycle 
+
 ### 15. Single-Source Shortest Paths Problem
 - Dijstra: positive weight, no cycles -> O(VlogV + E)
 - Bellmen-Ford:  positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
 
 Graph with negative weight example: social network, like is positive, dislike is negative
-
 
 ### 16. Dijstra
 Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue)
