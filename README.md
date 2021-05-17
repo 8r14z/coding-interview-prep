@@ -196,19 +196,38 @@ Graph Application:
 
 Presentation of graph: 
 - Adjacency list
+```
 {
     a : {b, c},
     b : {a, c},
     c : {a, b, d}
 }
-- Adjacency matrix
+```
+{b,c} is the degree of a, sume of all degrees of all nodes we will have 2E (handshaking lemma)
+The complexity to travel all nodes and their degrees will be O(V + 2E)
+At each node v, we travel v + v's degrees 
+So the complexity =  sum(v<sub>i</sub> + degree(v<sub>i</sub>)) => O(V + sum(degree(V))) = O(V + 2E) = O(V + E)
 
 Space Complexity for graph: O(V + E)
 
+- Adjacency matrix
+```
+  0 1 2 3 
+0 0 1 0 0
+1 0 1 0 1
+2 ...
+3 ...
+```
+We gotta travel from one node to all others even they are not connected :( a[i][j] = 0
+
+Space Complexity for graph: O(V<sup>2</sup>). Can represent in bits as the value is either 0 or 1
+
+Trade off: time vs space
+
 #### BFS
 Time complexity: 
-- Adjacency list -> O(V + E)
-- Adjacency matrix -> O(V<sup>2</sup>)
+- Adjacency list -> O(V + E). Space O(V + E)
+- Adjacency matrix -> O(V<sup>2</sup>). Space: O(V<sup>2</sup>) bits
 
 Undirected graph: each edge contribute 2 degrees to 2 nodes. Total number of degrees of all nodes are 2 times number of edges. 
 
@@ -268,10 +287,11 @@ This is a job scheduling problem. Start visiting by DFS, till we reach the end, 
 e has nothing depends on it -> it's safe to start with e first then e's parent
 
 ### 15. Single-Source Shortest Paths Problem
-- Dijstra: positive weight, no cycles -> O(V + E)
+- Dijstra: positive weight, no cycles -> O(VlogV + E)
 - Bellmen-Ford:  positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
 
-Graph with negative weight: social network, like is positive, dislike is negative
+Graph with negative weight example: social network, like is positive, dislike is negative
+
 
 ### 16. Dijstra
 Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue)
