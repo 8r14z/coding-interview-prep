@@ -5,8 +5,12 @@
 #                  n=2 k=2      n=2 k=2       n=2 k=1 (cuz 3-the biggest in the end is always visible)
 #    stop here as n=k ^       same ^      [1] n=1 k=1   [2] n=1 k=0 
 #                                   same pattern ^    stop ^
+# We notice the pattern that after first level we have 3 sub prolems, with 2 of {2,2} and 1{2,1}
+# so it's similar to: dp[i][j] = dp[i-1][j-1] + (i-1)*dp[i-1][j]
 # n == k => there is only one way to arrage it ... in sorted order
 # n < k => stop
+# A very good explaination https://www.youtube.com/watch?v=O761YBjGxGA
+
 class Solution:
     def rearrangeSticks(self, n: int, k: int) -> int:
         if n == k: return 1

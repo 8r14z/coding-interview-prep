@@ -60,3 +60,5 @@ for mask in range(2**N):
         if mask & (1 << i) > 0:
            sum += arr[i] 
 ```
+
+9. DP pattern can be recognized when the current problem result can be influenced by the smaller sub-problem :) The DP problem usually is stated by "find number of works ....", "find min number works", "find max number of works", "longest something", "shortest something",...
