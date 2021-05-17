@@ -369,7 +369,7 @@ Complexity: O(V.E)
 
 Graph with negative weight example: social network, like is positive, dislike is negative
 
-### 16. Dijstra
+### 16. Dijkstra
 Shortest path from one node to all the others on weighted graph. Disallow negative edge
 
 **NOTE**
@@ -381,21 +381,21 @@ Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the ti
 
 ```python
 graph
-parent = {}
-parent[a] = None
 
+parent = {'a': None}
 cost = {'a': 0}
-processed = set()
 
-a = find_lowest_cost_node()
-while a is not None:
+processed = set()
+pqueue # :notsure:
+
+while pqueue:
+    a = pqueue.pop()
+    processed.add(a)
+    
     for node in graph.neighbors(a):
         if b not in cost or cost[a] + edge(a[1],b) < cost[b]:
             cost[b] = cost[a] + edge(a,b)
             parent[b] = a
-
-    processed.add(a)
-    a = find_lowest_cost_node()
 ```
 
 ### 17. Bellmean-Ford
