@@ -401,7 +401,7 @@ def dijkstra(graph, start):
 # for connected componment graph E ~ V^2 so can bound the complexity and discard V from the complexity as E is dominant factor
 ```
 
-### 17. Bellmean-Ford
+### 17. Bellman-Ford
 
 
 ### X. Dynamic Programming
