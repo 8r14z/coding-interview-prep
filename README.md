@@ -399,7 +399,7 @@ def dijkstra(graph, start):
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
 # so the complexity if using Fi heap is O(VlogV + E)
 # https://en.wikipedia.org/wiki/Fibonacci_heap
-# the above assumes the graph is reprepsented adjacency list. adjacency matrix will make it V^2
+# the above assumes the graph is reprepsented adjacency list. adjacency matrix will make it V^2 -> seems the adjacency matrix presentation is much better in term of space and time 
 # for connected componment graph E ~ V^2 so can bound the complexity and discard V from the complexity as E is dominant factor
 ```
 
