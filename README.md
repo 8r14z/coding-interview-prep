@@ -338,6 +338,21 @@ e has nothing depends on it -> it's safe to start with e first then e's parent
 
 **WARNING** Need to run DFS to detect the cycle first :) it doesnt work with a cycle 
 
+```python
+def dfs(start, graph):
+    parent = {}
+    finished = set()
+    parent[start] = None
+    dfs_visited(start, parent, finished, graph)
+
+def dfs_visit(start, parent, finished, graph):
+    for node in graph.neighbors(start):
+        if node is not in parent:
+            parent[node] = start
+            dfs_visit(node, parent, finished, graph)
+    finished.add(start)
+```
+
 ### 15. Single-Source Shortest Paths Problem
 - Dijstra: positive weight, no cycles -> O(VlogV + E)
 - Bellmen-Ford:  positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
