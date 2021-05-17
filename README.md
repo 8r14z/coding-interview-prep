@@ -379,9 +379,21 @@ Implementation is similar to BFS using priority queue(BTS, heap). Have a separet
 
 Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node
 ```python
-if b in a.neighbors:
-    if b not in cost or cost[a] + edge(a,b) < cost[b]:
-        cost[b] = cost[a] + edge(a,b)
+graph = [Node]
+cost = {'a': 0}
+parent = {}
+parent[a] = None
+heapq.heapify(graph) # can be BTS or heap pre-processed with all node then get the top
+a = heapq.heappop(graph)
+while a is not None:
+    for node in a.neighbors:
+        if node 
+    if b in a.neighbors:
+        if b not in cost or cost[a] + edge(a,b) < cost[b]:
+            cost[b] = cost[a] + edge(a,b)
+            parent[b] = a
+
+    a = heapq.heappop(graph)
 ```
 
 ### 17. Bellmean-Ford
