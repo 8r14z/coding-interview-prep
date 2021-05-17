@@ -356,8 +356,12 @@ def dfs_visit(start, parent, finished, graph):
 ```
 
 ### 15. Single-Source Shortest Paths Problem
-- Dijstra: positive weight, no cycles -> O(VlogV + E)
-- Bellmen-Ford:  positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
+#### Dijstra: 
+Disallow negative weight, If you have negative weight edges, you might also have negative weight cycles => may make certain shortest paths undefined! \
+Complexity: O(VlogV + E)
+
+#### Bellmen-ford
+positive/negative weight -> O(V.E). Bellmen-Ford can detect cycle 
 
 Graph with negative weight example: social network, like is positive, dislike is negative
 
