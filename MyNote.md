@@ -1,6 +1,6 @@
 # DISCLAIMER:
 This note might only make sense to me :yaoming: 
-
+--------
 1. Read the problem carefully, every words in the problem statement could be a requirement/hint that needs to be covered
 IMPORTANT: read the input/output carefully, and think of different cases, dont assume that the input is unique and doesnt have any variant. For example: one integer/type can appear multiple times in an array
 
