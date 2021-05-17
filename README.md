@@ -378,22 +378,24 @@ Topological sort the given graph -> we have a list of vertices that neeeds to be
 Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue) 
 
 Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node
+
 ```python
-graph = [Node]
-cost = {'a': 0}
+graph
 parent = {}
 parent[a] = None
-heapq.heapify(graph) # can be BTS or heap pre-processed with all node then get the top
-a = heapq.heappop(graph)
+
+cost = {'a': 0}
+processed = set()
+
+a = find_lowest_cost_node()
 while a is not None:
-    for node in a.neighbors:
-        if node 
-    if b in a.neighbors:
-        if b not in cost or cost[a] + edge(a,b) < cost[b]:
+    for node in graph.neighbors(a):
+        if b not in cost or cost[a] + edge(a[1],b) < cost[b]:
             cost[b] = cost[a] + edge(a,b)
             parent[b] = a
 
-    a = heapq.heappop(graph)
+    processed.add(a)
+    a = find_lowest_cost_node()
 ```
 
 ### 17. Bellmean-Ford
