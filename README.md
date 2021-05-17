@@ -391,7 +391,7 @@ def dijkstra(graph, start):
             if b not in cost or cost[a] + edge(a,b) < cost[b]:
                 cost[b] = cost[a] + edge(a,b)
                 parent[b] = a
-                fibonacciheap.update(b)
+                fibonacciheap.update(b, cost[b])
 
 # use priority queue make it O(VlogV + ElogV)
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
