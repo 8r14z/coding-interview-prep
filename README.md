@@ -386,7 +386,7 @@ def dijkstra(graph, start):
     queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
 
     while queue:
-        a = queue.extractmax()
+        a = queue.extract()
         for node in graph.neighbors(a):
             if b not in cost or cost[a] + edge(a,b) < cost[b]:
                 cost[b] = cost[a] + edge(a,b)
