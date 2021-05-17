@@ -380,19 +380,18 @@ Implementation is similar to BFS using priority queue(BTS, heap). Have a separet
 Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node
 
 ```python
-graph
-parent = {'start': None}
+def dijkstra(graph, start):
+    parent = {'start': None}
+    cost = {'start': 0}
+    queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
 
-fibonacciheap = initialized(start, graph)
-
-while pqueue:
-    a = fibonacciheap.extractMax()
-
-    for node in graph.neighbors(a):
-        if b not in cost or cost[a] + edge(a[1],b) < cost[b]:
-            cost[b] = cost[a] + edge(a,b)
-            parent[b] = a
-            fibonacciheap.update(b)
+    while queue:
+        a = queue.extractmax()
+        for node in graph.neighbors(a):
+            if b not in cost or cost[a] + edge(a,b) < cost[b]:
+                cost[b] = cost[a] + edge(a,b)
+                parent[b] = a
+                fibonacciheap.update(b)
 
 # use priority queue make it O(VlogV + ElogV)
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
