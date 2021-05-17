@@ -254,6 +254,8 @@ reach adjacencies of s in 1 level
 
 ### 14. Depth-First Search (DFS), Topological Sort
 #### DFS
+Similar to BFS, starts from a indicated node to all others
+
 DFS might not find the shortest path due to memorized property of DFS. But it could be possible if we run DFS for the whole graph and update the latest value... -> this seems to be applied only when we tryna find something if it exists :) 
 
 Recursively explore graph, backtracking as necessary OR use stack
