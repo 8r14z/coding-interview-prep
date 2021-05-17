@@ -370,11 +370,19 @@ Complexity: O(V.E)
 Graph with negative weight example: social network, like is positive, dislike is negative
 
 ### 16. Dijstra
-Shortest path from one node to all the others on weighted graph. 
+Shortest path from one node to all the others on weighted graph. Disallow negative edge
 
-Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue)
+**NOTE**
+Topological sort the given graph -> we have a list of vertices that neeeds to be done in exact order. This applies while we dont have any specific start node and commit that we can find shortest path from one start node to all others. If u start from random node, it might not happen as there maybe a node the random dom can't reach
 
+Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue) 
 
+Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node
+```python
+if b in a.neighbors:
+    if b not in cost or cost[a] + edge(a,b) < cost[b]:
+        cost[b] = cost[a] + edge(a,b)
+```
 
 ### 17. Bellmean-Ford
 
