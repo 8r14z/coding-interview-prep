@@ -390,8 +390,7 @@ pqueue # :notsure:
 
 while pqueue:
     a = find_lowest_cost_node(pqueue, processed)
-    processed.add(a)
-    
+        
     for node in graph.neighbors(a):
         if b not in cost or cost[a] + edge(a[1],b) < cost[b]:
             cost[b] = cost[a] + edge(a,b)
