@@ -381,20 +381,22 @@ Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the ti
 
 ```python
 graph
+parent = {'start': None}
 
-parent = {'a': None}
-cost = {'a': 0}
-
-processed = set()
-pqueue # :notsure:
+fibonacciheap = initialized(start, graph)
 
 while pqueue:
-    a = find_lowest_cost_node(pqueue, processed)
-        
+    a = fibonacciheap.extractMax()
+
     for node in graph.neighbors(a):
         if b not in cost or cost[a] + edge(a[1],b) < cost[b]:
             cost[b] = cost[a] + edge(a,b)
             parent[b] = a
+            fibonacciheap.update(b)
+
+# use priority queue make it O(VlogV + ElogV)
+# USE Fibonacci heap to make the update O(1) and O(logN) for extracting
+# https://en.wikipedia.org/wiki/Fibonacci_heap
 ```
 
 ### 17. Bellmean-Ford
