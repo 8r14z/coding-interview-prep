@@ -392,6 +392,8 @@ def dijkstra(graph, start):
                 cost[b] = cost[a] + edge(a,b)
                 parent[b] = a
                 queue.update(b, cost[b])
+    
+    return cost, parent
 
 # use priority queue make it O(VlogV + ElogV)
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
