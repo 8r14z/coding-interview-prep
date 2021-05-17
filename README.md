@@ -341,7 +341,7 @@ e has nothing depends on it -> it's safe to start with e first then e's parent
 ```python
 def dfs(start, graph):
     parent = {}
-    finished = set()
+    finished = []
     parent[start] = None
     dfs_visited(start, parent, finished, graph)
 
@@ -350,7 +350,9 @@ def dfs_visit(start, parent, finished, graph):
         if node is not in parent:
             parent[node] = start
             dfs_visit(node, parent, finished, graph)
-    finished.add(start)
+    finished.append(start)
+
+# finished is the order of finishing time 
 ```
 
 ### 15. Single-Source Shortest Paths Problem
