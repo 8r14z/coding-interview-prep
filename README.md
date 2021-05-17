@@ -386,12 +386,12 @@ def dijkstra(graph, start):
     queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
 
     while queue:
-        a = queue.extract()
+        a = queue.extractmin()
         for node in graph.neighbors(a):
             if b not in cost or cost[a] + edge(a,b) < cost[b]:
                 cost[b] = cost[a] + edge(a,b)
                 parent[b] = a
-                fibonacciheap.update(b, cost[b])
+                queue.update(b, cost[b])
 
 # use priority queue make it O(VlogV + ElogV)
 # USE Fibonacci heap to make the update O(1) and O(logN) for extracting
