@@ -285,8 +285,15 @@ Child node means a node put later on DFS. For example DFS put `a` to the tree, a
 parent = {}
 parent[start] = None
 
-if node not in parent:
-    # BFS/DFS its children
+stack/queue.append(start)
+
+while stack/queue:
+    node = stack.pop()/queue.popLeft()
+    children = graph[node]
+    for child in children:
+        if child not in parent:
+            parent[child] = node
+            stack/queue.append(child)
 ```
 
 #### Cycle detection
