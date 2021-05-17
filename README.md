@@ -389,7 +389,7 @@ processed = set()
 pqueue # :notsure:
 
 while pqueue:
-    a = pqueue.pop()
+    a = find_lowest_cost_node(pqueue, processed)
     processed.add(a)
     
     for node in graph.neighbors(a):
