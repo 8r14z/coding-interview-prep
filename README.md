@@ -404,7 +404,7 @@ def dijkstra(graph, start):
 ```
 
 ### 17. Bellman-Ford
-
+To find the longest path, we know how to find the shortest path with Dijkstra and Bellman-Ford, so we can just revert the sign of weight (i.e: 1 -> -1, 2 -> -2, and so on) and find the longest path with Bellman-Ford as Dijstra doesnt work for negative weight :D 
 
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
