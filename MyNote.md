@@ -67,5 +67,6 @@ for mask in range(2**N):
 
 9. DP pattern can be recognized when the current problem result can be influenced by the smaller sub-problem :) The DP problem usually is stated by "find number of works ....", "find min number works", "find max number of works", "longest something", "shortest something",...
 
-10. Sometime we can use the algorithm to find the smallest to find the largest by reverting all numbers to negative. This trick is applied when u wanna use heapq implementation in Python, by default it's min-heap, if we wawnna covert it to max-heap, can just multiply all elements by -1 and use the min-heap :) \
+10. Sometime we can use the algorithm to find the smallest to find the largest (or opposite) by reverting all numbers to opposite sign (1 -> -1, -1 -> 1, etc). \
+This trick is applied when u wanna use heapq implementation in Python, by default it's min-heap, if we wawnna covert it to max-heap, can just multiply all elements by -1 and use the min-heap :) \
 Another example for this trick is to find the longest path, we know how to find the shortest path with Dijkstra and Bellman-Ford, so we can just revert the sign of weight and find the longest path with Bellman-Ford as Dijstra doesnt work for negative weight :D 
