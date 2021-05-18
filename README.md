@@ -381,7 +381,7 @@ Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the ti
 
 Because of being a greed algorithm (means focus on optimize the current step), having negative weight cycle will make Dijkstra wrong as once a node is processed it will never being processed again,..even there is a cheap cost to reach that node with negative weight neighbor... we might think we dont we just keep processing it... well if we dont mark one as done, we might end up processing 4ever with cycle. For example: A->B->C->A
 
-For negative weight cycle... better use Bellman-Ford
+=> For negative weight cycle... better use Bellman-Ford
 
 ```python
 def dijkstra(graph, start):
