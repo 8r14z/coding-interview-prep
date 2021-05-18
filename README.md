@@ -377,7 +377,9 @@ Topological sort the given graph -> we have a list of vertices that neeeds to be
 
 Implementation is similar to BFS using priority queue(BTS, heap). Have a separete hash to save cost to access with constant time, have another hash to save the parent to back track the path, also we need an hash to check whether a node is processed or not? if one is procecssed already we never do that again. A node while processing update cost for it's neightbors and then mark it as processed :) and jump to process the next lowest cost node (in prority queue) 
 
-Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node
+Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the time and update its neighbors if the cost to its neightbors doesnt exist or simply more optimal to go from the node.
+
+Because of being a greed algorithm (means focus on optimize the current step), having negative weight cycle will make Dijkstra wrong as once a node is processed it will never being processed again,..even there is a cheap cost to reach that node with negative weight neighbor... we might think we dont we just keep processing it... well if we dont mark one as done, we might end up processing 4ever with cycle. For example: A->B->C->A
 
 ```python
 def dijkstra(graph, start):
@@ -406,7 +408,10 @@ def dijkstra(graph, start):
 ### 17. Bellman-Ford
 Bellman-Ford can detect negative cycle and abort
 
+```python
+def bellmanford(graph, start):
 
+```
 
 
 
