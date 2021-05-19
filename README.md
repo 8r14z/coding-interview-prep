@@ -422,15 +422,15 @@ def bellmanford(graph, start):
     cost = {start, 0}
 
     V = len(graph.vertices)
-
+    # A simple shortest path from src to any other vertex can have at-most |V| - 1 edges 
     for _ in range(1, V):
-        for v in graph.vertices:                # 1
-            for u, distance in v.neighbors:     # 2
+        for v in graph.vertices:                # *1
+            for u, distance in v.neighbors:     # *2
                 if u not in cost or cost[u] < cost[v] + distance:
                     cost[b] = cost[a] + distance
                     parent[b] = a
     
-    # 1 + 2 = E
+    # *1 + *2 = E
 
     for v in graph.vertices:
         for u, dist in v.neighbors:
