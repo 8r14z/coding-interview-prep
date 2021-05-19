@@ -448,9 +448,9 @@ If there is a nagative weight cycle in the graph, finding shortest path path is 
 
 ### 18. Speed up Dijkstra
 
-Can we use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph. Will this algorithm work?
-
-
+Can we use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph.
 
 ### 19. Dynamic Programming (long section)
+Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.
+
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
