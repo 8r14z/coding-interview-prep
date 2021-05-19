@@ -427,8 +427,8 @@ def bellmanford(graph, start):
         for v in graph.vertices:                # *1
             for u, distance in v.neighbors:     # *2
                 if u not in cost or cost[u] < cost[v] + distance:
-                    cost[b] = cost[a] + distance
-                    parent[b] = a
+                    cost[u] = cost[v] + distance
+                    parent[v] = a
     
     # *1 + *2 = E
 
