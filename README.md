@@ -397,7 +397,7 @@ def dijkstra(graph, start):
 
     while queue:
         a = queue.extractmin()
-        for node,distance in graph.neighbors(a):
+        for node,distance in a.neighbors(a):
             if b not in cost or cost[a] + distance < cost[b]:
                 cost[b] = cost[a] + distance
                 parent[b] = a
@@ -431,7 +431,7 @@ def bellmanford(graph, start):
                     parent[b] = a
     
     # 1 + 2 = E
-    
+
     for v in graph.vertices:
         for u, dist in v.neighbors:
             if cost[u] > cost[v] + distance:
