@@ -434,7 +434,7 @@ def bellmanford(graph, start):
 
     for v in graph.vertices:
         for u, dist in v.neighbors:
-            if cost[u] > cost[v] + distance:
+            if u not in cost or cost[u] > cost[v] + distance:
                 return None, None # contains negative cycles
 
     return cost, parent
