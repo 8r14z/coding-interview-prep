@@ -381,7 +381,7 @@ Dijkstra is a kind of greedy algorithm. It find a node the lowest cost at the ti
 
 Because of being a greed algorithm (means focus on optimize the current step), having negative weight cycle will make Dijkstra wrong as once a node is processed it will never being processed again,..even there is a cheap cost to reach that node with negative weight neighbor... we might think we dont we just keep processing it... well if we dont mark one as done, we might end up processing 4ever with cycle. For example: A->B->C->A
 
-=> Have negative weight, or even worst negative cycle will make the algorithm run incorrectly. With non-cycle negative weight, in some case it works...
+=> Have negative weight, or even worst negative cycle will make the algorithm run incorrectly. With non-cycle negative weight, in some case it works...but most of the time it won't...so :NO: pls
 
 A -> B: -5
 A -> C: 2
@@ -391,8 +391,8 @@ B -> C: 3
 
 ```python
 def dijkstra(graph, start):
-    parent = {'start': None}
-    cost = {'start': 0}
+    parent = {start: None}
+    cost = {start: 0}
     queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
 
     while queue:
@@ -414,10 +414,30 @@ def dijkstra(graph, start):
 ```
 
 ### 17. Bellman-Ford
-Bellman-Ford can detect negative cycle and abort
+Bellman-Ford can detect negative cycle and report. Bellman-Ford is different from Dijkstra that it can work with negative-weight or negative cycle, it wont give the answer for such cases as the answer will be wrong anw, but report if there is a fraud detected (-w, -c)
 
 ```python
 def bellmanford(graph, start):
+    parent = {start: None}
+    cost = {start, 0}
+
+    V = len(graph.vertices)
+
+    for _ in range(1, V):
+        for v in graph.vertices:                # 1
+            for u, distance in v.neighbors:     # 2
+                if cost[u] < cost[v] + distance:
+                    cost[b] = cost[a] + distance
+                    parent[b] = a
+    
+    # 1 + 2 = E
+    
+    for v in graph.vertices:
+        for u, dist in v.neighbors:
+            if cost[u] > cost[v] + distance:
+                # wrong :) 
+
+    return cost, parent
 
 ```
 
