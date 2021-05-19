@@ -443,5 +443,7 @@ def bellmanford(graph, start):
 
 To find the longest path, we know how to find the shortest path with Dijkstra and Bellman-Ford, so we can just revert the sign of weight (i.e: 1 -> -1, 2 -> -2, and so on) and find the longest path with Bellman-Ford as Dijstra doesnt work for negative weight :D 
 
+If there is a nagative weight cycle in the graph, finding shortest path path is the NP-problem == super hard problem. In case of graph, no algorithm is better than exponential time to solve this -> Generic SP. Algorithm :) this is potentially loop forever 
+
 ### X. Dynamic Programming
 https://www.youtube.com/watch?v=YBSt1jYwVfU 
