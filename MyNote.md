@@ -70,3 +70,31 @@ for mask in range(2**N):
 10. Sometime we can use the algorithm to find the smallest to find the largest (or opposite) by reverting all numbers to opposite sign (1 -> -1, -1 -> 1, etc). \
 This trick is applied when u wanna use heapq implementation in Python, by default it's min-heap, if we wawnna covert it to max-heap, can just multiply all elements by -1 and use the min-heap :) \
 Another example for this trick is to find the longest path, we know how to find the shortest path with Dijkstra and Bellman-Ford, so we can just revert the sign of weight and find the longest path with Bellman-Ford as Dijstra doesnt work for negative weight :D 
+
+11. Find k with n&(n-1)&(n-2)&...k = 0 \
+
+To make it 0 with & at the end, we need to have 0 at all position in bit presentation 0x000000.
+```
+01|11   7
+01|10   6
+01|01   5
+01|00   4
+00|11   3
+ ^
+```
+We can see in decreasing order, MSB will be keep the same as 1 (from 7 -> 4) until it meet new presentation starts with 0 as 0x0111...1. So this is the max number can make the whole serie & = 0. To get this number, we simply can get 4 - 1 in the example. Generally, get MSB left of `n`, let's call i, so 2<sup>i</sup> - 1 is `k` 
+
+```python
+n = int(input())
+print(2**(len(bin(n))-3) - 1)
+# bin here is to get the bit presetantion of an number
+# 5 => '0b101'
+# so to get most significant bit, len(0b101) - 3 = 2 => k = 2**2 -1 = 3
+# can use >> in this case also to find the msb
+
+msb = 0
+while n:
+	n >>= 1
+	msb += 1
+print(2**(msb-1) - 1)
+```
