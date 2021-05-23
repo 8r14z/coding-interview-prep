@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros
 class Solution:
     def checkZeroOnes(self, s: str) -> bool:
         max0 = 0
