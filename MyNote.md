@@ -100,20 +100,27 @@ print(2**(msb-1) - 1)
 ```
 
 12. Travel half of array, i in range((n+1)//2) for both odd and even
-- even: n = 4 => i in range(3) => i in {0,1,2} \
+- even: n = 4 => i in range(3) => i in {0,1,2}
+```
 0 1 2 3
     ^
-- odd: n = 7 => i in range(4) => i in {0,1,2,3} \
+```
+- odd: n = 7 => i in range(4) => i in {0,1,2,3}
+```
 0 1 2 3 4
       ^
-
+```
 Travel the same number of items left and right from mid, i in range(n//2)
-- even: n = 4 -> i in range(2) => left in {0,1}  right in {2,3} \
-0 1 | 2 3 \
+- even: n = 4 -> i in range(2) => left in {0,1}  right in {2,3}
+```
+0 1 | 2 3
   L   R 
+```
 - odd: n = 5 -> i in range(2) => left in {0,1} right in {3,4}
-0 1 2 3 4 \
+```
+0 1 2 3 4
   L | R 
+```
 
 ```python
 for i in range(n//2):
