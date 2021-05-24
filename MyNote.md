@@ -98,3 +98,7 @@ while n:
 	msb += 1
 print(2**(msb-1) - 1)
 ```
+
+12. Travel half of array, i in range(0, (n+1)//2) for both odd and even
+- odd: n = 4 => i in range(3) => i in {0,1,2}
+- even: n = 7 => i in range(4) => i in {0,1,2,3}
