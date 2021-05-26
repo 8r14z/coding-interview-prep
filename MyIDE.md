@@ -7,19 +7,23 @@ def solve(x):
     S = str(input())
 
     res = 0
-
-    for i in range((n+1)//2):
-        res += (ord(S[i]) - 97)*(k**(mid-i-1))
+    mod = 10**9 + 7
+    mid = (n+1)//2
+    for i in range(mid):
+        res += (ord(S[i]) - 97)* pow(k, mid-i-1, mod)
 
     isSmaller = False
     for i in range(n//2):
-        if S[-i-1] < S[mid+i]:
+        if S[n//2-1-i] == S[mid+i]:
+            continue
+        if S[n//2-1-i] < S[mid+i]:
             isSmaller = True
+          break
 
     if isSmaller:
-        res += 1
-
-        print(f'Case #{x+1}: {res}')
+        res = (res+1)
+        
+    print(f'Case #{x+1}: {int(res%mod)}')
 
 
 t = int(input())

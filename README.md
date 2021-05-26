@@ -413,6 +413,8 @@ def dijkstra(graph, start):
 # for connected componment graph E ~ V^2 so can bound the complexity and discard V from the complexity as E is dominant factor
 ```
 
+We can use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph.
+
 ### 17. Bellman-Ford
 Bellman-Ford can detect negative cycle and report. Bellman-Ford is different from Dijkstra that it can work with negative-weight or negative cycle, it wont give the answer for such cases as the answer will be wrong anw, but report if there is a fraud detected (-w, -c)
 
@@ -447,10 +449,31 @@ To find the longest path, we know how to find the shortest path with Dijkstra an
 If there is a nagative weight cycle in the graph, finding shortest path path is the NP-hard problem == super hard problem. In case of graph, no algorithm is better than exponential time to solve this -> Generic SP. Algorithm :) this is potentially loop forever. Generic SP. algorithm is it will relax all others while the cost to on one edge is changed. change in v<sup>i</sup> will make v<sup>i+n</sup> changed. so the changes is factored by weight of edges and range of weight can be exponetial. But for Dijkstra and Bellman-Ford, w of edges are not counted in the complexity but more abt number of edges and number of vertices. The exponetial complexity of Generic algorithm coming from bad choices of edges...but practically there is no good choice for that algorithm, for more specific problems we have Dijkstra and Bellman-Ford :) 
 
 ### 18. Speed up Dijkstra
+#### Single source, single target
+```python
+def dijkstra(graph, start, end):
+    parent = {start: None}
+    cost = {start: 0}
+    queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
 
-We can use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph.
+    while queue:
+        a = queue.extractmin()
+        if a is end: 
+            break
+        for node,distance in a.neighbors(a):
+            if b not in cost or cost[a] + distance < cost[b]:
+                cost[b] = cost[a] + distance
+                parent[b] = a
+                queue.update(b, cost[b])
+    
+    path = [end]
+    node = end
 
-
+    while parent[node]:
+        path.append(parent[node])
+        node = parent[node]
+    return path
+```
 
 ### 19. Dynamic Programming (long section)
 Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.

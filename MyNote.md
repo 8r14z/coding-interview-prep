@@ -124,5 +124,6 @@ Travel the same number of items left and right from mid, i in range(n//2)
 
 ```python
 for i in range(n//2):
-    if a[n//2-1-i] == a[(n+1)//2+i]
+    if a[n//2-1-i] == a[(n+1)//2+i]:
+        print(a[i])
 ```
