@@ -448,32 +448,13 @@ To find the longest path, we know how to find the shortest path with Dijkstra an
 
 If there is a nagative weight cycle in the graph, finding shortest path path is the NP-hard problem == super hard problem. In case of graph, no algorithm is better than exponential time to solve this -> Generic SP. Algorithm :) this is potentially loop forever. Generic SP. algorithm is it will relax all others while the cost to on one edge is changed. change in v<sup>i</sup> will make v<sup>i+n</sup> changed. so the changes is factored by weight of edges and range of weight can be exponetial. But for Dijkstra and Bellman-Ford, w of edges are not counted in the complexity but more abt number of edges and number of vertices. The exponetial complexity of Generic algorithm coming from bad choices of edges...but practically there is no good choice for that algorithm, for more specific problems we have Dijkstra and Bellman-Ford :) 
 
-### 18. Speed up Dijkstra
-#### Single source, single target
-```python
-def dijkstra(graph, start, end):
-    parent = {start: None}
-    cost = {start: 0}
-    queue = fibonacciheap(start, graph) # assume we have Fibonacci Heap ADT
+### 18. Speed up Dijkstra: Single source, single target
+Simple search:
+- Have graph G, source S, target T. Do Dijkstra and extrac min from priority, stop when T is extraced from queue, then back track to output the path. 
 
-    while queue:
-        a = queue.extractmin()
-        if a is end: # terminate here after end is found and done relaxation
-            break
-        for node,distance in a.neighbors(a):
-            if b not in cost or cost[a] + distance < cost[b]:
-                cost[b] = cost[a] + distance
-                parent[b] = a
-                queue.update(b, cost[b])
-    
-    path = [end]
-    node = end
-
-    while parent[node]:
-        path.append(parent[node])
-        node = parent[node]
-    return path
-```
+Bi-directional Search: 
+- Alternate forward search from S and backward search from T. 
+- 
 
 ### 19. Dynamic Programming (long section)
 Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.
