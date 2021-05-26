@@ -458,7 +458,7 @@ def dijkstra(graph, start, end):
 
     while queue:
         a = queue.extractmin()
-        if a is end: # terminate here after end is found and already being relaxed
+        if a is end: # terminate here after end is found and done relaxation
             break
         for node,distance in a.neighbors(a):
             if b not in cost or cost[a] + distance < cost[b]:
