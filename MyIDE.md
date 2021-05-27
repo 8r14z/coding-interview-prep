@@ -1,32 +1,28 @@
 # This is the IDE I mainly use to practice
-
 def solve(x):
-    arr = [int(i) for i in input().split()]
-    n = arr[0]
-    k = arr[1]
-    S = str(input())
+    n = int(input())
+    s = str(input())
 
-    res = 0
-    mod = 10**9 + 7
-    mid = (n+1)//2
-    for i in range(mid):
-        res += (ord(S[i]) - 97)* pow(k, mid-i-1, mod)
+    numOfZeros = 0
+    for c in s:
+        if c == '0':
+            numOfZeros += 1
 
-    isSmaller = False
-    for i in range(n//2):
-        if S[n//2-1-i] == S[mid+i]:
-            continue
-        if S[n//2-1-i] < S[mid+i]:
-            isSmaller = True
-          break
-
-    if isSmaller:
-        res = (res+1)
+    if numOfZeros%2 == 0:
+        print('BOB')
+    else:
+        if numOfZeros == 1:
+            print('BOB')
+        else:
+            print('ALICE')
         
-    print(f'Case #{x+1}: {int(res%mod)}')
-
-
 t = int(input())
 
 for x in range(t):
     solve(x)
+
+# ALICE starts first
+# BOB's strategy is to not allow ALICE has chance to reverse string
+# if number of zeros is even, whenever ALICE make 0 -> 1 at i, BOB trying to make it palindrom in his turn by make 0 -> 1 at n-i-1
+# At the end, 1 last 0 left, 1101, BOB reverse to make ALICE do the last one. -> BOB wins
+# in case the num of zeros is odd, ALICE starts with make 0 -> 1 at i = n/2 and apply same strategy as BOB 

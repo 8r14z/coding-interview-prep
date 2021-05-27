@@ -1,5 +1,5 @@
 # A - And Then There Were K
-
+# https://codeforces.com/contest/1527/problem/A
 t = int(input())
 for _ in range(t):
     n = int(input())
