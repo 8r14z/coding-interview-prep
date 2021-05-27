@@ -56,6 +56,13 @@ Pre-condition of heapify at a node: subtree rooted at its left and right childre
 
 => Heap build routine starts from the end towards the begin -> more exactly it starts from node n/2 - 1 to avoid unnecessary work on leaf nodes. 
 
+Insert: add to end of array and swap upward the parent. 
+```python
+while a[i//2] < a[i]:
+    a[i//2], a[i] = a[i], a[i//2]
+    i = i//2
+```
+
 ### 5. Binary Search Trees
 https://youtu.be/9Jry5-82I68
 Augumented BST: add extra key in to each node that holds number of nodes below it. Modify when inserting or deleting. Similar approach is used to buid balanced BST AVL by storing height of substree instead of number of nodes
@@ -453,8 +460,13 @@ Simple search:
 - Have graph G, source S, target T. Do Dijkstra and extrac min from priority, stop when T is extraced from queue, then back track to output the path. 
 
 Bi-directional Search: 
-- Alternate forward search from S and backward search from T. 
-- 
+- Alternate forward search from S and backward search from T. meaning do Dijkstra forward from S and Dijkstra backward from T. F -> B -> F -> B ->...
+- Algorithm terminates when some vertex w has been processed, i.e., deleted from the
+queue of both searches, Qf and Qb
+- Find node x with minimum value of df (x) + db(x). x may not be the vertex w that caused termination
+- Find shortest path from s to x using and shortest path backwards from t to x 
+
+
 
 ### 19. Dynamic Programming (long section)
 Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.

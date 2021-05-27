@@ -8,13 +8,7 @@ def solve(x):
         if c == '0':
             numOfZeros += 1
 
-    if numOfZeros%2 == 0:
-        print('BOB')
-    else:
-        if numOfZeros == 1:
-            print('BOB')
-        else:
-            print('ALICE')
+    
         
 t = int(input())
 
