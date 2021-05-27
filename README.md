@@ -466,8 +466,6 @@ queue of both searches, Qf and Qb
 - Find node x with minimum value of df (x) + db(x). x may not be the vertex w that caused termination
 - Find shortest path from s to x using and shortest path backwards from t to x 
 
-
-
 ### 19. Dynamic Programming (long section)
 Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.
 
