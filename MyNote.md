@@ -127,3 +127,7 @@ for i in range(n//2):
     if a[n//2-1-i] == a[(n+1)//2+i]:
         print(a[i])
 ```
+
+13. Fibonacci with DP is O(n) time - O(n) space, optimize by saving 2 running variables instead of array -> O(n) time - O(1) space
+
+Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/

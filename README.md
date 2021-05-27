@@ -467,6 +467,11 @@ queue of both searches, Qf and Qb
 - Find shortest path from s to x using and shortest path backwards from t to x 
 
 ### 19. Dynamic Programming (long section)
-Dynamic Programming Problems, the algorithm calculates shortest paths in a bottom-up manner.
+```
+DP = sub-problems + "reuse" solved sub-problems
+```
 
-https://www.youtube.com/watch?v=YBSt1jYwVfU 
+
+
+
+
