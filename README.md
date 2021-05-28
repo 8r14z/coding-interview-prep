@@ -352,6 +352,8 @@ def dfs(start, graph):
     parent[start] = None
     dfs_visited(start, parent, finished, graph)
 
+    print(finished[::-1]) # topological order S -> end
+
 def dfs_visit(start, parent, finished, graph):
     for node in graph.neighbors(start):
         if node is not in parent:
@@ -467,11 +469,16 @@ queue of both searches, Qf and Qb
 - Find shortest path from s to x using and shortest path backwards from t to x 
 
 ### 19. Dynamic Programming (long section)
+DP is name of optimization, likes finding minimum or maximum of something
+#### Memorized DP algorithm
 ```
 DP = sub-problems + "reuse" solved sub-problems
 ```
+Complexity = # sub-problems * time/sub-problem
 
+#### Bottom-up DP algorithm
+Think of recursion tree and build upward. Start from basecase to root.
 
-
+ 
 
 
