@@ -470,15 +470,21 @@ queue of both searches, Qf and Qb
 
 ### 19. Dynamic Programming (long section)
 DP is name of optimization, likes finding minimum or maximum of something
-#### Memorized DP algorithm
+**1. Memorized DP algorithm**
 ```
 DP = sub-problems + "reuse" solved sub-problems
 ```
 Complexity = # sub-problems * time/sub-problem
 
-#### Bottom-up DP algorithm
+**2. Bottom-up DP algorithm**
 Think of recursion tree and build upward. Start from basecase to root.
 
- 
+DP can be solved by observing topological sort (A depends on B to finish -> solve B first and save the result then solve A). You dont need memorization if u can do it in topological sort. The hardest part is to find the formula.
+
+Find shortest path from S to T can use topological sort. Path from S to T is S -> v -> u -> T. So to find the shortest path(S,T) -> we topologically solve it by path(S,T) = path(S,u) + edge(u, T), path(S,u) = path(S,v) + edge(v,u), and so on...
+
+In case there are multiple parent nodes of T, u, u1, u2, u3,.. so we can chagne the formula by get min(path(S,u) + edge)(u,T), path(S,u1) + edge)(u1,T), path(S,u2) + edge)(u2,T), ...)
+
+
 
 

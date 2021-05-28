@@ -1,3 +1,4 @@
+# https://codeforces.com/contest/1526/problem/C2
 import heapq
 
 n = int(input())

@@ -1,22 +1,16 @@
 # This is the IDE I mainly use to practice
-def solve(x):
-    n = int(input())
-    s = str(input())
 
-    numOfZeros = 0
-    for c in s:
-        if c == '0':
-            numOfZeros += 1
+import heapq
 
-    
-        
-t = int(input())
+n = int(input())
+arr = [int(num) for num in input().split()]
+heap = []
 
-for x in range(t):
-    solve(x)
+s = 0
+for num in arr:
+    heapq.heappush(heap, num)
+    s += num
+    while s < 0:
+        s-= heapq.heappop(heap)
 
-# ALICE starts first
-# BOB's strategy is to not allow ALICE has chance to reverse string
-# if number of zeros is even, whenever ALICE make 0 -> 1 at i, BOB trying to make it palindrom in his turn by make 0 -> 1 at n-i-1
-# At the end, 1 last 0 left, 1101, BOB reverse to make ALICE do the last one. -> BOB wins
-# in case the num of zeros is odd, ALICE starts with make 0 -> 1 at i = n/2 and apply same strategy as BOB 
+print(len(heap))
