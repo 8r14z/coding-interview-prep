@@ -133,3 +133,5 @@ for i in range(n//2):
 Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
 
 14. HEAP HEAP HEAP HEAP
+
+15. Sometimes bruce-force is good enough
