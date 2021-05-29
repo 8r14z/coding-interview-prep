@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/get-biggest-three-rhombus-sums-in-a-grid/
 class Solution:
     def calc_sum(self, i, j, size, grid) -> int:
         if size == 0 or (i + size*2+1) > len(grid): 
@@ -7,13 +8,13 @@ class Solution:
         for x in range(size+1):
             sum+= grid[i+x][j-x]
             sum+= grid[i+x][j+x]
-            sum+= grid[i+size+x][j-x]
-            sum+= grid[i+size+x][j+x]
+            sum+= grid[i+size*2-x][j-x]
+            sum+= grid[i+size*2-x][j+x]
             
         sum -= (grid[i][j] + grid[i+size][j-size] + grid[i+size*2][j] + grid[i+size][j+size])
         return sum
     
-    def getBiggestThree(self, grid: [[int]]) -> [int]:
+    def getBiggestThree(self, grid: List[List[int]]) -> List[int]:
         res = []
         n = len(grid)
         m = len(grid[0])
@@ -31,7 +32,5 @@ class Solution:
         
         
         return sorted(res, reverse=True)
-
-i = [[3,4,5,1,3],[3,3,4,2,3],[20,30,200,40,10],[1,5,5,4,1],[4,3,2,2,5]]
-print(Solution().getBiggestThree(i))
-
+    
+    
