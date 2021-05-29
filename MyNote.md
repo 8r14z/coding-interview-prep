@@ -131,3 +131,5 @@ for i in range(n//2):
 13. Fibonacci with DP is O(n) time - O(n) space, optimize by saving 2 running variables instead of array -> O(n) time - O(1) space
 
 Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+
+14. HEAP HEAP HEAP HEAP
