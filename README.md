@@ -473,6 +473,7 @@ queue of both searches, Qf and Qb
 
 ### 19. Dynamic Programming (long section)
 DP is name of optimization, likes finding minimum or maximum of something
+
 **1. Memorized DP algorithm**
 ```
 DP = sub-problems + "reuse" solved sub-problems
