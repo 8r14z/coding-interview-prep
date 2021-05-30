@@ -480,7 +480,12 @@ DP = sub-problems + "reuse" solved sub-problems
 Complexity = # sub-problems * time/sub-problem
 
 **2. Bottom-up DP algorithm**
-Think of recursion tree and build upward. Start from basecase to root.
+Think of recursion tree and build upward. Start from basecase to root. Do topological sort of subproblem depedendency DAG
+
+Topological sort: \
+F<sub>1</sub> <- ... <- F<sub>n-2</sub> <- F<sub>n-1</sub> <- Fib<sub>n</b>
+
+Subproblems dependencies should be acyclic
 
 DP can be solved by observing topological sort (A depends on B to finish -> solve B first and save the result then solve A). You dont need memorization if u can do it in topological sort. The hardest part is to find the formula.
 
