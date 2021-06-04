@@ -507,11 +507,20 @@ DP = shortest paths in some DAG
 
 #### 5 easy steps
 1. define subproblems -> # problems
-2. guess -> # choices for guess
-3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems togethe. Calculate time/subproblem
+2. guess -> # choices for a subproblem, number of ways to solve a subproblem
+3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems together. \
+Calculate time/subproblem. \
+min/max of subproblems + work of current
 4. recurse & memorize OR DP table bottom-up -> subproblem recurrence is acyclic/topological order. 
 5. solve original problem
 
 ```
 Best-tip: Find topological sort and interate from there. Topological sort is the dependency graph, so one should be completed before another
 ```
+
+Tips to find subproblems for input as strings or sequences
+- suffixes x[i:] -> topological right to left (decreasing i)
+- prefixes x[:i] -> topological left to right (increasing i)
+- substrings x[i:j] i <= j
+
+
