@@ -483,6 +483,9 @@ Complexity = # sub-problems * time/sub-problem
 **2. Bottom-up DP algorithm**
 Think of recursion tree and build upward. Start from basecase to root. Do topological sort of subproblem depedendency DAG
 
+**3. Parent pointers**
+Remember which guest is best
+
 Topological sort: \
 F<sub>1</sub> <- ... <- F<sub>n-2</sub> <- F<sub>n-1</sub> <- Fib<sub>n</b>
 
@@ -494,6 +497,17 @@ Find shortest path from S to T can use topological sort. Path from S to T is S -
 
 In case there are multiple parent nodes of T, u, u1, u2, u3,.. so we can chagne the formula by get min(path(S,u) + edge)(u,T), path(S,u1) + edge)(u1,T), path(S,u2) + edge)(u2,T), ...)
 
+#### Definition**
+```
+DP = carefull brute force = guessing + recursion + memorization 
+```
+DP = shortest paths in some DAG
 
+#### 5 easy steps
+1. define subproblems -> # problems
+2. guess -> # choices for guess
+3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems togethe. Calculate time/subproblem
+4. recurse & memorize OR DP table bottom-up -> subproblem recurrence is acyclic. 
+5. solve original problem
 
-
+ 
