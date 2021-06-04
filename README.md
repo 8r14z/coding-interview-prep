@@ -525,7 +525,7 @@ Tips to find subproblems for input as strings or sequences
 - prefixes x[:i] -> topological order left to right (increasing i)
 - substrings x[i:j] i <= j -> increasing substring size (small -> large substrings)
 
-
+#### Reference
 - [Part 1](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec19.pdf)
 - [Part 2](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
 - [Part 3](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
