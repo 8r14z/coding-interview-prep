@@ -520,12 +520,12 @@ The solution is comparing multiple subproblems -> interate to find. i.e min/max 
 Best-tip: Find topological sort and interate from there. Topological sort is the dependency graph, so one should be completed before another
 ```
 
-Tips to find subproblems for input as strings or sequences
+Useful problems for input as strings or sequences
 - suffixes x[i:] -> topological order right to left (decreasing i)
 - prefixes x[:i] -> topological order left to right (increasing i)
 - substrings x[i:j] i <= j -> increasing substring size (small -> large substrings)
 
 #### Reference
-- [Part 1 - Fibonacci, Shortest Path](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec19.pdf)
-- [Part 2 - Text Justification, Blackjack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
-- [Part 3 - Parenthesization, Edit Distance/Longest subsequence, Knapsack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
+- [Fibonacci, Shortest Path](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec19.pdf)
+- [Text Justification, Blackjack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
+- [Parenthesization, Edit Distance/Longest common subsequence, Knapsack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
