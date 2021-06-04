@@ -471,7 +471,7 @@ queue of both searches, Qf and Qb
 - Find node x with minimum value of df (x) + db(x). x may not be the vertex w that caused termination
 - Find shortest path from s to x using and shortest path backwards from t to x 
 
-### 19. Dynamic Programming (long section)
+### 19. Dynamic Programming
 DP is name of optimization, likes finding minimum or maximum of something
 
 **1. Memorized DP algorithm**
