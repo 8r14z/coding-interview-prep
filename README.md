@@ -510,7 +510,7 @@ DP = shortest paths in some DAG
 2. guess -> # choices for a subproblem, number of ways to solve a subproblem
 3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems together. \
 Calculate time/subproblem. \
-min/max of subproblems + work of current
+min/max of choices + work of current
 4. recurse & memorize OR DP table bottom-up -> subproblem recurrence is acyclic/topological order. 
 5. solve original problem. May/May not need extra cost \
 The solution is first or last element -> O(1) \
@@ -520,7 +520,7 @@ The solution is comparing multiple subproblems -> interate to find. i.e min/max 
 Best-tip: Find topological sort and interate from there. Topological sort is the dependency graph, so one should be completed before another
 ```
 
-Useful problems for input as strings or sequences
+Subproblems for input as strings or sequences
 - suffixes x[i:] -> topological order right to left (decreasing i)
 - prefixes x[:i] -> topological order left to right (increasing i)
 - substrings x[i:j] i <= j -> increasing substring size (small -> large substrings)
