@@ -15,7 +15,7 @@ node2.right = node4
 node4.left = node3
 node4.right = node5
 
-def inorder(node) -> [int]:
+def interative_inorder(node) -> [int]:
     res = []
     stack = []
     cur = node
@@ -31,4 +31,8 @@ def inorder(node) -> [int]:
             
     return res 
 
-print(inorder(node2))
+def recursive_inorder(node) -> [int]:
+    if node is None: return []
+    return recursive_inorder(node.left) + [node.val] + recursive_inorder(node.right) 
+
+print(interative_inorder(node2))
