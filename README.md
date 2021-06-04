@@ -499,7 +499,7 @@ DAG -> topological sort -> bottom up (i.e Fibonacci)
 **3. Parent pointers**
 Remember which guest is best
 
-#### Definition**
+#### Definition
 ```
 DP = carefull brute force = guessing + recursion + memorization 
 ```
