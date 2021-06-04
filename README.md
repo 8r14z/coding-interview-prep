@@ -512,15 +512,20 @@ DP = shortest paths in some DAG
 Calculate time/subproblem. \
 min/max of subproblems + work of current
 4. recurse & memorize OR DP table bottom-up -> subproblem recurrence is acyclic/topological order. 
-5. solve original problem
+5. solve original problem. May/May not need extra cost \
+The solution is first or last element -> O(1) \
+The solution is comparing multiple subproblems -> interate to find. i.e min/max -> O(n)
 
 ```
 Best-tip: Find topological sort and interate from there. Topological sort is the dependency graph, so one should be completed before another
 ```
 
 Tips to find subproblems for input as strings or sequences
-- suffixes x[i:] -> topological right to left (decreasing i)
-- prefixes x[:i] -> topological left to right (increasing i)
-- substrings x[i:j] i <= j
+- suffixes x[i:] -> topological order right to left (decreasing i)
+- prefixes x[:i] -> topological order left to right (increasing i)
+- substrings x[i:j] i <= j -> increasing substring size (small -> large substrings)
 
 
+- [Part 1](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec19.pdf)
+- [Part 2](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
+- [Part 3](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
