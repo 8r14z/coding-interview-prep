@@ -426,7 +426,10 @@ def dijkstra(graph, start):
 We can use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph.
 
 #### Directed Acyclic Graph (DAG)
-Can't have negative cycle
+Works for DAG with negative edges but without any cycle :) no cycle at all even negative or possitive cycle. 
+
+Dijkstra works with cycle but not negative cycle :) weights have to >= 0
+
 1. Topologically sort the DAG. Path from u to v implies that u is before v in the
 linear ordering.
 2. One pass over vertices in topologically sorted order relaxing each edge that
