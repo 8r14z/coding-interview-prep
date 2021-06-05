@@ -434,7 +434,7 @@ leaves each vertex.
 
 Θ(V + E) time
 
-This algorithm doesnt work for any source :) after topological sort, it commits to get the shortest path from the first element of the sorted array to the end. 
+**This algorithm doesnt work for any source**. after topological sort, it only commits to get the shortest path from the first element of the sorted array (as the source) to the end. 
 
 The relaxation is from one vertice to its neighbors and then go to the next vertice (one by one over vertices in topologically ordered array). 
 
