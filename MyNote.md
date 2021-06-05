@@ -135,3 +135,9 @@ Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-f
 14. HEAP HEAP HEAP HEAP
 
 15. Sometimes bruce-force is good enough
+
+16. Shortest path algorithms: 
+- Unweighted: BFS
+- Weighted: 
+    - non-negative cycle: Dijkstra / DAG shortest path algorithm
+    - negative cycle: Bellmen-Ford -> report if there is a negative cycle

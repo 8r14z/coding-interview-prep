@@ -425,6 +425,16 @@ def dijkstra(graph, start):
 
 We can use Dijkstra’s algorithm for shortest paths for graphs with negative weights – one idea can be, calculate the minimum weight value, add a positive value (equal to absolute value of minimum weight value) to all weights and run the Dijkstra’s algorithm for the modified graph.
 
+#### Directed Acyclic Graph (DAG)
+Can't have negative cycle
+1. Topologically sort the DAG. Path from u to v implies that u is before v in the
+linear ordering.
+2. One pass over vertices in topologically sorted order relaxing each edge that
+leaves each vertex.
+
+Θ(V + E) time
+
+
 ### 17. Bellman-Ford
 Bellman-Ford can detect negative cycle and report. Bellman-Ford is different from Dijkstra that it can work with negative-weight or negative cycle, it wont give the answer for such cases as the answer will be wrong anw, but report if there is a fraud detected (-w, -c)
 
