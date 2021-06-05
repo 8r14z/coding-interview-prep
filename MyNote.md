@@ -139,6 +139,6 @@ Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-f
 16. Shortest path algorithms: 
 - Unweighted: BFS
 - Weighted: 
-    - Dijkstra: works for graph with cycle but weights have to >= 0
-    - non-negative cycle: Dijkstra / DAG shortest path algorithm
+    - no cycle: DAG
+    - no negative cycle: Dijkstra
     - negative cycle: Bellmen-Ford -> report if there is a negative cycle
