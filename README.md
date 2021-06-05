@@ -436,6 +436,8 @@ leaves each vertex.
 
 This algorithm doesnt work for any source :) after topological sort, it commits to get the shortest path from the first element of the sorted array to the end. 
 
+The relaxation is from one vertice to its neighbors and then go to the next vertice (one by one over vertices in topologically ordered array). 
+
 
 ### 17. Bellman-Ford
 Bellman-Ford can detect negative cycle and report. Bellman-Ford is different from Dijkstra that it can work with negative-weight or negative cycle, it wont give the answer for such cases as the answer will be wrong anw, but report if there is a fraud detected (-w, -c)
