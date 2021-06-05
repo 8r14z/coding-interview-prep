@@ -140,5 +140,5 @@ Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-f
 - Unweighted: BFS
 - Weighted: 
     - no cycle: DAG
-    - no negative cycle: Dijkstra
-    - negative cycle: Bellmen-Ford 
+    - no negative weight and no negative cycle: Dijkstra
+    - negative weight or negative cycle: Bellmen-Ford 
