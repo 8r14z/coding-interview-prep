@@ -522,12 +522,12 @@ DP = carefull brute force = guessing + recursion + memorization
 DP = shortest paths in some DAG
 
 #### 5 easy steps
-1. define subproblems -> # problems
-2. guess -> # choices for a subproblem, number of ways to solve a subproblem
+1. define subproblems, then count # problems
+2. guess how to solve and count # choices for a subproblem, number of ways to solve a subproblem
 3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems together. \
 Calculate time/subproblem. \
 min/max of choices + work of current
-4. recurse & memorize OR DP table bottom-up -> subproblem recurrence is acyclic/topological order. 
+4. recurse & memorize (subproblem recurrence is acyclic) OR DP table bottom-up (topological order)
 5. solve original problem. May/May not need extra cost \
 The solution is first or last element -> O(1) \
 The solution is comparing multiple subproblems -> interate to find. i.e min/max -> O(n)
