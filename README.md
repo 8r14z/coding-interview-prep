@@ -488,7 +488,7 @@ queue of both searches, Qf and Qb
 - Find shortest path from s to x using and shortest path backwards from t to x 
 
 ### 19. Dynamic Programming
-DP is name of optimization, likes finding minimum or maximum of something
+DP is name of optimization, likes finding minimum or maximum of something in sequence/string/array
 
 **1. Memorized DP algorithm**
 ```
