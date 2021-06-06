@@ -523,7 +523,7 @@ DP = shortest paths in some DAG
 
 #### 5 easy steps
 1. define subproblems, then count # problems
-2. guess how to solve and count # choices for a subproblem, number of ways to solve a subproblem
+2. guess how to solve the problem and what state is, then count # choices for a subproblem, number of ways to solve a subproblem
 3. relate subproblem solutions -> recurrence/formula of DP, how to connect those problems together. \
 Calculate time/subproblem. \
 min/max of choices + work of current
@@ -541,7 +541,12 @@ Subproblems for input as strings or sequences
 - prefixes x[:i] -> topological order left to right (increasing i)
 - substrings x[i:j] i <= j -> increasing substring size (small -> large substrings)
 
+2 kinds of guessing (Step 2)
+- guessing which subproblem to use to solve bigger problem
+- guessing by adding more subproblems to guess/remember more (ie. knapsack, we need to keep track of the size after adding/removing an item so it's [i][j] instead of [i] for subfix/prefix problems)
+
 #### Reference
 - [Fibonacci, Shortest Path](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec19.pdf)
 - [Text Justification, Blackjack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
 - [Parenthesization, Edit Distance/Longest common subsequence, Knapsack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
+- [Guitar Fingering, Tetris, Super Mario Bros](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec22.pdf)
