@@ -1,5 +1,6 @@
 # Materials:
 I. [MIT 6.006 Introduction to Algorithms](#introduction)
+II. [[MIT 6.046J Design and Analysis of Algorithms](#design_and_analysis)
 
 ## [MIT 6.006 Introduction to Algorithms](https://youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb) <a name="introduction"></a>
 
@@ -313,7 +314,7 @@ stack/queue.append(start)
 while stack/queue:
     node = stack.pop()/queue.popLeft()
     neighbors = graph[node]
-    for neighbor in neighbors:
+    for neighbor in neighbor
         if neighbor not in parent:
             parent[neighbor] = node
             stack/queue.append(neighbor)
@@ -550,3 +551,5 @@ Subproblems for input as strings or sequences
 - [Text Justification, Blackjack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec20.pdf)
 - [Parenthesization, Edit Distance/Longest common subsequence, Knapsack](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec21.pdf)
 - [Guitar Fingering, Tetris, Super Mario Bros](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec22.pdf)
+
+## [MIT 6.046J Design and Analysis of Algorithms](https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp) <a name="design_and_analysis"></a>
