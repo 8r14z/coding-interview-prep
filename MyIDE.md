@@ -1,12 +1,15 @@
-from functools import cache
-@cache
-def minchange(A, N):
-    if N == 0: return 0
-    if N == 1: return 1
 
-    arr = [minchange(A, N-c)+1 for c in A]
-    return min(arr)
+def max_value(W, items):
+    dp = [0] * (W+1)
+
+    for w in range(W+1):
+        max_val = 0
+        for iw, iv in items:
+            if iw <= w:
+                max_val = max(max_val, dp[w-iw] + iv)
+        dp[w] = max_val
+    
+    return dp[W]
 
 
-print(minchange([1,2,5], 10))
-
+print(max_value(8, [(2,3), (3,5), (4,7), (5,9), (7,13)]))
