@@ -28,14 +28,13 @@ def time_scheduling(intervals):
 
 print(time_scheduling([(1,3), (2,4), (1,4), (2,4), (4,6), (5,7), (6, 8), (8, 10), (9, 11)]))
 
-
 # interval (start, end, weight)
 def weight_time_scheduling(intervals):
     sorted_intervals = sorted(intervals, key=lambda tup: tup[1])
     n = len(intervals)
     dp = [0] * n
     dp[n-1] = sorted_intervals[n-1][2]
-    
+
     def find_compatible(i, intervals) -> int: 
         n = len(intervals)
         left = i + 1
@@ -65,3 +64,34 @@ def weight_time_scheduling(intervals):
 
 print(weight_time_scheduling([(1,4,1), (4,6,1), (6,8,1), (3,5,2), (5,7,2)]))
         
+INF = float('inf')
+
+def total_occurences(A, K):
+    def binary_search(A, K, find_most_left):
+        n = len(A) 
+        left = 0 
+        right = n - 1
+        res = INF if find_most_left else -INF
+
+        while left <= right:
+            mid = (left+right) // 2
+            if A[mid] < K:
+                left = mid + 1 
+            elif A[mid] > K:
+                right = mid - 1
+            else:
+                if find_most_left:
+                    res = min(res, mid)
+                    right = mid - 1
+                else:
+                    res = max(res, mid)
+                    left = mid + 1
+                
+        return res if res >= 0 and res < n else -1
+
+    start_index = binary_search(A, K, True)
+    if start_index == -1: return 0
+    end_index = binary_search(A, K, False)
+    return end_index - start_index + 1
+
+print(total_occurences([1,2,2,2,7,10,12,20,99,100], 2))
