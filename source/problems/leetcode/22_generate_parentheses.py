@@ -4,20 +4,20 @@
 # to make a valid parentheses, there needs to be an open before close
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        def dfs(string, open, close, strings):
+        def backtrack(string, open, close, strings):
             if open == 0 and close == 0:
                 strings.append(string)
                 return
-
-            if open == 0:
-                dfs(string + ')', 0, close - 1, strings)
-            elif open == close:
-                dfs(string + '(', open - 1, close, strings)
+                
+            if open == close:
+                backtrack(string + '(', open - 1, close, strings)
+            elif open == 0:
+                backtrack(string + ')', open, close - 1, strings)
             else:
-                dfs(string + '(', open - 1, close, strings)
-                dfs(string + ')', open, close - 1, strings)
+                backtrack(string + '(', open - 1, close, strings)
+                backtrack(string + ')', open, close - 1, strings)
         
         res = []
-        dfs('', n, n, res)
+        backtrack('', n, n, res)
         return res
         
