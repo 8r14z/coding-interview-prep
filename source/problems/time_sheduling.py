@@ -1,4 +1,5 @@
 # interval (start, end)
+# O(nlogn) for sorting
 # greedly find the earliest finish time :) 
 def time_scheduling(intervals):
     sorted_intervals = sorted(intervals, key=lambda tup: tup[1])
@@ -16,7 +17,7 @@ print(time_scheduling([(1,3), (2,4), (1,4), (2,4), (4,6), (5,7), (6, 8), (8, 10)
 
 
 # interval (start, end, weight)
-# 
+# O(nlogn)
 def weight_time_scheduling(intervals):
     # sort by start time
     sorted_intervals = sorted(intervals, key=lambda tup: tup[0])
@@ -50,7 +51,7 @@ def weight_time_scheduling(intervals):
         w = sorted_intervals[i][2]
         dp[i] = max(dp[i+1], w + dp_compatible)
         res = max(res, dp[i])
-        
+
     return res
 
 print(weight_time_scheduling([(1,4,1), (4,6,1), (6,8,1), (3,5,2), (5,7,2)]))
