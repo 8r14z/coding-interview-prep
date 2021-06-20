@@ -20,4 +20,3 @@ class Solution:
         res = []
         backtrack('', n, n, res)
         return res
-        
