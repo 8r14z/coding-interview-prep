@@ -95,3 +95,20 @@ def total_occurences(A, K):
     return end_index - start_index + 1
 
 print(total_occurences([1,2,2,2,7,10,12,20,99,100], 2))
+
+
+def partition(A, L, R):
+    p_index = L # the last i that element < pivot
+    pivot = A[R]
+
+    for i in range(L, R):
+        if A[i] >= pivot:
+            A[p_index], A[i] = A[i], A[p_index]
+            p_index += 1
+            print(p_index)
+    
+    print(R)
+    A[p_index], A[R] = A[R], A[p_index]
+    return p_index
+
+print(partition([1,3,3,3,3,3], 0, 4))
