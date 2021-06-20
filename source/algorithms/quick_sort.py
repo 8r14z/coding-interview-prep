@@ -9,6 +9,7 @@ def partition(array, left, right):
     array[i], array[right] = array[right], array[i]
     return i
 
+
 def quicksort_helper(array, left, right):
     if left < right:
         pivotIndex = partition(array, left, right)
