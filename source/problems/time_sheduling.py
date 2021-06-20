@@ -18,6 +18,7 @@ print(time_scheduling([(1,3), (2,4), (1,4), (2,4), (4,6), (5,7), (6, 8), (8, 10)
 
 # interval (start, end, weight)
 # O(nlogn)
+# https://www.geeksforgeeks.org/weighted-job-scheduling-log-n-time/
 def weight_time_scheduling(intervals):
     # sort by start time
     sorted_intervals = sorted(intervals, key=lambda tup: tup[0])
