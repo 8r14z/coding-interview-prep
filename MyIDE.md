@@ -58,3 +58,46 @@ def partition(A, L, R):
     return p_index
 
 print(partition([1,3,3,3,3,3], 0, 5))
+
+from collections import deque
+# 1 or 5 steps
+def stair_case1(N):
+    if N < 0:
+        return 0
+    if N < 5:
+        return 1
+
+    queue = deque()
+    for _ in range(5):
+        queue.append(1)
+
+    for _ in range(5, N+1):
+        c = queue[0] + queue[-1]
+        queue.popleft()
+        queue.append(c)
+
+    return queue[-1]
+
+def stair_case(N):
+    if N < 0:
+        return 0
+    if N < 5:
+        return 1
+
+    dp = [0] * (N+1)
+    dp[0] = dp[1] = 1
+
+    for i in range(2, N+1):
+        dp[i] = dp[i-1] + (0 if i < 5 else dp[i-5])
+
+    return dp[N]
+
+
+print(stair_case1(6))
+print(stair_case(6))
+
+print(stair_case1(7))
+print(stair_case(7))
+
+print(stair_case1(15))
+print(stair_case(15))
