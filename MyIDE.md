@@ -44,7 +44,6 @@ def total_occurences(A, K):
 
 print(total_occurences([1,2,2,2,7,10,12,20,99,100], 2))
 
-
 # partition descreasing order
 def partition(A, L, R):
     p_index = L # the last i that element < pivot
