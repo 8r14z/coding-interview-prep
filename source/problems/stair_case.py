@@ -42,3 +42,6 @@ def number_of_way_to_reach_stair_case_dp(N):
     return number_of_way_to_reach_stair_case_dp(N-1) + number_of_way_to_reach_stair_case_dp(N-2)
 
 print(number_of_way_to_reach_stair_case(6)) # 13
+
+
+# for the problem with steps are either 1 or X, X > 2. we can apply DP with X == 2, it's fibonacci
