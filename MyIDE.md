@@ -111,3 +111,19 @@ def partition(A, L, R):
     return p_index
 
 print(partition([1,3,3,3,3,3], 0, 5))
+
+
+from functools import cache
+
+@cache
+def number_of_way_to_reach_stair_case_dp(N):
+    if N < 0:
+        return 0
+    if N <= 1: 
+        return 1
+
+    return number_of_way_to_reach_stair_case_dp(N-1) + number_of_way_to_reach_stair_case_dp(N-2)
+
+print(number_of_way_to_reach_stair_case_dp(5))
+
+    
