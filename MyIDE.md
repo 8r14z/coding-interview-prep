@@ -112,18 +112,20 @@ def partition(A, L, R):
 
 print(partition([1,3,3,3,3,3], 0, 5))
 
-
-from functools import cache
-
-@cache
-def number_of_way_to_reach_stair_case_dp(N):
+# stair case with 1 or 5 steps
+def stair_case(N):
     if N < 0:
         return 0
-    if N <= 1: 
+    if N < 5:
         return 1
 
-    return number_of_way_to_reach_stair_case_dp(N-1) + number_of_way_to_reach_stair_case_dp(N-2)
-
-print(number_of_way_to_reach_stair_case_dp(5))
-
+    a = 1
+    b = 1
     
+    for _ in range(5, N+1):
+        c = a + b 
+        a = b
+        b = c
+    return b
+
+print(stair_case(6))

@@ -43,5 +43,20 @@ def number_of_way_to_reach_stair_case_dp(N):
 
 print(number_of_way_to_reach_stair_case(6)) # 13
 
+# 1 or 5 steps
+def stair_case(N):
+    if N < 0:
+        return 0
+    if N < 5:
+        return 1
 
-# for the problem with steps are either 1 or X, X > 2. we can apply DP with X == 2, it's fibonacci
+    a = 1
+    b = 1
+    
+    for _ in range(5, N+1):
+        c = a + b 
+        a = b
+        b = c
+    return b
+
+print(stair_case(6))
