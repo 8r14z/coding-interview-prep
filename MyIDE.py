@@ -192,7 +192,8 @@ def solve_generate_graph(n, edges):
         sum += math.ceil(math.sqrt(len(visited_vertices)))
 
     return sum + (n-visited_count)
-# O(N+M) <- optimal solution
+# O(N+M) <- optimal solution 
+# space O(N+M) <- n + 2m
 print('third approach')
 print(solve_generate_graph(8, ['8 1','5 8', '7 3', '8 6']))
 print(solve_generate_graph(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
