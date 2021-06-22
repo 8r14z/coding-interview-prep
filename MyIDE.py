@@ -63,7 +63,6 @@
 
 # '{:.3f}'.format(math.sqrt(5))
 
-
 import math
 import collections
 
@@ -104,6 +103,9 @@ def connectedSum(n, edges):
         
     return sum
 # O(n*m)
+print('first approach')
+print(connectedSum(8, ['8 1','5 8', '7 3', '8 6']))
+print(connectedSum(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
 
 def solve(n, edges):
     def bfs(e, edges):
@@ -138,10 +140,77 @@ def solve(n, edges):
 
     return n-len(visited_vertices) + sum
 # O(m^2)
+print('second approach')
 print(solve(8, ['8 1','5 8', '7 3', '8 6']))
 print(solve(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
 
+from collections import deque
+import math
+def solve_generate_graph(n, edges): 
+    def generate_graph(edges):
+        graph = {}
+        for edge in edges:
+            p,q = [int(v) for v in edge.split()] 
+            if p in graph:
+                graph[p].append(q)
+            else:
+                graph[p] = [q]
+            if q in graph:
+                graph[q].append(p)
+            else:
+                graph[q] = [p]
+
+        return graph
+    
+    def bfs(start, graph):
+        queue = deque()
+        queue.append(start)
+        visited = set([start])
+
+        while queue:
+            current_vertex = queue.popleft()
+            if current_vertex not in graph:
+                continue
+            
+            neighbors = graph[current_vertex]
+            for vertex in neighbors:
+                if vertex not in visited: 
+                    visited.add(vertex)
+                    queue.append(vertex)
+
+        return visited
+
+    graph = generate_graph(edges)
+    processing_vertices = set(range(1, n+1))
+    visited_count = 0
+    sum = 0
+    while processing_vertices:
+        start = processing_vertices.pop()
+        visited_vertices = bfs(start, graph)
+        processing_vertices -= visited_vertices
+        visited_count += len(visited_vertices)
+        sum += math.ceil(math.sqrt(len(visited_vertices)))
+
+    return sum + (n-visited_count)
+# O(N+M) <- optimal solution
+print('third approach')
+print(solve_generate_graph(8, ['8 1','5 8', '7 3', '8 6']))
+print(solve_generate_graph(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
+
+
+
+
+
+
+
+
+
+
+
+
+
 Store = collections.namedtuple('Store', 'index capacity')
+
 def get_store_capacity(s):
     length = len(s)
     is_open = False

@@ -101,3 +101,46 @@ print(stair_case(7))
 
 print(stair_case1(15))
 print(stair_case(15))
+
+from collections import deque
+import math
+def solve_generate_graph(n, edges): 
+    graph = {}
+
+    for edge in edges:
+        p,q = [int(v) for v in edge.split()] 
+        if p in graph:
+            graph[p].append(q)
+        else:
+            graph[p] = [q]
+        if q in graph:
+            graph[q].append(p)
+        else:
+            graph[q] = [p]
+    
+    def bfs(start, graph):
+        queue = deque([start])
+        visited = set([start])
+
+        while queue:
+            current_vertex = queue.popleft()
+            neighbors = graph[current_vertex]
+            
+            for vertex in neighbors:
+                if vertex not in visited: 
+                    visted.add(vertex)
+                    queue.append(vertex)
+        return visited
+
+    processing_vertices = set(range(1, n+1))
+    sum = 0
+    while processing_vertices:
+        start = processing_vertices.pop()
+        visted_vertices = bfs(start, graph)
+        processing_vertices -= visited_vertices
+        sum += math.ceil(math.sqrt(len(visited_vertices)))
+
+    return sum + (n-len(graph))
+
+print(solve_generate_graph(8, ['8 1','5 8', '7 3', '8 6']))
+print(solve_generate_graph(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
