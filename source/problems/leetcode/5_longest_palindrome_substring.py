@@ -22,6 +22,37 @@ def longestPalindromeDp(s):
 
     return s[max_end - max_len + 1: max_end+1]
 
+
+def longest_palindrome_substring(s):
+    n = len(s)
+    if n < 1: return 0
+    if n == 1: return 1
+
+    dp = [[False] * n for _ in range(n)]
+
+    res = 1
+    # palindrome len = 1
+    for i in range(n):
+        dp[i][i] = 1
+    
+    # palindrome len = 2
+    for i in range(n-1):
+        dp[i][i+1] = 2 if s[i] == s[i+1] else 0
+        res = max(res, dp[i][i+1])
+
+    # len >= 3
+    for l in range(3, n+1):
+        for i in range(n-l+1):
+            j = i + l - 1
+            if s[i] == s[j] and dp[i+1][j-1]:
+                dp[i][j] = True
+                res = max(res, l)
+
+    return res
+
+print('longest_palindrome_dp')
+print(longest_palindrome_substring('forgeeksskeegfor'))
+
 # O(n^2) with less constant factor
 class Solution:
     def longestPalindrome(self, s: str) -> str:

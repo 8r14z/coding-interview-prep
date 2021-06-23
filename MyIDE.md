@@ -153,3 +153,34 @@ def solve_generate_graph(n, edges):
 
 print(solve_generate_graph(8, ['8 1','5 8', '7 3', '8 6']))
 print(solve_generate_graph(10, ['1 2','1 3', '2 4', '3 5', ' 8 7']))
+
+
+def longest_palindrome_substring(s):
+    n = len(s)
+    if n < 1: return 0
+    if n == 1: return 1
+
+    dp = [[False] * n for _ in range(n)]
+
+    res = 1
+    # palindrome len = 1
+    for i in range(n):
+        dp[i][i] = 1
+    
+    # palindrome len = 2
+    for i in range(n-1):
+        dp[i][i+1] = 2 if s[i] == s[i+1] else 0
+        res = max(res, dp[i][i+1])
+
+    # len >= 3
+    for l in range(3, n+1):
+        for i in range(n-l+1):
+            j = i + l - 1
+            if s[i] == s[j] and dp[i+1][j-1]:
+                dp[i][j] = True
+                res = max(res, l)
+
+    return res
+
+print('longest_palindrome_dp')
+print(longest_palindrome_substring('forgeeksskeegfor'))
