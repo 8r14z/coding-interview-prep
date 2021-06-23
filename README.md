@@ -33,6 +33,8 @@ https://www.educative.io/blog/crack-amazon-coding-interview-questions.
 
 https://www.youtube.com/watch?v=aOu7BaKgnMc
 
+https://www.amazon.jobs/en/landing_pages/phone-interview
+
 Behaviral:
 - past experience align to princicples
 - working project deadline
