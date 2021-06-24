@@ -15,7 +15,7 @@ def coin_change(coins, amount):
                 else:
                     count += dp[change]
         dp[i] = count
-        
+
     return dp[amount]
 
 from functools import cache
@@ -33,3 +33,6 @@ def coin_change_topdown(coins, amount):
 
 print(coin_change([1,2,3], 4))
 print(coin_change_topdown([1,2,3], 4))
+
+print(coin_change([12, 5, 3, 6], 10))
+print(coin_change_topdown([12, 5, 3, 6], 10))
