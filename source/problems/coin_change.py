@@ -11,6 +11,9 @@ def num_of_ways(coins, n):
                 dp[i][j] = 1
                 continue
             
+            # to avoid duplicated set like {1,2} and {2,1} for 3
+            # at each coin we ask a question whether we should include the coin or not
+            # similar to knapsack 0/1
             num_including_coin_set = (dp[i][j-coins[i]]) if (j >= coins[i]) else 0
             num_excluding_coin_set = dp[i-1][j] if i >= 1 else 0
 
