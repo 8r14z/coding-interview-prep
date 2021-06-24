@@ -7,7 +7,7 @@ def knapsack(iv, iw, w):
     for i in range(1,n+1):
         for j in range(1,w+1):
             dp[i][j] = max(
-                dp[i-1][j],
+                dp[i-1][j], # excluding iw[j]
                 iv[i-1] + (dp[i-1][j-iw[i-1]] if j > iw[i-1] else 0)
             )
 
