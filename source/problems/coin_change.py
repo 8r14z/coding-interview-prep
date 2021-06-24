@@ -40,5 +40,6 @@ def minimum_num_of_coins(coins, n):
 print(num_of_ways([1,2,3], 4)) # 4
 print(num_of_ways([1, 5, 10], 12)) # 4
 print(num_of_ways([2, 5, 3, 6], 10)) # 5
+print(num_of_ways([1, 5, 10], 10)) # 4
 
 print(minimum_num_of_coins([1,2,5], 11))
