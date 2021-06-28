@@ -7,9 +7,12 @@
 - [geeksforgeeks - Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
 
-Data Structures: Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
-Algorithms: sorting/searching/DFS/BFS/Tree traversal
-Technique: Brute-force/Divide and Conquer/DP
+#### Data Structures
+Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
+#### Algorithms
+sorting/searching/DFS/BFS/Tree traversal
+#### Technique 
+Brute-force/Divide and Conquer/DP
 
 1. DFS
 2. BFS
