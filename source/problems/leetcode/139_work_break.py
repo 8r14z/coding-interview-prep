@@ -1,5 +1,4 @@
-# https://www.educative.io/blog/crack-amazon-coding-interview-questions
-
+# https://leetcode.com/problems/word-break/
 
 dictionary = set([
     'apple',
@@ -8,8 +7,7 @@ dictionary = set([
 ])
 
 from functools import cache
-
-def work_break(string, dictionary):
+def work_break_td(string, dictionary):
     n = len(string)
     @cache
     def dp(start, end):
@@ -24,7 +22,7 @@ def work_break(string, dictionary):
 
     return dp(0,0)
 
-def work_break_dp(s, dictionary):
+def work_break_bu(s, dictionary):
     n = len(s)
     dp = [False] * n
 
@@ -39,5 +37,5 @@ def work_break_dp(s, dictionary):
     return dp[0]
 
 
-print(work_break('applepie', dictionary))
-print(work_break_dp('applepie', dictionary))
+print(work_break_td('applepie', dictionary))
+print(work_break_bu('applepie', dictionary))

@@ -65,3 +65,6 @@ assert(num_of_ways_optimal_space([2, 5, 3, 6], 10) == 5) # 5
 assert(num_of_ways_optimal_space([1, 5, 10], 10) == 4) # 4
 
 print(minimum_num_of_coins([1,2,5], 11))
+
+
+a = list()
