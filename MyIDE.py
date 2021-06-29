@@ -276,3 +276,30 @@ def numberOfItems(s, startIndices, endIndices):
 assert(numberOfItems('*|**|*|*', [1,1,2,2,1,3], [8,3,6,7,6,4]) == [3,0,2,3,2,0])
 # Time: O(n + mlogn)
 # Space: O(n+m)
+
+
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+        
+class Solution:
+    def flatten(self, root: TreeNode) -> None:
+        self.prev = None
+        
+        def preorder(node):
+            if node is None: return
+            print(node)
+            if self.prev:
+                self.prev.right = node
+            self.prev = node
+            print(node.val)
+            
+            preorder(node.left)
+            preorder(node.right)
+            
+        preorder(root)
+        return root
