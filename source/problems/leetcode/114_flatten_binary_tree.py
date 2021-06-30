@@ -24,4 +24,28 @@ class Solution:
         self.prev = None
         preorder(root)
         return root
+
+    def flatten2(self, root: TreeNode) -> None:
+        def preorder(node):
+            if not node: 
+                return None
+            
+            if not node.left and not node.right:
+                return node
+            
+            left = node.left
+            right = node.right 
+            
+            l_tail = preorder(left)
+            r_tail = preorder(right)            
+        
+            if l_tail:    
+                node.right = left
+                node.left = None
+                l_tail.right = right
+        
+            return r_tail if r_tail else l_tail
+        
+        preorder(root)
+        return root
         

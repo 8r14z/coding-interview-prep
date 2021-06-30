@@ -142,3 +142,9 @@ Can improve fib to O(logN) time: https://www.geeksforgeeks.org/program-for-nth-f
     - no cycle: DAG
     - no negative weight and no negative cycle: Dijkstra
     - negative weight or negative cycle: Bellmen-Ford 
+
+17. Divide and conquer
+S1. Split problem in to smaller subproblems
+S2. Continously split the subproblems into smaller subproblems till a subproblem is small enough
+S3. Recursively solve the subproblem
+S4. Merge 2 subproblems

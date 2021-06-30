@@ -360,3 +360,28 @@ class Solution:
                 
         return -1
         
+
+# convert a BST to DLL
+def convert_to_linked_list(root):
+    def inorder(node):
+        if not node: return None, None
+        if not node.left and not node.right:
+            return node, node
+
+        left = node.left
+        right = node.right
+
+        l_head, l_tail = inorder(left)
+        r_head, r_tail = inorder(right)
+
+        if l_tail: 
+            l_tail.right = node
+        node.left = l_tail
+        node.right = r_head
+        if r_head: 
+            r_head.left = node
+
+        return l_head if l_head else node, r_tail if r_tail else node
+    
+    head,_ = inorder(root)
+    return head
