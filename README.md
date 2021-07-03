@@ -24,3 +24,14 @@ Brute-force/Divide and Conquer/DP
 8. Recursion
 9. custom data structures (object oriented programming)
 10. Binary search
+
+logarithm
+graph traversal: DFS BFS
+binary search
+sliding windown
+recursion
+binary tree
+suffix tree
+heap
+dynamic programming
+sorting algo

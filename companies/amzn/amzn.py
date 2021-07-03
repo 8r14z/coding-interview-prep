@@ -385,3 +385,20 @@ def convert_to_linked_list(root):
     
     head,_ = inorder(root)
     return head
+
+
+# rotate and array by k
+def rotate_arr(nums, k):
+    def reverse(start, end, arr):
+        while start < end:
+            arr[start], arr[end] = arr[end], arr[start]
+            start += 1
+            end -= 1
+    n = len(nums)
+    k = k%n
+    if k == 0:
+        return
+    nums.reverse()
+    reverse(0, k-1, nums)
+    reverse(k, n-1, nums)
+
