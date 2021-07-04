@@ -1,10 +1,11 @@
 # https://leetcode.com/problems/subarray-sum-equals-k/
+import collections 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         n = len(nums)
         count = 0
         prefix_sum = 0 # cumulative sum at i sum(0,i)
-        seen_sum = defaultdict(int)
+        seen_sum = collections.defaultdict(int)
         
         for num in nums:
             prefix_sum += num
