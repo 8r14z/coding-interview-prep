@@ -6,7 +6,7 @@
 - [geeksforgeeks - Data Structures](https://www.geeksforgeeks.org/data-structures/)
 - [geeksforgeeks - Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
-NOTE: 2 geeksforgeeks links contains ALL algorithm u must know (or even more...)
+**NOTE**: 2 geeksforgeeks links contains ALL algorithm u must know (or even more...)
 
 #### Data Structures
 Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
