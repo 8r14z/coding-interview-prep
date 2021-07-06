@@ -1,3 +1,4 @@
+### Phone Interview
 Phone interview: the same process is applied for all roles :) doesn't matter what kind of role u apply for...
 
 - leveling is done by Amazon :) 
@@ -31,3 +32,5 @@ Behaviral:
 - how did u do differently? 
 
 => within 2 days - 6 months
+
+### On-site interview
