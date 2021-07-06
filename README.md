@@ -6,13 +6,22 @@
 - [geeksforgeeks - Data Structures](https://www.geeksforgeeks.org/data-structures/)
 - [geeksforgeeks - Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
+NOTE: 2 geeksforgeeks links contains ALL algorithm u must know (or even more...)
 
 #### Data Structures
 Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
 #### Algorithms
-sorting/searching/DFS/BFS/Tree traversal
+- Sorting/searching/DFS/BFS/Tree traversal
 #### Technique 
-Brute-force/Divide and Conquer/DP
+- Brute-force
+- Divide and Conquer 
+- Dynamic Programming
+#### Patterns
+- Recursion
+- Bit manipulation
+- DP
+- 
+
 
 1. DFS
 2. BFS
