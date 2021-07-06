@@ -6,8 +6,9 @@
 - [geeksforgeeks - Data Structures](https://www.geeksforgeeks.org/data-structures/)
 - [geeksforgeeks - Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
-**NOTE**: \
+```
 2 geeksforgeeks links contains everything u need for coding interviews
+```
 
 #### Data Structures
 - Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
