@@ -11,37 +11,35 @@
 
 #### Data Structures
 - Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
+
 #### Algorithms
 - Sorting/searching/DFS/BFS/Tree traversal
+
 #### Technique 
 - Brute-force
 - Divide and Conquer 
-- Dynamic Programming
-#### Patterns
+- Dynamic Programming (DP)
 - Recursion
 - Bit manipulation
-- DP
-- 
 
+#### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
+1. Sliding Window
+To perform an operation on a specific/dynamic window size. Start from 1st on the left and keep shifting to right
 
-1. DFS
-2. BFS
-3. Matching Parenthesis problem: Stack
-4. Hash table
-5. Variables/Pointers manipulation: 2 pointers
-6. reverse linked list (duplicates , removing duplicates)
-7. sorting algorithms 
-8. Recursion
-9. custom data structures (object oriented programming)
-10. Binary search
+2. Two pointers
+Keep two pointers in an array or linked list. Usually it's head and tail. Keep moving/modifying 2 pointers to achieve more efficient solution
 
-logarithm
-graph traversal: DFS BFS
-binary search
-sliding windown
-recursion
-binary tree
-suffix tree
-heap
-dynamic programming
-sorting algo
+3. Fast & slow pointers
+A special kind of 2 pointers. Fast pointer's speed is 2x of slow pointer. Typically to detect cyclic sequence
+
+4. Merge intervals
+A popular problem of this kind of problenm is time scheduling. to merge time that overlap with each others. Usually can be solved by greedy alogrithm
+
+5. Linked list manipulation
+There are a wide range of problems that involves linked list and manipulate nodes on linked list. A popular example could be reversing linked list (this is almost a meme lol)
+
+6. DFS and BFS on trees/graphes
+They are 2 most important algorithms in set of trees and graphes, appeared in almost every tree/graph problems
+
+7. Using heap to find min/max
+Heap is an important data structure, it's key for priority queue and most problems related to scheduling or optimize timeline will involve heap.
