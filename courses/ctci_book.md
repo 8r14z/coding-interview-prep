@@ -24,5 +24,10 @@ Best quote: "When u get stuck, throw a random hash table" lol
     - Bottlenecks: the part that slows down the overall runtime. e.g: sort the array before iterating over it. Sorting O(nlogn), Iterating O(n) -> sorting is the bottlenecks
     - Unnecessary work: the part that doesnt really neccessary and makes the overall run time slower.
     - Duplicated work: usually optimize this part will makes the whole algo optimized. e.g instead of iterating the array everytime to find sum of 2 number we can have a hash table to keep track of the num that has been seen
-- 
+- Transform the problem into a simpler version and solve it, then work up on more complex version
+- Solve the base case first :) <- this is a good one. solve more complex problems by reusing the simple problem
+- Emergency List lol basically back up ur mind with bunch of data structures and algos, then try one by one
+
+
+
 
