@@ -28,6 +28,38 @@ Best quote: "When u get stuck, throw a random hash table" lol
 - Solve the base case first :) <- this is a good one. solve more complex problems by reusing the simple problem
 - Emergency List lol basically back up ur mind with bunch of data structures and algos, then try one by one
 
+### Array and  Strings
+Amortized time complexity of appending into array is O(1) and O(N) for the worst case when array is out of capacity and need to reallocate new block of memory and copy all existing elements
 
+-> We can say that array.append is O(1) in average / amortized complexity 
 
+### Linked list
+The runner technique == fast/slow pointers
 
+Simple example: to find mid pointer, have slow point interates through linked list and fast pointer interates double speed, stop when fast pointer hits null => slow is mid
+
+### Trees and Graphs
+Definition of trees can be vary slightly with respect to equality.
+- Do not have duplicates
+- Duplicates are in left
+- Duplicates are in right
+
+Kinds of trees:
+- Complete binary trees: Every level except the last level is completely filled and all the nodes are left justified.
+- Full binary trees: Every node has 0 or two children
+- Perfect binary trees: Every node except the leaf nodes have two children and every level (last level too) is completely filled.
+
+Binary tree traversal:
+- In-order: L -> N -> R
+- Pre-order: N -> L -> R
+- Post-order: L -> R -> N
+
+Binary heaps: min/max
+- Complete binary tree, each node > children (max-heaps) or < children (min-heaps). The root is min or max value
+- Insert to the end and swap it up 
+- Extract min: replace root with last node, heapify new root. 
+
+Tries (prefix trees): [implementation](../source/data_structure/trie.py)
+- O(k) lookup time with k is input's length 
+
+Graphs: trees are connected, acyclic graphs

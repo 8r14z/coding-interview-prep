@@ -8,6 +8,7 @@ Phone interview: the same process is applied for all roles :) doesn't matter wha
 - 1 or 2 coding problems - computer science fundamentals
 - any languages :) 
 - ask clarify questions (always) -> thinking through -> communicate through (why, edge cases) -> start implementing -> clean code -> testing with couple of samples -> interview gives hints (guide to the right answer) -> no need to compile -> work on medium categories :) 
+- use some sample tests
 
 https://livecode.amazon.jobs/session/8a7c8403-31dc-4262-b39e-f93935927ef7
 
@@ -17,7 +18,9 @@ https://www.youtube.com/watch?v=aOu7BaKgnMc
 
 https://www.amazon.jobs/en/landing_pages/phone-interview
 
-Behaviral:
+Response within 2 days - 6 months
+
+Behavioral:
 - past experience align to princicples
 - working project deadline
 - dive deep to solve problem 
@@ -30,7 +33,28 @@ Behaviral:
 - STAR format
 - tangible result :) metrics, numbers, backed by data
 - how did u do differently? 
-
-=> within 2 days - 6 months
+- admit failures / self-improvement / STAR
+- as many examples as possible -> have a note is fine
+- "can have a minute to think abt it"
+- No need to prepare for "Hire and Develop the Best,  Are Right A Lot, Frugality"
+- 2 -> 4 minutes for behavioral question 
 
 ## On-site interview
+4 hours - 4 interviews - collaborative sessions 1:1 - same chime link for all interviews
+
+3 coding interviews (same as the phone interview) + 1 system design. One of 4 is bar raiser
+
+Response within 1 week
+
+An interview consist:
+- Technical + Behavioral - 50 minutes
+- 1 coding + 2 LP -> 8 LPs in whole date
+- System design: collaborative, 
+    - give system think through
+    - requirements in the board -> clarification
+    - draw diagrams. Web services/API/DB
+    - pen & pager / share screen / or anything else
+    - catch hints and advises
+- No Object oriented design
+
+https://www.youtube.com/watch?v=t5M3ttm9c8Y

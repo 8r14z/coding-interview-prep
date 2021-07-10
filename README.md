@@ -44,3 +44,5 @@ They are 2 most important algorithms in set of trees and graphes, appeared in al
 
 7. Using heap to find min/max
 Heap is an important data structure, it's key for priority queue and most problems related to scheduling or optimize timeline will involve heap.
+
+8. Prefix sum: where we can optimize an result by previously calculated results in a sequence 
