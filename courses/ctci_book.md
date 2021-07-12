@@ -63,3 +63,56 @@ Tries (prefix trees): [implementation](../source/data_structure/trie.py)
 - O(k) lookup time with k is input's length 
 
 Graphs: trees are connected, acyclic graphs
+
+All algo needed for trees and graphs: DFS, BFS, Bidirectional BFS (more optimal BFS in searching in undirected graph), inorer, preorder, postorder traversals, Dijkstra, Bellman-Ford, Floyd-Warshall
+
+### Bit manipulation
+- Two's complement presentation. N bits, the most significant bit is used to maintain sign. 0 for positive and 1 for negative. N bits, 1 bit of sign, N-1 bits are for value. Thus 32 bits signed numbers will be in [-2^31, 2^31-1] (-1 is for zero)
+- Logical right shift will fill with 0 (>>>)
+- Arithmetic righ shift will fill with sign bit (>>)
+- Unsigned right shift will fill with 0 
+- Signed right shift will fill with sign bit
+- All left shift fill 0 from the left
+
+### Object-Oriented Design
+Approach:
+1. Clarify requirements - 6Ws technique What/Why/Who/When/Where/How
+2. Define core objects that's critical to the problem statement. For example, to design a restaurant, the core objects will be Guest, Employee, Table, Order, Menu, ...
+3. Define relationships between objects. E.g N-to-N, 1-to-N, 
+4. Define methods/actions each objects
+ 
+### Recursion and DP
+
+
+### System Design
+1. Clarify/scope requirements
+2. Make reasonable assumptions. Assumptions are what define the foundation of a problem. U working on a system and assume that its dependencies are well done. Assume on volume of traffic, assume data consumption, etc
+3. Define core components: Client, Server, DB, etc.
+4. Sketch out user flows
+5. Identify the component to focus on. Bottlenecks, major challenges, performance issues, what component is heavily used, etc 
+6.  State trade-offs and limitation in current design
+
+#### Vertical vs. Horizontal Scaling
+Vertical: increase the computing power of one node
+Horizontal: increase number of nodes
+
+#### Load balancer
+Allows to distribute loads evenly to multiple machines (servers). To make sure the workload on one machine reasonable and maintain the heath of server. 
+
+#### SQL vs NoSQL
+Join operations in SQL will get slow as the system grows bigger
+- Normalization is to avoid redundancy, duplicated data between tables. Tables establish relationship with each other, to get combined data, use joins -> bottlenecks in the long run
+- Denormalization, meaing adding redundant tables to avoid join operations. For example, tables Orders and Users, to avoid joining tables once querying orders of a users, we can have a table for such mapping called UserOrder -> Costly for write operations, risk of inconsistent data, more storage
+
+#### DB partitioning (Sharding)
+Slit data into different databases/machines
+- Vertical sharding: partitioning by feature/projects. One for User Profiles, one for Messages, etc
+- Key-based (Hash-based) sharding: paritioning by some sort of data. For examplem, partition Users by Users.location or hash a key and distribute it. 
+- Directory-based sharding: maintain lookup table for where data can be found -> Single point of failure (SPOF), performance issues with single table accesses
+
+#### Caching
+
+
+
+
+
