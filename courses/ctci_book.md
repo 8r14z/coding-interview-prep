@@ -107,10 +107,27 @@ Join operations in SQL will get slow as the system grows bigger
 #### DB partitioning (Sharding)
 Slit data into different databases/machines
 - Vertical sharding: partitioning by feature/projects. One for User Profiles, one for Messages, etc
-- Key-based (Hash-based) sharding: paritioning by some sort of data. For examplem, partition Users by Users.location or hash a key and distribute it. 
+- Key-based (Hash-based) sharding: paritioning by some sort of data. For examplem, partition Users by Users.location. Partitioned by hashed of a field. 
 - Directory-based sharding: maintain lookup table for where data can be found -> Single point of failure (SPOF), performance issues with single table accesses
 
 #### Caching
+#### Asynchronous Processing and Queues
+#### Network metrics
+- Bandwidth: max amount of data can be transferred in a unit of time
+- Throughput: the actual amount of data that is transferred
+- Latency: how long it takes to go from one to the other. The delay between sender and receiver
+#### MapReduce system
+This allows us to process a lot of processing in parallel, which makes processing huge amount of data more efficient 
+
+#### System considerations
+- Failures. Single point of failures
+- Availability (Uptime, Mornitoring & Alerting, Logging) and Reliability
+- Scalability
+- Read-heavy (caching) and Write-heavy (queue write, data consistency, concurrency)
+- Security (Fraud and Abuse, Data Privacy, Authentication)
+- Pre-computation
+
+
 
 
 
