@@ -7,3 +7,10 @@ In practice there are several considerations:
 - Radix sort requires access to individual digits - which makes it harder to use.
 - Top down radix-2 sort is a special case. It can use the regular partition function from quicksort instead of key indexed counting, which tends to be much more efficient because it only needs to access the data once (and in order).
 - Radix-k sort where k > 2 requires extra memory in the order O(k) or O(n+k) depending on the implementation of the key indexed counting sort (in place or not).
+
+
+#### Locality of reference
+- Temporal locality: If at one point a particular memory location is referenced, then it is likely that the same location will be referenced again in the near future.
+- Spatial locality: If a particular storage location is referenced at a particular time, then it is likely that nearby memory locations will be referenced in the near future. 
+
+Heapsort is a stable sort with O(nlogn) but it has big constant factor based on the randomness of picking items to swap. It makes the operating hard to predict what memory location that u should jump to next. But anyway this is minor 
