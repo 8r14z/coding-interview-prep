@@ -14,3 +14,8 @@ In practice there are several considerations:
 - Spatial locality: If a particular storage location is referenced at a particular time, then it is likely that nearby memory locations will be referenced in the near future. 
 
 Heapsort is a stable sort with O(nlogn) but it has big constant factor based on the randomness of picking items to swap. It makes the operating hard to predict what memory location that u should jump to next. But anyway this is minor 
+
+
+#### Rolling hash function
+To compute hash of based on existing hash value. Used for Rabin-Karp searching :) 
+
