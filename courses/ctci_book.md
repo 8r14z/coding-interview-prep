@@ -127,9 +127,31 @@ This allows us to process a lot of processing in parallel, which makes processin
 - Security (Fraud and Abuse, Data Privacy, Authentication)
 - Pre-computation
 
+### Sorting and Searching
+Bubble sort, insertion sort, heap sort, merge sort, quick sort
 
+Hybrid sort: introsort = insertion + quick + heap sort (Swift), timesort = insertion + merge sort (Java, Python)
 
+### Database
+#### Denormalized vs. Normalized
+- DB normalization is a db design to minimize redundancy, prevent duplicated data spans across multiple tables
+- DB denormalization is a design that allow redundancy to optimize read time 
 
+For example: tables Courses and Teachers. Courses table contains a column called TeacherID, which is foreign key to Teachers table. This design avoid duplicate Teacher info in Courses table, we can easily query Teacher from TeacherID. On downside is that it will require a lot expensive join operations. To cope with that, we can store frequently accessed data in Courses table to speed up the read time and avoid JOINs, we can add teacher name and gender, etc. Downside of this is it will costly on updates to keep data in different places consistent and  more storage.
 
+Normalization or Denormalization will depends on use cases :) Denormalization is commonly used for highly scale systems. 
 
+#### Database Design
+This might be similar to OOD
+1. Clarify clarify clarify
+2. Core objects
+3. Relationships
+4. Actions
 
+### Thread and Locks
+#### Process vs. Thread
+- Process: instance of program in execution, indenpendent entity which resources are allocated. Executed in separate address space, one process can not directly access resources owned by other threads, need to do inter-process communication and it's handled by OS. 
+- Threads exist within a process share process's resources. Given that shared resources within same process, each thread has its own stack and registers.
+
+#### Context switch
+Context switching is govered by the scheduling algorithm of OS.
