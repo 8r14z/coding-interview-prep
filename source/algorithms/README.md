@@ -19,3 +19,5 @@ Heapsort is a stable sort with O(nlogn) but it has big constant factor based on 
 #### Rolling hash function
 To compute hash of based on existing hash value. Used for Rabin-Karp searching :) 
 
+#### MapReduce
+Includes Map step and Reduce step and input is splitted into multiple machines to enable parallel execution
