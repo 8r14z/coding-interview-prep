@@ -62,7 +62,6 @@ Sample questions (sourced Glassdoor & Blind)
 - Given a number n, how many ways you can create a BST, for eg for n=2, o/p = 2,n = 3 , o/p is 5.
 - Implement a LRU cache .
 
-
 ### System Design
 - Design the discovery page. Got deep into multithreading for loading pics. Know how to implement infinite scroll
 - "Twitter feed", "IG feed", "list -> detail view", etc.
@@ -78,5 +77,5 @@ Sample questions (sourced Glassdoor & Blind)
 - Runtime
 
 ### Tips
-- Start simple, always be talking and looking for acceptance before continuing. - - Try not to explain something beyond your understanding. At a few years of experience, it's more dangerous to try reach to far in your explanations of best-practices, patterns, etc..
+- Start simple, always be talking and looking for acceptance before continuing. - - Try not to explain something beyond your understanding. At a few years of experience, it's more dangerous to try reach to far in your explanations of best-practices, patterns, etc
 
