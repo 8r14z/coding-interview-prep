@@ -18,7 +18,7 @@ Sample questions (sourced Glassdoor & Blind)
 - Given a labyrinth matrix of traversable/non-traversable elements, find if it's possible to go from the top-left element to the bottom right
 - Basic algorithm problems like bfs and hash table.
 - It was a coding question involving a trie.
-- Median sorted arrays
+- Median 2 sorted arrays
 - Hard leetcode question. Related topic is String
 - Max sum root to leaf
 - There is a list with words like: pin, pine, apple, pineapple. Go through the list and figure out which words are combinations of other words in the list, and which ones aren't
@@ -31,7 +31,6 @@ Sample questions (sourced Glassdoor & Blind)
 - In a matrix consisting of '1' and '0'. '1' is walkable and '0' is blocked. Give you a start point and an end point, ask you how many steps you can reach end point from the start point.
 - Given a target number and a single number, write a program to find the shortest path to calculate the target number by applying "+-*/" operations to the single number. No parentheses. For example, if we have target number=26 and single number=3 return 3 * 3 * 3 - 3 / 3.
 - A basic algorithmic engineering challenge around Depth First Search
-- Find shortest path in a top-down game with four directions of movement.
 - Find shortest path in a top-down game with four directions of movement.
 - Know Backtracking and Strings
 - Remove duplicates in an array within k range
@@ -60,7 +59,7 @@ Sample questions (sourced Glassdoor & Blind)
 - max sum of TreeNodes in n-ary tree while nodes cannot be adjacent and node value are positive
 - Topological sort
 - Given a number n, how many ways you can create a BST, for eg for n=2, o/p = 2,n = 3 , o/p is 5.
-- Implement a LRU cache .
+- Implement a LRU cache.
 
 ### System Design
 - Design the discovery page. Got deep into multithreading for loading pics. Know how to implement infinite scroll
