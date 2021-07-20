@@ -22,7 +22,7 @@ for i in range(n):
     for j in range(m):
         newMatrix[j][n-1-i] = matrix[i][j]
 
-# In-place
+# In-place with nxn matrix
 n = len(matrix)        
 for i in range(n):
     for j in range(i, n):
