@@ -413,7 +413,7 @@ def maxPathSum(self, root: TreeNode) -> int:
         global_max = max(global_max, cur_max)
             
         return max(cur_val, cur_val + left_val, cur_val + right_val)
-            # sequence means the path should be in same branch == A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
+        # sequence means the path should be in same branch == A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
         
     global_max = float('-inf')
     dfs(root)
