@@ -387,6 +387,54 @@ def convert_to_linked_list(root):
     return head
 
 
+# Given a binary tree T, find the maximum path sum. The path may start and end at any node in the tree.
+class TreeNode:
+    def __init(self, val: int):
+        self.val = val
+        self.left = None
+        self.right = None
+def maxPathSum(self, root: TreeNode) -> int:
+    def dfs(node) -> int:
+        nonlocal global_max
+        if not node: 
+            return 0
+            
+        cur_val = node.val
+        left_val = dfs(node.left)
+        right_val = dfs(node.right)
+            
+        cur_max = max([
+            cur_val, 
+            cur_val + left_val, 
+            cur_val + right_val, 
+            cur_val + left_val + right_val
+        ])
+                       
+        global_max = max(global_max, cur_max)
+            
+        return max(cur_val, cur_val + left_val, cur_val + right_val)
+            # sequence means the path should be in same branch == A node can only appear in the sequence at most once. Note that the path does not need to pass through the root.
+        
+    global_max = float('-inf')
+    dfs(root)
+    return global_max
+
+
+# rotate matrix by 90 degress
+def rotate(matrix: [[int]]):
+    n = len(matrix)
+    if n < 2:
+        return
+    
+    for i in range(n):
+        for j in range(i+1, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    
+    for i in range(n):
+        for j in range(n//2):
+            matrix[i][j], matrix[i][n-j-1] = matrix[i][n-j-1], matrix[i][j]
+
+
 # rotate and array by k
 def rotate_arr(nums, k):
     def reverse(start, end, arr):
