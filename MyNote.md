@@ -13,6 +13,7 @@ Read input/output/constraint...
 
 4. Rotate matrix 90 degree
 ```python
+# Extra space
 for i in range(m):
     for j in range(n):
         newMatrix[i][j] = matrix[n-1-j][i]
@@ -20,6 +21,16 @@ for i in range(m):
 for i in range(n):
     for j in range(m):
         newMatrix[j][n-1-i] = matrix[i][j]
+
+# In-place
+n = len(matrix)        
+for i in range(n):
+    for j in range(i, n):
+        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+                
+for i in range(n):
+    for j in range(n//2):
+        matrix[i][j], matrix[i][n-1-j] = matrix[i][n-1-j], matrix[i][j]
 ```
 
 5. 2 pointer problems.. 2 pointers usually start at the same position, one move faster than the other
