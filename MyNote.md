@@ -159,3 +159,5 @@ S1. Split problem in to smaller subproblems
 S2. Continously split the subproblems into smaller subproblems till a subproblem is small enough
 S3. Recursively solve the subproblem
 S4. Merge 2 subproblems
+
+18. Python bisect.bisect => left <= i, right > i .... bisect.bisect_left => left < i, right >= i
