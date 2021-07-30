@@ -1,5 +1,3 @@
-# https://www.educative.io/blog/crack-amazon-coding-interview-questions
-
 import math
 from collections import deque
 from functools import lru_cache

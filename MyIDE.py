@@ -65,6 +65,7 @@
 
 import math
 import collections
+from source.problems.stair_case import stair_case
 
 def bfs(start, edges):    
 
@@ -303,3 +304,47 @@ class Solution:
             
         preorder(root)
         return root
+
+
+class File:
+    def __init__(self):
+        self.cache = []
+        self.cur_index = 0
+
+    def refresh_cache(self):
+        if not self.cache or self.cur_index >= len(self.cache):
+            chunk = self.read4k()
+            if not chunk:
+                return False
+
+            self.cache = chunk
+            self.cur_index = 0
+        
+        return True
+
+    def read_line(self):
+        is_succeeded = self.refresh_cache()
+
+        if not is_succeeded: return ''
+
+        start = self.cur_index
+        end = self.find_next_end_of_line()
+
+        if end != -1:
+            self.cur_index = end + 1
+            return self.cache[start:end+1]
+        else:
+            self.cur_index = len(self.cache)
+            return self.cache[start:] + self.read_line()
+
+    def find_next_end_of_line(self):
+        start = self.cur_index
+        end = -1
+        for i in range(start, len(self.cache)):
+            if self.cache[i] == '\n':
+                end = i
+                break
+        return end
+
+    def read_4k(self):
+        pass
