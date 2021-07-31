@@ -5,10 +5,9 @@ Phone interview: the same process is applied for all roles :) doesn't matter wha
 - leveling is done by Amazon
 - no need to turn on camera 
 - collaborative: solve with the engineer
-- 35-40m coding 20m 5 Q&A
-- 1 or 2 coding problems - computer science fundamentals
-- any languages :) 
-- ask clarify questions (always) -> thinking through -> communicate through (why, edge cases) -> start implementing -> clean code -> testing with couple of samples -> walkthrough the code -> interview gives hints (guide to the right answer) -> no need to compile -> work on medium categories
+- 35-40m coding - 20m Behavioral/Leadership Principle - 5m Q&A
+- 1 or 2 coding problems in any languages
+- ask clarify questions -> thinking through -> communicate through (why, edge cases) -> start implementing -> clean code -> testing with couple of samples -> walkthrough the code -> interview gives hints (guide to the right answer) -> no need to compile -> work on medium categories
 
 *Response within 2 days - 6 months*
 
@@ -17,11 +16,11 @@ Behavioral:
 - working project deadline
 - dive deep to solve problem 
 - bad feedbacks
-- did learn from failures :) 
+- did learn from failures 
 - grew or changed from the failures
 - big impacts :) 
 - 10 stories cover all scenarios
-- 2-3 behaviral questions :) 
+- 2-3 behaviral questions
 - STAR format
 - tangible result :) metrics, numbers, backed by data
 - how did u do differently? 
