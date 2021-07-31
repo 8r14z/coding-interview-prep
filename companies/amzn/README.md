@@ -7,18 +7,9 @@ Phone interview: the same process is applied for all roles :) doesn't matter wha
 - 35-40m coding 20m 5 Q&A
 - 1 or 2 coding problems - computer science fundamentals
 - any languages :) 
-- ask clarify questions (always) -> thinking through -> communicate through (why, edge cases) -> start implementing -> clean code -> testing with couple of samples -> interview gives hints (guide to the right answer) -> no need to compile -> work on medium categories :) 
-- use some sample tests
+- ask clarify questions (always) -> thinking through -> communicate through (why, edge cases) -> start implementing -> clean code -> testing with couple of samples -> walkthrough the code -> interview gives hints (guide to the right answer) -> no need to compile -> work on medium categories
 
-https://livecode.amazon.jobs/session/8a7c8403-31dc-4262-b39e-f93935927ef7
-
-https://www.educative.io/blog/crack-amazon-coding-interview-questions. 
-
-https://www.youtube.com/watch?v=aOu7BaKgnMc
-
-https://www.amazon.jobs/en/landing_pages/phone-interview
-
-Response within 2 days - 6 months
+*Response within 2 days - 6 months*
 
 Behavioral:
 - past experience align to princicples
@@ -40,11 +31,11 @@ Behavioral:
 - 2 -> 4 minutes for behavioral question 
 
 ## On-site interview
-4 hours - 4 interviews - collaborative sessions 1:1 - same chime link for all interviews
+4 hours - 4 interviews - same chime link for all interviews
 
-3 coding interviews (same as the phone interview) + 1 system design. One of 4 is bar raiser
+3 coding interviews (DS&A) + 1 system design. One of 4 is bar raiser round
 
-Response within 1 week
+*Response within 1 week*
 
 An interview consist:
 - Technical + Behavioral - 50 minutes
@@ -57,4 +48,9 @@ An interview consist:
     - catch hints and advises
 - No Object oriented design
 
-https://www.youtube.com/watch?v=t5M3ttm9c8Y
+## References
+- https://livecode.amazon.jobs/session/8a7c8403-31dc-4262-b39e-f93935927ef7
+- https://www.educative.io/blog/crack-amazon-coding-interview-questions. 
+- https://www.youtube.com/watch?v=aOu7BaKgnMc
+- https://www.amazon.jobs/en/landing_pages/phone-interview
+- https://www.youtube.com/watch?v=t5M3ttm9c8Y
