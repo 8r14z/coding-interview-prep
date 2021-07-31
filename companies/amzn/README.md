@@ -1,7 +1,8 @@
+# Process
 ## Phone Interview
 Phone interview: the same process is applied for all roles :) doesn't matter what kind of role u apply for...
 
-- leveling is done by Amazon :) 
+- leveling is done by Amazon
 - no need to turn on camera 
 - collaborative: solve with the engineer
 - 35-40m coding 20m 5 Q&A
