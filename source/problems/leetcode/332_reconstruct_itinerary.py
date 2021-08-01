@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/reconstruct-itinerary/
-
+from collections import defaultdict
 class Solution(object):
     def findItinerary(self, tickets):
     
