@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/optimize-water-distribution-in-a-village/
 
 import heapq
+from collections import defaultdict
 # Prim + MinHeap
 class Solution:
     def minCostToSupplyWater(self, n: int, wells: List[int], pipes: List[List[int]]) -> int:
