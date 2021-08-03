@@ -348,3 +348,67 @@ class File:
 
     def read_4k(self):
         pass
+
+
+# 31
+# 245
+
+# 45
+# 31
+
+# 31
+# 345
+
+# 34531
+
+# 32451
+
+# 14
+# ''
+
+# 354
+# 3514
+# output = 3543514
+
+# 354
+# 354
+# output = 3535414
+
+# 31
+# 245
+
+def mergeNumbers(firstNumber, secondNumber):
+    # Write your code here
+    output = ''
+    
+    i = 0 # 1st number
+    j = 0 # 2nd number
+    n = len(firstNumber)
+    m = len(secondNumber)
+    
+    while i < n or j < m:
+        cur_i = i
+        cur_j = j
+ 
+        while cur_i < n and cur_j < m and firstNumber[cur_i] == secondNumber[cur_j]:
+            cur_i += 1
+            cur_j += 1
+        
+        if cur_i < n and cur_j < m:
+            if firstNumber[cur_i] > secondNumber[cur_j]:
+                output += firstNumber[i]
+                i +=1
+            else:
+                output += secondNumber[j]
+                j += 1
+        elif cur_i < n:
+            output += firstNumber[i]
+            i += 1
+        elif cur_j < m:
+            output += secondNumber[j]
+            j += 1 
+
+    return output
+
+print(mergeNumbers('31', '245'))
+print(mergeNumbers('354', '3541'))
