@@ -11,12 +11,10 @@ class Solution:
         
         for i in range(n):
             if i >= k:
-                window.remove(nums[i-k])
-                # O(k)
+                window.remove(nums[i-k]) # O(k)
                 
-            bisect.insort(window, nums[i])
+            bisect.insort(window, nums[i]) # O(k)
             
-            # O(k)
             if i >= k-1:
                 if k % 2:
                     ans.append(float(window[k//2]))
