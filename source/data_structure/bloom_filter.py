@@ -8,4 +8,4 @@ class BloomFilter:
     def __init__(self, item_count, prob):
         self.item_count = item_count
         self.prob = prob
-        
+    
