@@ -29,3 +29,26 @@ class Solution:
             dp[i] = res
             
         return dp[0]-1
+
+
+class Solution:
+    def minCut(self, s: str) -> int:
+        def expand_from_center(s, start, end, dp):
+            while start >= 0 and end < len(s) and s[start] == s[end]:
+                cuts = 0 if start == 0 else (dp[start-1] + 1)
+                dp[end] = min(dp[end], cuts)
+                start -= 1
+                end += 1
+                
+        n = len(s)
+        dp = [0] * n
+        
+        for i in range(n):
+            dp[i] = i
+            
+        for i in range(n):
+            expand_from_center(s, i, i, dp)
+            expand_from_center(s, i, i+1, dp)
+            
+        return dp[n-1]
+                
