@@ -21,3 +21,19 @@ class Solution:
 
 # Time: 2*n -> O(n) 
 # Same space
+
+
+class Solution:
+    def minFlipsMonoIncr(self, s: str) -> int:
+        flips = 0
+        count = 0
+        
+        for c in s:
+            if c == '1':
+                count += 1
+            else:
+                flips = min(flips + 1, count)
+            
+        return flips
+
+# O(n) & constant space
