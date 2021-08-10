@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/flip-string-to-monotone-increasing/
-
+from functools import lru_cache
 class Solution:
     def minFlipsMonoIncr(self, s: str) -> int:
         n = len(s)
