@@ -11,9 +11,9 @@ class Solution:
             if s[i] == prev:
                 return dp(s[i], i+1)
             else:
-                if prev == '0':
+                if prev == '0': # 01 -> either keep this or flip 1 to 0
                     return min(dp(s[i], i+1), 1 + dp('0', i+1))
-                else:
+                else: # 10 -> flip 0 to 1
                     return 1 + dp('1', i+1)
                 
         return dp('0', 0)
