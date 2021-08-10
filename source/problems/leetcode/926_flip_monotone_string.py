@@ -37,3 +37,4 @@ class Solution:
         return flips
 
 # O(n) & constant space
+# https://leetcode.com/problems/flip-string-to-monotone-increasing/discuss/1394838/w-Hint-Python-O(n)-by-pattern-analysis
