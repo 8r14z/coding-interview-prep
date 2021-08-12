@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/array-of-doubled-pairs/
-
+from collections import Counter
 class Solution:
     def canReorderDoubled(self, arr: List[int]) -> bool:
         arr.sort(key=abs)
