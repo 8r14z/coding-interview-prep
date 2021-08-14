@@ -30,9 +30,9 @@ def number_of_way_to_reach_stair_case_constant_space(N):
 
     return b
 
-from functools import cache
+from functools import lru_cache
 # Time O(n) Space: O(n)
-@cache
+@lru_cache(None)
 def number_of_way_to_reach_stair_case_dp(N):
     if N < 0:
         return 0
