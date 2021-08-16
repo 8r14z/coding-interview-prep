@@ -22,3 +22,6 @@ class Solution:
             return ans
         
         return dp(0, N-1, 0)
+
+# Intuition: try to count continuous intervals and merge them with intervals appearing later.
+# E.g: 122232
