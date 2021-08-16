@@ -12,13 +12,15 @@ class Solution:
             m = l
             while m <= r and boxes[m] == boxes[l]:
                 m += 1
-            
+            # m = number of same continous intervals
+
             count = count + m - l
-            ans = dp(m, r, 0) + count**2
+            ans = dp(m, r, 0) + count**2 # cur answer + next subproblem
             
             for i in range(m, r+1):
                 if boxes[i] == boxes[l]:
-                    ans = max(ans, dp(m,i-1,0) + dp(i,r, count))
+                    ans = max(ans, dp(m,i-1,0) + dp(i,r, count)) 
+                    # try to merge the cur answer with the same intervals appearing later
             return ans
         
         return dp(0, N-1, 0)
