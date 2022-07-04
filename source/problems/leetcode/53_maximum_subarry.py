@@ -11,3 +11,13 @@ class Solution:
             result = max(result, local_max)
         
         return result
+
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        cur_max = 0
+        res = -float('inf')
+        for i in range(n):
+            cur_max = max(cur_max + nums[i], nums[i])
+            res = max(res, cur_max)
+            
+        return res
