@@ -100,3 +100,7 @@ Use...
 - Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
 
 Know how to analysis time complexity will be very helpful :)
+
+To optimize Space Complexity. Try...
+- In-place modification on exisiting space
+- Avoid duplicated memories. E.g think twice we really need an extra array to do the job instead of a simple variable 
