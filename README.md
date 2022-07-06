@@ -20,6 +20,9 @@
 - [Software Engineering Interviews](https://www.youtube.com/playlist?list=PLiQ766zSC5jPIKibTa5qtXpwgwEBalDV4)
 - [Harvard COMPSCI 224 Advanced Algorithms](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
 
+### Pick A Language and Stick With It
+- I'd suggest [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar
+
 #### Data Structures
 - Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
 
