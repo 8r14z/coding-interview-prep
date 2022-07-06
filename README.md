@@ -69,3 +69,7 @@ Heap is an important data structure, it's key for priority queue and most proble
 1. Practice
 2. Practice more 
 3. Repeat 
+
+```
+On a side note: Try applying Hash Table / Graphs / Stack & Queue / Heap / Binary Tree when getting stuck
+```
