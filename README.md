@@ -83,10 +83,12 @@ On a side note: Try applying Hash Table / Graphs / Stack & Queue / Heap / Binary
 Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table
 ```
 
-Try to find a way to improve time complexity. Common time complexity (sorted fast -> slow)
+Try to find a way to improve time complexity. Most common time complexity (sorted fast -> slow)
 - O(1)
 - O(log(n))
 - O(n)
 - O(n*log(n))
 - O(n^2)
-- O(n^3) <-- this is already the worst you are able to find except some NP-hard problems which are n^n
+- O(n^3) 
+- O(2^n) 
+- O(n!) <-- this is already the worst you are able to find except some NP-hard problems which are n^n
