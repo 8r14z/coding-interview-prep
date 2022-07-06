@@ -1,4 +1,4 @@
-# Materials
+# Everything You Need For Coding Interviews
 
 ### Data Structure and Algorithms
 - [MIT 6.006 Introduction to Algorithms](courses/mit_6006.md)
