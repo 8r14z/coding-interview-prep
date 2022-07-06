@@ -93,10 +93,10 @@ Try to find a way to improve time complexity. Most common time complexity (sorte
 - O(2^n) 
 - O(n!) <-- this is already the worst you can find except some NP-hard problems which are n^n
 
-Use:
-- Hash: to improve search efficiency O(1) on average assuming a good hash func is used
-- Graph: to model a problem to a graph problem when entities have inter-connection
-- Heap: when there is priorization involved (find min, find max, etc)
-- Tree: to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
+Use...
+- Hash Table to improve search efficiency O(1) on average assuming a good hash func is used
+- Graph to model a problem to a graph problem when entities have inter-connection
+- Heap when there is priorization involved (find min, find max, etc)
+- Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
 
 Know how to analysis time complexity will be very helpful :)
