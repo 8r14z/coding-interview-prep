@@ -82,5 +82,5 @@ Heap is an important data structure, it's key for priority queue and most proble
 ```
 On a side note: Try applying Hash Table / Graphs / Stack & Queue / Heap / Binary Tree when getting stuck
 
-Fact is most of problems can be solved with Hash Table, Heap, or DFS/BFS
+Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table
 ```
