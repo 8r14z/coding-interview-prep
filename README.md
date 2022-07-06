@@ -107,3 +107,4 @@ To optimize Space Complexity. Try...
 
 ### Interview Hacks
 - Ask interviewers if you can assume some validation (input correctness, etc). That saves huge amount of time to avoid writing extra code in the interviews
+- Write CLEAN code and be collaborative (communicate your thought process throughfully)
