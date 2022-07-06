@@ -29,10 +29,16 @@ To quickly revisit algorithms, data structures and their time/space complexity
 - I'd strongly suggest [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews
 
 #### Data Structures
-- Array/Stack/Queue/LinkedList/Heaps/Trees/BST/Tries/Hash table/Graphs
+- Array
+- Stack & Queue 
+- LinkedList 
+- Heaps
+- Trees, BST/Balanced BST, Tries
+- Hash Table
+- Graphs
 
 #### Algorithms
-- Sorting/searching/DFS/BFS/Tree traversal
+- Sorting/Searching/DFS/BFS/Tree traversal
 
 #### Technique 
 - Brute-force
