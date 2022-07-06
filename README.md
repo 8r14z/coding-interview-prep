@@ -91,4 +91,4 @@ Try to find a way to improve time complexity. Most common time complexity (sorte
 - O(n^2)
 - O(n^3) 
 - O(2^n) 
-- O(n!) <-- this is already the worst you are able to find except some NP-hard problems which are n^n
+- O(n!) <-- this is already the worst you can find except some NP-hard problems which are n^n
