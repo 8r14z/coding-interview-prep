@@ -98,3 +98,5 @@ Use:
 - Graph: to model a problem to a graph problem when entities have inter-connection
 - Heap: when there is priorization involved (find min, find max, etc)
 - Tree: to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
+
+Know how to analysis time complexity will be very helpful :)
