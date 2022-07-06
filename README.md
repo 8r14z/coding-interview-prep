@@ -64,3 +64,8 @@ They are 2 most important algorithms in set of trees and graphes, appeared in al
 Heap is an important data structure, it's key for priority queue and most problems related to scheduling or optimize timeline will involve heap.
 
 8. Prefix sum: where we can optimize an result by previously calculated results in a sequence 
+
+### A Practical Tip To Solve Any Problem
+1. Practice
+2. Practice more 
+3. Repeat 
