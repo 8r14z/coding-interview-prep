@@ -65,7 +65,7 @@ Heap is an important data structure, it's key for priority queue and most proble
 
 8. Prefix sum: where we can optimize an result by previously calculated results in a sequence 
 
-### A Practical Tip To Solve Any Problem
+### Practical Tips To Solve Any Problems
 1. Practice
 2. Practice more 
 3. Repeat 
