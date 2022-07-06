@@ -38,7 +38,7 @@ To quickly revisit algorithms, data structures and their time/space complexity
 - Brute-force
 - Divide and Conquer 
 - Dynamic Programming (DP)
-- Recursion
+- Recursion / Backtracking
 - Bit manipulation
 
 #### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
@@ -64,6 +64,8 @@ They are 2 most important algorithms in set of trees and graphes, appeared in al
 Heap is an important data structure, it's key for priority queue and most problems related to scheduling or optimize timeline will involve heap.
 
 8. Prefix sum: where we can optimize an result by previously calculated results in a sequence 
+
+
 
 ### Practical Tips To Solve Any Problems
 1. Practice
