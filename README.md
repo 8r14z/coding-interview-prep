@@ -8,7 +8,7 @@
 - [geeksforgeeks - Algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 
 ```
-2 geeksforgeeks links have everything u need for coding interviews
+2 geeksforgeeks links have most important things
 ```
 
 ### Youtube Resources
