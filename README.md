@@ -20,6 +20,9 @@
 - [Software Engineering Interviews](https://www.youtube.com/playlist?list=PLiQ766zSC5jPIKibTa5qtXpwgwEBalDV4)
 - [Harvard COMPSCI 224 Advanced Algorithms](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
 
+### Cheatsheet
+- [Big-0 Cheatsheet](https://www.bigocheatsheet.com/)
+- [Algorithms & Data strucuture Cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
 
 ### Pick A Language and Stick With It
 - I'd strongly suggest [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews
