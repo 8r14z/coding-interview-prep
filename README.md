@@ -72,8 +72,6 @@ Heap is an important data structure, it's key for priority queue and most proble
 
 8. Prefix sum: where we can optimize an result by previously calculated results in a sequence 
 
-
-
 ### Practical Tips To Solve Any Problems
 1. Practice
 2. Practice more 
@@ -84,3 +82,11 @@ On a side note: Try applying Hash Table / Graphs / Stack & Queue / Heap / Binary
 
 Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table
 ```
+
+Try to find a way to improve time complexity. Common time complexity (sorted fast -> slow)
+- O(1)
+- O(log(n))
+- O(n)
+- O(n*log(n))
+- O(n^2)
+- O(n^3) <-- this is already the worst you are able to find except some NP-hard problems which are n^n
