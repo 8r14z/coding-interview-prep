@@ -104,3 +104,6 @@ Know how to analysis time complexity will be very helpful :)
 To optimize Space Complexity. Try...
 - In-place modification on exisiting space
 - Avoid duplicated memories. E.g think twice we really need an extra array to do the job instead of a simple variable 
+
+### Interview Hacks
+- Ask interviewers if you can assume some validation (input correctness, etc). That saves huge amount of time to avoid writing extra code in the interviews
