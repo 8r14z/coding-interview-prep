@@ -21,6 +21,7 @@
 - [Harvard COMPSCI 224 Advanced Algorithms](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
 
 ### Cheatsheet
+To quickly revisit algorithms, data structures and their time/space complexity
 - [Big-0 Cheatsheet](https://www.bigocheatsheet.com/)
 - [Algorithms & Data strucuture Cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
 
