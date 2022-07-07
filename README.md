@@ -50,7 +50,9 @@ To quickly revisit algorithms, data structures and their time/space complexity
 
 #### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 1. Sliding Window
-To perform an operation on a specific/dynamic window size. Start from 1st on the left and keep shifting to right. In a sliding window, the two pointers usually move in the same direction will never overtake each other
+To perform an operation on a specific/dynamic window size. Start from 1st on the left and keep shifting to right. In a sliding window, the two pointers usually move in the same direction will never overtake each other.
+
+[Code Template](https://leetcode.com/problems/minimum-window-substring/discuss/26808/here-is-a-10-line-template-that-can-solve-most-substring-problems)
 
 2. Two pointers
 Keep two pointers in an array or linked list. Usually it's head and tail. Keep moving/modifying 2 pointers to achieve more efficient solution
