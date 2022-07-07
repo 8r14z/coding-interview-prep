@@ -84,7 +84,7 @@ Heap is an important data structure, it's key for priority queue and most proble
 ```
 On a side note: Try applying Hash Table / Graphs / Stack & Queue / Heap / Binary Tree when getting stuck
 
-Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table
+Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table, Binary Search
 ```
 
 Try to find a way to improve time complexity. Most common time complexity (sorted fast -> slow)
@@ -99,6 +99,7 @@ Try to find a way to improve time complexity. Most common time complexity (sorte
 
 Use...
 - Hash Table to improve search efficiency O(1) on average assuming a good hash func is used
+- Binary Search whenever a pre-condition is a sorted array
 - Graph to model a problem to a graph problem when entities have inter-connection
 - Heap when there is priorization involved (find min, find max, etc)
 - Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
