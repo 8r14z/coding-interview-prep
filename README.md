@@ -55,7 +55,9 @@ To perform an operation on a specific/dynamic window size. Start from 1st on the
 [Code Template](https://leetcode.com/problems/minimum-window-substring/discuss/26808/here-is-a-10-line-template-that-can-solve-most-substring-problems)
 
 2. Two pointers
-Keep two pointers in an array or linked list. Usually it's head and tail. Keep moving/modifying 2 pointers to achieve more efficient solution
+Keep two pointers in an array or linked list. Usually it's head and tail. Keep moving/modifying 2 pointers to achieve more efficient solution. 
+
+Two pointers can be in the same array/list or different. Usually, we compare value at 2 pointers and/or increment (left -/right +) when relevant
 
 3. Fast & slow pointers
 A special kind of 2 pointers. Fast pointer's speed is 2x of slow pointer. Typically to detect cyclic sequence
