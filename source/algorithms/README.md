@@ -15,7 +15,7 @@ In practice there are several considerations:
 
 Heapsort is a stable sort with O(nlogn) but it has big constant factor based on the randomness of picking items to swap. It makes the operating hard to predict what memory location that u should jump to next. But anyway this is minor 
 
-### Tail Recursion
+### Tail/Non-tail Recursion
 In traditional recursion, the typical model is that you perform your recursive calls first, and then you take the return value of the recursive call and calculate the result. In this manner, you don't get the result of your calculation until you have returned from every recursive call.
 
 In tail recursion, you perform your calculations first, and then you execute the recursive call, passing the results of your current step to the next recursive step. This results in the last statement being in the form of (return (recursive-function params)). Basically, the return value of any given recursive step is the same as the return value of the next recursive call.
