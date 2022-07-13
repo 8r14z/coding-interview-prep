@@ -1,5 +1,12 @@
 # Everything You Need For Coding Interviews
 
+This is a notebook when practicing for code interviews. This helps I landed offers at
+- Amazon
+- Facebook
+- Google
+- Snapchat
+- ...
+
 ### Data Structure and Algorithms Courses
 - [MIT 6.006 Introduction to Algorithms](courses/mit_6006.md)
 - [MIT 6.046J Design and Analysis of Algorithms](courses/mit_6046.md)
