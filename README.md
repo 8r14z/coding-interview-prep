@@ -121,4 +121,4 @@ To optimize Space Complexity. Try...
 - Write CLEAN code and be collaborative (communicate your thought process throughfully)
 - Always ask questions / clarify doubts BEFORE jumping into implementation 
 - Test your code with a few test cases
-- State tradeoffs between time vs. space and between different approaches
+- State tradeoffs between different approaches (time vs. space)
