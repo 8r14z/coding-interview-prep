@@ -39,7 +39,7 @@ To quickly revisit algorithms, data structures and their time/space complexity
 - [Algorithms & Data strucuture Cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
 
 ### Pick A Language and Stick With It
-I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews
+I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews (e.g [heapq](https://docs.python.org/3/library/heapq.html))
 
 ### Data Structures
 - Array
