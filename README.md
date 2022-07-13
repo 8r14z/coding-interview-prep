@@ -36,7 +36,7 @@ No need books, stick to above links. These are more than enough. But in case you
 ### Cheatsheet
 To quickly revisit algorithms, data structures and their time/space complexity
 - [Big-0 Cheatsheet](https://www.bigocheatsheet.com/)
-- [Algorithms & Data strucuture Cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/) - not super detailed but a good starting point to revisit DS&A
+- [Algorithms & Data strucuture Cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
 
 ### Pick A Language and Stick With It
 - I'd strongly suggest [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews
