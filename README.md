@@ -108,7 +108,7 @@ Try to find a way to improve time complexity. Most common time complexity (sorte
 - O(n^2)
 - O(n^3) 
 - O(2^n) 
-- O(n!) <-- this is already the worst you can find except some NP-hard problems which are n^n
+- O(n!) <-- this is already the worst you can find except some NP-hard problems (which the only solution is Brute-force)
 
 Use...
 - Hash Table to improve search efficiency O(1) on average assuming a good hash func is used
