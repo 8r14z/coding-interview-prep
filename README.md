@@ -1,6 +1,6 @@
 # Everything You Need For Coding Interviews
 
-This is a notebook that I used to take note when practicing for code interviews. This helps me landed offers at
+This is a notebook that I'm using to take note when practicing for code interviews. This helps me landed offers at
 - Amazon
 - Facebook
 - Snapchat
