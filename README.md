@@ -108,7 +108,7 @@ Try to find a way to improve time complexity. Most common time complexity (sorte
 - O(n^2)
 - O(n^3) 
 - O(2^n) 
-- O(n!) <-- This is commonly the worst time complexity for problems in coding interviews.
+- O(n!) <-- This is commonly the worst time complexity for problems in coding interviews (except some NP-hard problems)
 
 Use...
 - Hash Table to improve search efficiency O(1) on average assuming a good hash func is used
