@@ -12,12 +12,15 @@ import heapq
 
 class Solution(object):
     def mergeKLists(self, lists):
+        if not lists:
+            return None
+
         min_heap = []
-        for llist in lists:
-            if llist:
-                heapq.heappush(min_heap, llist)
+        for head in lists:
+            if head:
+                heapq.heappush(min_heap, head)
             
-        if not min_heap:
+        if not min_heap: # lists contain all None
             return None
         
         head = cur = None
