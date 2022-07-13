@@ -125,5 +125,6 @@ To optimize Space Complexity. Try...
 - Ask interviewers if you can assume some validation (input correctness, etc). That saves huge amount of time to avoid writing extra code in the interviews
 - Write CLEAN code and be collaborative (communicate your thought process throughfully)
 - Always ask questions / clarify doubts BEFORE jumping into implementation 
+- Communicate the approach with interviewers - THINK OUT LOUD
 - Test your code with a few test cases
 - State tradeoffs between different approaches (time vs. space)
