@@ -26,6 +26,13 @@ This is a notebook that I used to take note when practicing for code interviews.
 - [Software Engineering Interviews](https://www.youtube.com/playlist?list=PLiQ766zSC5jPIKibTa5qtXpwgwEBalDV4)
 - [Harvard COMPSCI 224 Advanced Algorithms](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uP4rJgf5ayhHWgw7akUWSf)
 
+### Books
+No need books, stick to above links. These are more than enough. But in case you still want to read some books so...
+- [Cracking The Coding Interview](https://www.amazon.co.uk/Cracking-Coding-Interview-6th-Programming/dp/0984782850/ref=sr_1_1?crid=34CLB13A8BGXI&keywords=coding+interview&qid=1657739069&sprefix=coding+intervie%2Caps%2C122&sr=8-1)
+- [Grokking Algorithms](https://www.amazon.co.uk/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=pd_bxgy_img_sccl_2/259-4758939-1754565?pd_rd_w=7zWiS&content-id=amzn1.sym.79b812bf-5c8b-4c0c-851c-784423adaff5&pf_rd_p=79b812bf-5c8b-4c0c-851c-784423adaff5&pf_rd_r=CFX5DK00E9Y4Z0KYG3ZH&pd_rd_wg=2SOxw&pd_rd_r=23eabb4f-6a4e-4355-8068-98a9cb2eaa29&pd_rd_i=1617292230&psc=1)
+- [Introduction to Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X/ref=pd_vtp_sccl_3_10/259-4758939-1754565?pd_rd_w=1UbBw&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=BZWYBGN9R7DHT30QYECR&pd_rd_wg=STZSo&pd_rd_r=23952bbe-33a2-4e11-be09-b601fcf39c4d&pd_rd_i=026204630X&psc=1)
+- [Elements of Programming Interviews - Python](https://www.amazon.co.uk/Elements-Programming-Interviews-Python-Insiders/dp/1537713949/ref=pd_vtp_sccl_3_30/259-4758939-1754565?pd_rd_w=V5IEj&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=KNXHF80BJ3WFA15N4KFA&pd_rd_wg=3H5hs&pd_rd_r=a2da7e73-472d-4101-8d97-8f0b6025b73d&pd_rd_i=1537713949&psc=1)
+
 ### Cheatsheet
 To quickly revisit algorithms, data structures and their time/space complexity
 - [Big-0 Cheatsheet](https://www.bigocheatsheet.com/)
