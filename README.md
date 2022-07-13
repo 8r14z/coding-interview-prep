@@ -28,7 +28,7 @@ To quickly revisit algorithms, data structures and their time/space complexity
 ### Pick A Language and Stick With It
 - I'd strongly suggest [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews
 
-#### Data Structures
+### Data Structures
 - Array
 - Stack & Queue 
 - LinkedList 
@@ -37,10 +37,10 @@ To quickly revisit algorithms, data structures and their time/space complexity
 - Hash Table
 - Graphs
 
-#### Algorithms
+### Algorithms
 - Sorting/Searching/DFS/BFS/Tree traversal
 
-#### Technique 
+### Technique 
 - Brute-force
 - Divide and Conquer 
 - Dynamic Programming (DP)
@@ -48,7 +48,7 @@ To quickly revisit algorithms, data structures and their time/space complexity
 - Bit manipulation
 - Tree traversal
 
-#### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
+### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 1. Sliding Window
 To perform an operation on a specific/dynamic window size. Start from 1st on the left and keep shifting to right. In a sliding window, the two pointers usually move in the same direction will never overtake each other.
 
