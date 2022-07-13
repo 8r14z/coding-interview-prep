@@ -98,7 +98,7 @@ Heap is an important data structure, it's key for priority queue and most proble
 
 Most important algirthms & data structures are DFS/BFS, Heap (heapify), Hash Table, Binary Search
 
-Try to find a way to improve time complexity. Most common time complexity (sorted fast -> slow)
+Try to find a way to improve time complexity. Most common time complexity
 - O(1)
 - O(log(n))
 - O(n)
