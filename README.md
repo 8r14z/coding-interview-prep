@@ -33,6 +33,11 @@ No need books, stick to above links. These are more than enough. But in case you
 - [Introduction to Algorithms](https://www.amazon.co.uk/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X/ref=pd_vtp_sccl_3_10/259-4758939-1754565?pd_rd_w=1UbBw&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=BZWYBGN9R7DHT30QYECR&pd_rd_wg=STZSo&pd_rd_r=23952bbe-33a2-4e11-be09-b601fcf39c4d&pd_rd_i=026204630X&psc=1)
 - [Elements of Programming Interviews - Python](https://www.amazon.co.uk/Elements-Programming-Interviews-Python-Insiders/dp/1537713949/ref=pd_vtp_sccl_3_30/259-4758939-1754565?pd_rd_w=V5IEj&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=KNXHF80BJ3WFA15N4KFA&pd_rd_wg=3H5hs&pd_rd_r=a2da7e73-472d-4101-8d97-8f0b6025b73d&pd_rd_i=1537713949&psc=1)
 
+### Practice
+- [Blind75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
+- [Grind75](https://www.techinterviewhandbook.org/grind75)
+- Leetcode - highly recommend to buy premium for 1 month
+
 ### Cheatsheet
 To quickly revisit algorithms, data structures and their time/space complexity
 - [Big-0 Cheatsheet](https://www.bigocheatsheet.com/)
