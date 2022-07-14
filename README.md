@@ -57,12 +57,12 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Hash Table
 - Graphs
 
-** Implemented in Python in [source/data_structures](source/data_structure/)
+**Implemented in Python in [source/data_structure](source/data_structure/)**
 
 ### Algorithms
 - Sorting/Searching/DFS/BFS/Tree traversal
 
-** Implemented in Python in [source/algorithms](source/data_structure/)
+**Implemented in Python in [source/algorithms](source/algorithms/)**
 
 ### Technique 
 - Brute-force
