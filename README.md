@@ -36,7 +36,7 @@ No need books, stick to above links. These are more than enough. But in case you
 ### Practice
 - [Blind75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
 - [Grind75](https://www.techinterviewhandbook.org/grind75)
-- Leetcode - highly recommend to buy premium for 1 month
+- [Leetcode](https://leetcode.com/problemset/all/) - highly recommend to buy premium for 1 month
 
 ### Cheatsheet
 To quickly revisit algorithms, data structures and their time/space complexity
