@@ -161,3 +161,5 @@ S3. Recursively solve the subproblem
 S4. Merge 2 subproblems
 
 18. Python bisect.bisect => left <= i, right > i .... bisect.bisect_left => left < i, right >= i
+
+19. If you can't figure out a dynamic programming solution, you can always do DFS + memoization which does the same thing.
