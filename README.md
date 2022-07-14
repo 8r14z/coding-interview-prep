@@ -89,7 +89,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 
 2. Two pointers
 
-   Keep two pointers in an array or linked list. Usually it's head and tail. Keep moving/modifying 2 pointers to achieve more efficient solution. 
+   Two Pointers is a pattern where two pointers iterate through the data structure in tandem until one or both of the pointers hit a certain condition. Two Pointers is often useful when searching pairs in a sorted array or linked list; for example, when you have to compare each element of an array to its other elements.
 
    Two pointers can be in the same array/list or different. Usually, we compare value at 2 pointers and/or increment (left -/right +) when relevant
 
