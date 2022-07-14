@@ -11,6 +11,7 @@ This is a notebook I'm using to take note when practicing for code interviews. T
 2. Follow suggested links in the README and learn about data structures & algorithms
 3. Try implementing data structures & algorithms in the language of choice. Sample code in Python can be found in [source/algorithms](source/algorithms/) and [source/data_structure](source/data_structure/) folders
 3. After founding a good background, start practicing with Blind75, Grind75 and others. Solutions may be found in [source/problems/leetcode](source/problems/leetcode/) - seach with leetcode id (e.g https://leetcode.com/problems/longest-substring-without-repeating-characters/ is 3)
+4. Get ready and kill the interviews
 
 ### Data Structure and Algorithms Courses
 - [MIT 6.006 Introduction to Algorithms](courses/mit_6006.md)
