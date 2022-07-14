@@ -19,7 +19,6 @@ class Solution:
         return answer
 
 # Binary search 
-
 class Solution:
     def search(subsequence, val) -> int:
         low = 0
