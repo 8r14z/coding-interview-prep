@@ -8,7 +8,7 @@ This is a notebook I'm using to take note when practicing for code interviews. T
 
 ### TL;DR - how to use this repo?
 1. Read [README.md](README.md)
-2. Follow suggested links in the README and learn about data structures & algorithms
+2. Follow suggested links in the README to learn data structures & algorithms
 3. Try implementing data structures & algorithms in the language of choice. Sample code in Python can be found in [source/algorithms](source/algorithms/) and [source/data_structure](source/data_structure/) folders
 3. After having a good foundation on DS&A, start practicing with Blind75, Grind75, and others. Solutions may be found in [source/problems/leetcode](source/problems/leetcode/) - seach with leetcode id (e.g https://leetcode.com/problems/longest-substring-without-repeating-characters/ is **3**)
 4. Recognize the patterns 
