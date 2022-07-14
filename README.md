@@ -95,7 +95,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 
 3. Fast & slow pointers
 
-   A special kind of 2 pointers. Fast pointer's speed is 2x of slow pointer. Typically to detect cyclic sequence
+   A special variant of 2 pointers. Fast pointer's speed is 2x of slow pointer. Typically to detect cyclic sequence
 
 4. Merge intervals
 
