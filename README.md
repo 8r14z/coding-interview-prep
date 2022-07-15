@@ -154,3 +154,4 @@ To optimize Space Complexity. Try...
 - Communicate the approach with interviewers - THINK OUT LOUD
 - Test your code with a few test cases
 - State tradeoffs between different approaches (time vs. space)
+- It'll surprise the interviewers if you know some advanced DS&A like Fibonacci Heap which is far optimal than Binary Heap in insertion - O(1)
