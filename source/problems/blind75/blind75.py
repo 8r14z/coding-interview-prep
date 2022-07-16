@@ -166,6 +166,7 @@ class Solution:
             return index
             
 # https://leetcode.com/problems/3sum/
+## S.1 - hash table 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         triplets = set()
@@ -183,3 +184,4 @@ class Solution:
                 temp.add(nums[j])
         
         return triplets
+## S.2 - two pointers

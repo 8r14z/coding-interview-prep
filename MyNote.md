@@ -163,3 +163,8 @@ S4. Merge 2 subproblems
 18. Python bisect.bisect => left <= i, right > i .... bisect.bisect_left => left < i, right >= i
 
 19. If you can't figure out a dynamic programming solution, you can always do DFS + memoization which does the same thing.
+
+20. Sort + two pointers to avoid duplications (skip list[left] or list[right] if list[left] == list[left-1] or list[right] == list[right+1])
+    IF the array is already sorted, we can skip the indices having the same values to avoid duplication. eg. array [8, 8, 10, 11] skip array[1] as we already calculate that in array[0]
+
+
