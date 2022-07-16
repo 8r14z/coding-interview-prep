@@ -126,3 +126,45 @@ class Solution:
         
         return search_min()
 
+# https://leetcode.com/problems/search-in-rotated-sorted-array/
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        if n == 0:
+            return -1
+        elif n == 1:
+            return 0 if nums[0] == target else -1
+            
+        def find_min_index():
+            low = 0
+            high = n - 1
+            index = high
+            while low <= high:
+                mid = (low + high) // 2
+                if nums[mid] >= nums[0]:
+                    low = mid + 1 
+                else:
+                    index = min(index,mid)
+                    high = mid - 1
+            return index
+        
+        def find_target_index(low, high):
+            while low <= high:
+                mid = (low + high) // 2
+                if nums[mid] == target:
+                    return mid
+                elif nums[mid] > target:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            return -1
+        
+        min_index = 0 if nums[0] < nums[-1] else find_min_index()
+        if min_index == 0:
+            return find_target_index(0, n-1)
+        else:
+            index = find_target_index(0, min_index - 1)
+            if index == -1:
+                index = find_target_index(min_index, n-1)
+            return index
+            
