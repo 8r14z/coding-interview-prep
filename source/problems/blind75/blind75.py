@@ -71,11 +71,11 @@ class Solution:
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         n = len(nums)
-        cur_max = 0
+        max_so_far = 0
         res = -float('inf')
         for i in range(n):
-            cur_max = max(cur_max + nums[i], nums[i])
-            res = max(res, cur_max)
+            max_so_far = max(max_so_far + nums[i], nums[i])
+            res = max(res, max_so_far)
             
         return res
 
