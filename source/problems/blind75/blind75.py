@@ -4,12 +4,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         temp = {} 
-        
         for (i, val) in enumerate(nums):
             num = target - val
             if num in temp:
                 return [temp[num], i]
-            
             temp[val] = i
             
         return []
@@ -19,7 +17,6 @@ class Solution:
 INF = float('inf')
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        
         n = len(prices)
         max_profit = 0
         max_price = -INF
@@ -168,3 +165,21 @@ class Solution:
                 index = find_target_index(min_index, n-1)
             return index
             
+# https://leetcode.com/problems/3sum/
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        triplets = set()
+        n = len(nums)
+        if n < 3:
+            return triplets
+        
+        for i in range(n):
+            target = -nums[i]
+            temp = set()
+            for j in range(i+1, n):
+                if target - nums[j] in temp:
+                    triplet = tuple(sorted([nums[i], target - nums[j], nums[j]]))
+                    triplets.add(triplet)
+                temp.add(nums[j])
+        
+        return triplets
