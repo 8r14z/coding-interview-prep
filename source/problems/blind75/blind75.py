@@ -102,3 +102,27 @@ class Solution:
         return result
 
 # https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        first = nums[0]
+        last = nums[-1]
+        if first < last or len(nums) == 1:
+            return first
+        
+        def search_min():
+            n = len(nums)
+            low = 0
+            high = n-1
+            min_idx = high
+            while low <= high:
+                mid = (low + high) // 2
+                if nums[mid] >= first:
+                    low = mid + 1
+                else:
+                    min_idx = min(min_idx, mid)
+                    high = mid - 1
+                    
+            return nums[min_idx]
+        
+        return search_min()
+
