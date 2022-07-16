@@ -210,3 +210,24 @@ class Solution:
                     left += 1
                     
         return triplets
+
+# https://leetcode.com/problems/container-with-most-water/
+# Greedy:
+# Start with the maximum width container and go to a shorter width container 
+# if there is a vertical line longer than the current containers shorter line. 
+# This way we are compromising on the width but we are looking forward to a longer length container.
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        n = len(height)
+        left = 0
+        right = n - 1
+        res = -1
+        while left < right:
+            if height[left] < height[right]:
+                res = max(height[left] * (right - left), res)
+                left += 1
+            else:
+                res = max(height[right] * (right - left), res)
+                right -= 1
+                
+        return res
