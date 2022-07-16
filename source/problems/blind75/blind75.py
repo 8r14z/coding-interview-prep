@@ -184,4 +184,29 @@ class Solution:
                 temp.add(nums[j])
         
         return triplets
-## S.2 - two pointers
+## S.2 - two pointers - O(n^2) less constant factor
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        n = len(nums)
+        triplets = []
+        for i in range(n):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+                
+            left = i+1
+            right = n-1
+            while left < right:
+                target3sum = nums[i] + nums[left] + nums[right]
+                if target3sum == 0:
+                    triplet = [nums[i], nums[left], nums[right]]
+                    triplets.append(triplet)
+                    left += 1
+                    while nums[left] == nums[left-1] and left < right:
+                        left += 1
+                elif target3sum > 0:
+                    right -= 1
+                else:
+                    left += 1
+                    
+        return triplets
