@@ -276,4 +276,21 @@ class Solution:
             res += (bit * 2 ** (32-i-1))
             n >>= 1
         return res
-            
+
+# https://leetcode.com/problems/climbing-stairs/
+# similar to fibonacci
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+        first = 1
+        second = 2
+        
+        for i in range(3, n):
+            cur = first + second
+            first = second
+            second = cur
+        
+        return first + second
