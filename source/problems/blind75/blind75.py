@@ -233,3 +233,18 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/sum-of-two-integers/
+class Solution:
+    def getSum(self, a, b):
+        if b == 0: return a
+        return self.getSum(a ^ b, (a & b) << 1)
+
+# https://leetcode.com/problems/number-of-1-bits/
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        count = 0
+        while n:
+            count += (n & 1)
+            n >>= 1
+        return count
+
+# https://leetcode.com/problems/counting-bits/

@@ -47,7 +47,15 @@ for num1 in hashNums1:
         count += (hashNums1[num1] * hashNums2[target-num1])
 ```
 
-8. Number of subsets in a list with N elements = 2<sup>N</sup>. if there is N numbers, there are 2<sup>N</sup>-1 reperesentation of their combination in bit mask. For example:
+8. Number of subsets in a list with N elements = 2<sup>N</sup>. if there is N numbers, there are 2<sup>N</sup>-1 reperesentation of their combination in bit mask. 
+
+**Proof**
+
+Suppose you want to choose a subset. For each element, you have two choices: either you put it in your subset, or you don't; and these choices are all independent.
+
+Remark: this works also for the empty set. An empty set has exactly one subset, namely the empty set. And the fact that 20=1 reflects the fact that there is only one way to pick no elements at all!
+
+For example:
 
 arr=[1,2,3]
 
