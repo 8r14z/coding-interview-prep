@@ -13,7 +13,7 @@ def isValidBTS(a):
             return 'NO'
         else:
             while len(stack) > 0 and a[i] > stack[-1]:
-                min_val = stack.pop()
+                min_val = stack.pop() # backtrack to the parent node of right-subtree
             stack.append(a[i])
             # In BST left node always has min value. So the min value is always on top of stack
             # As pre-order, we prioritize left traversal, so we keep pushing value to stack. 
