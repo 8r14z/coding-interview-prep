@@ -333,3 +333,19 @@ class Solution:
                 sequence[index] = nums[i]
         return len(sequence)
         
+# https://leetcode.com/problems/word-break/
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        words = set(wordDict)
+        n = len(s)
+        is_valid_word = [False] * n
+        
+        for i in reversed(range(n)):
+            for j in range(i, n):
+                word = s[i:j+1]
+                if word in words and (j == n-1 or is_valid_word[j+1]):
+                    is_valid_word[i] = True
+                    break
+        
+        return is_valid_word[0]
+
