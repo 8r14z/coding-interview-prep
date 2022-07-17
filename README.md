@@ -44,6 +44,7 @@ No need books, stick to above links (I did so I can tell you need not). These ar
 ### Practice
 - [Blind75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) - a curated list of leetcode problems - [Solutions](./source/problems/blind75/)
 - [Grind75](https://www.techinterviewhandbook.org/grind75)
+- [AlgoMonster](https://algo.monster/problems/stats)
 - [Leetcode](https://leetcode.com/problemset/all/) - highly recommend to buy premium for 1 month
 
 **Check out solutions in [source/problems](source/problems/)**
