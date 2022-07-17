@@ -12,12 +12,14 @@ def isValidBTS(a):
         if a[i] < min_val:
             return 'NO'
         else:
-            while len(stack) > 0 and stack[-1] < a[i]:
+            while len(stack) > 0 and a[i] > stack[-1]:
                 min_val = stack.pop()
             stack.append(a[i])
             # In BST left node always has min value. So the min value is always on top of stack
-            # as we travel, if the top of stack has value < the current, it means we travel right
-            # that's when we need to track min_val, so value of node after that should always > min_val. Otherwise it's invalid
+            # As pre-order, we prioritize left traversal, so we keep pushing value to stack. 
+            # Whenever the current node's value > the top of stack's value, it means we just turn right
+            # That's when we need to track min_val as the min_value of a right-subtree should be the value of curent node, 
+            # To make BST valid, the value of nodes after that should always > min_val. Otherwise it's invalid
 
     return 'YES'
 
