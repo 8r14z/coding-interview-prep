@@ -53,6 +53,8 @@ for num1 in hashNums1:
 
 Suppose you want to choose a subset. For each element, you have two choices: either you put it in your subset, or you don't; and these choices are all independent.
 
+2 for a[0], 2 for a[1],... => 2 * 2 * 2 .... = 2^n
+
 Remark: this works also for the empty set. An empty set has exactly one subset, namely the empty set. And the fact that 2^0=1 reflects the fact that there is only one way to pick no elements at all!
 
 For example:
