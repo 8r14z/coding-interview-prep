@@ -300,6 +300,7 @@ class Solution:
 # To solve this, we need to ask question
 # What will be minimum no coins at amount - 1, amount - 2,..., 1
 # At each amount of money, we will need to question whether we should include a coin in [coins] or not
+# O(n * amount)
 INF = float('inf')
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
