@@ -317,3 +317,18 @@ class Solution:
             min_coins[cur_amount] = min_coin_at_cur_amount
             
         return min_coins[amount] if min_coins[amount] != INF else -1
+
+# https://leetcode.com/problems/longest-increasing-subsequence/
+import bisect
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        n = len(nums)
+        sequence = [nums[0]]
+        for i in range(1, n):
+            if nums[i] > sequence[-1]:
+                sequence.append(nums[i])
+            else:
+                index = bisect.bisect_left(sequence, nums[i])
+                sequence[index] = nums[i]
+        return len(sequence)
+        
