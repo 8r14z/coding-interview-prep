@@ -23,7 +23,7 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
                 
-            if node:1
+            if node:
                 answer.append(node.val)
                 
         return answer

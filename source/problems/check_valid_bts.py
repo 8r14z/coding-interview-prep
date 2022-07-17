@@ -15,6 +15,9 @@ def isValidBTS(a):
             while len(stack) > 0 and stack[-1] < a[i]:
                 min_val = stack.pop()
             stack.append(a[i])
+            # In BST left node always has min value. So the min value is always on top of stack
+            # as we travel, if the top of stack has value < the current, it means we travel right
+            # that's when we need to track min_val, so value of node after that should always > min_val. Otherwise it's invalid
 
     return 'YES'
 
