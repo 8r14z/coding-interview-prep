@@ -248,3 +248,32 @@ class Solution:
         return count
 
 # https://leetcode.com/problems/counting-bits/
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        res = [0]
+        for i in range(1, n+1):
+            # // 2 is equal to shift right by 1 (>> 1)
+            # * 2 is equal to shift left by 1 (<< 1)
+            # => same number of bits
+            # if odd number need to retain 1 LSB as it gets lost while shifting right
+            res.append(res[i//2] + i % 2)
+            
+        return res
+
+# https://leetcode.com/problems/missing-number/
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        total = n * (n+1) // 2
+        return total - sum(nums)
+
+# https://leetcode.com/problems/reverse-bits/
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        res = 0
+        for i in range (32):
+            bit = n % 2
+            res += (bit * 2 ** (32-i-1))
+            n >>= 1
+        return res
+            
