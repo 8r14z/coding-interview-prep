@@ -5,7 +5,7 @@ This note only makes sense to me :yaoming:
 1. Read the problem carefully, every words in the problem statement could be a requirement/hint that needs to be covered
 IMPORTANT: read the input/output carefully, and think of different cases, dont assume that the input is unique and doesnt have any variant. For example: one integer/type can appear multiple times in an array
 
-Read input/output/constraint...
+   Read input/output/constraint...
 
 2. Sometimes Binary Search Tree is hard to implement, Stack+Sort can come to rescue 
 
