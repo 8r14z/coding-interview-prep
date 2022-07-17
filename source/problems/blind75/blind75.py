@@ -296,3 +296,23 @@ class Solution:
         return first + second
 
 # https://leetcode.com/problems/coin-change/
+# DP variant
+# To solve this, we need to ask question
+# What will be minimum no coins at amount - 1, amount - 2,..., 1
+# At each amount of money, we will need to question whether we should include a coin in [coins] or not
+INF = float('inf')
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        if amount < 1 or len(coins) < 1:
+            return 0
+        
+        min_coins = [0] * (amount + 1)
+        
+        for cur_amount in range(1, amount+1):
+            min_coin_at_cur_amount = INF
+            for coin in coins:
+                if coin <= cur_amount and min_coins[cur_amount - coin] != INF:
+                    min_coin_at_cur_amount = min(min_coin_at_cur_amount, min_coins[cur_amount - coin] + 1)
+            min_coins[cur_amount] = min_coin_at_cur_amount
+            
+        return min_coins[amount] if min_coins[amount] != INF else -1

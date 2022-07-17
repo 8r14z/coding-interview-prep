@@ -1,5 +1,5 @@
 # calculate number of ways
-# min/max numbe of coins will similar to unbouned knapsack [implement](./knapsack.py)
+# min/max number of coins will similar to unbouned knapsack [implement](./knapsack.py)
 
 # coins is a list of coins with different value 
 # n is the target amount we wanna get change
@@ -47,7 +47,7 @@ def minimum_num_of_coins(coins, n):
     for i in range(1, n+1):
         min_way = float('inf')
         for j in range(m):
-            if coins[j] <= i:
+            if coins[j] <= i and dp[i-coins[j]] != float('inf'):
                 min_way = min(min_way, dp[i-coins[j]] + 1)
         dp[i] = min_way
     
