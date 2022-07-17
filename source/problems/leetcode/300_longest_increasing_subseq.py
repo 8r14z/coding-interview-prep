@@ -20,37 +20,14 @@ class Solution:
 
 # Binary search 
 class Solution:
-    def search(subsequence, val) -> int:
-        low = 0
-        high = len(subsequence) - 1
-
-        index = high
-        while low <= high:
-            mid = (low + high) // 2
-            if (subsequence[mid] >= val):
-                index = min(index, mid)
-                high = mid - 1
-            else:
-                low = mid + 1
-
-        return index
-
     def lengthOfLIS(self, nums: List[int]) -> int:
         n = len(nums)
-        if not n:
-            return 0
-        if n == 1:
-            return 1
-        
-        subsequence = []
-        subsequence.append(nums[0])
-        
+        sequence = [nums[0]]
         for i in range(1, n):
-            index = self.search(subsequence, nums[i])
-            if (index < len(subsequence)):
-                subsequence[index] = nums[i]
+            if nums[i] > sequence[-1]:
+                sequence.append(nums[i])
             else:
-                subsequence.append(nums[i])
+                index = bisect.bisect_left(sequence, nums[i])
+                sequence[index] = nums[i]
+        return len(sequence)
         
-        
-        return len(subsequence)

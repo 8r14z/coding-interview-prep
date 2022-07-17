@@ -319,6 +319,7 @@ class Solution:
         return min_coins[amount] if min_coins[amount] != INF else -1
 
 # https://leetcode.com/problems/longest-increasing-subsequence/
+# [../leetcode/300_longest_increasing_subseq.py] for DP solution
 import bisect
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
