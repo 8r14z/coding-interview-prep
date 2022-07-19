@@ -380,3 +380,19 @@ class Solution:
                     
         return dp[target]
 
+# https://leetcode.com/problems/house-robber/
+# there is a little trick in the question that makes u think it always a sequence of i, i + 2, i + 4, ...
+# it could be any house as long as its index < i-1 or > i+1
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        stolen_money_start_from_houses = [0] * n
+        
+        for i in range(n):
+            max_prev_money = 0
+            for j in range(0, i-1):
+                max_prev_money = max(max_prev_money, stolen_money_start_from_houses[j])
+
+            stolen_money_start_from_houses[i] = nums[i] + max_prev_money 
+            
+        return max(stolen_money_start_from_houses)
