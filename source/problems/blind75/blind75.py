@@ -349,3 +349,34 @@ class Solution:
         
         return is_valid_word[0]
 
+# https://leetcode.com/problems/combination-sum-iv/
+# the question to ask here is what the combination of target-1, target-2,..., 0 is
+# O(target * n)
+# num of sub-problems = target
+# cost / sub-problem = n
+from functools import cache
+class Solution:
+    def combinationSum4(self, nums: List[int], target: int) -> int:
+        @cache 
+        def dp(n):
+            if n == 0:
+                return 1
+            res = 0
+            for num in nums:
+                if n >= num:
+                    res += dp(n-num)
+            return res
+            
+        return dp(target)
+    
+    def combinationSum4(self, nums: List[int], target: int) -> int:
+        dp = [0] *(target+1)
+        dp[0] = 1
+        
+        for cur_target in range(1, target+1):
+            for num in nums:
+                if cur_target >= num:
+                    dp[cur_target] += dp[cur_target-num]
+                    
+        return dp[target]
+
