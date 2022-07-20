@@ -408,3 +408,29 @@ class Solution:
 
 # https://leetcode.com/problems/house-robber-ii/
 # there are 2 sub-prolems, what is max money includes/excludes first house? 
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n == 0:
+            return 0
+        elif n == 1:
+            return nums[0]
+        elif n == 2:
+            return max(nums[0], nums[1])
+            
+        max_prev_prev_house = nums[0]
+        max_prev_house = max(nums[0], nums[1])
+        
+        max_prev_prev_house_ex_1 = 0
+        max_prev_house_ex_1 = nums[1]
+        
+        for i in range(2, n-1):
+            max_cur = max(max_prev_house, max_prev_prev_house + nums[i])
+            max_prev_prev_house = max_prev_house
+            max_prev_house = max_cur
+            
+            max_cur_ex_1 = max(max_prev_house_ex_1, max_prev_prev_house_ex_1 + nums[i])
+            max_prev_prev_house_ex_1 = max_prev_house_ex_1
+            max_prev_house_ex_1 = max_cur_ex_1
+        
+        return max(max_prev_house, max_prev_prev_house_ex_1 + nums[-1])
