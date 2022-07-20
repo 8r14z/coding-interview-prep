@@ -384,51 +384,27 @@ class Solution:
 # there is a little trick in the question that makes u think it always a sequence of i, i + 2, i + 4, ...
 # it could be any house as long as its index < i-1 or > i+1
 # lession learned: don't assume the input :) 
-class Solution:
-    def rob(self, nums: List[int]) -> int:
-        n = len(nums)
-        stolen_money_start_from_houses = [0] * n
-        
-        for i in range(n):
-            max_prev_money = 0
-            for j in range(0, i-1):
-                max_prev_money = max(max_prev_money, stolen_money_start_from_houses[j])
-
-            stolen_money_start_from_houses[i] = nums[i] + max_prev_money 
-            
-        return max(stolen_money_start_from_houses)
-
-# https://leetcode.com/problems/house-robber-ii/
-# there are 2 sub-prolems, what is max money includes/excludes first house? 
+# dp question: whether max is sum of prev house or cur + prev_prev housee
+# O(n), O(1) space
 class Solution:
     def rob(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 0:
             return 0
-        elif n == 1:
+        if n == 1:
             return nums[0]
-        elif n == 2:
+        if n == 2:
             return max(nums[0], nums[1])
-            
-        stolen_money = [0] * n
-        stolen_money_exclude_first_house = [0] * n
         
-        stolen_money[0] = nums[0]
-        stolen_money[1] = nums[1]
-        stolen_money_exclude_first_house[1] = stolen_money[1]
+        max_prev_prev_house = nums[0]
+        max_prev_house = max(nums[1], nums[0])
+        max_cur = 0
         
         for i in range(2, n):
-            max_prev_money = 0
-            max_prev_money_exclude_first = 0
-            for j in range(i-1):
-                max_prev_money = max(max_prev_money, stolen_money[j])
-                max_prev_money_exclude_first = max(max_prev_money_exclude_first, stolen_money_exclude_first_house[j])
-            
-            stolen_money_exclude_first_house[i] = max_prev_money_exclude_first + nums[i]
-            if i == n-1:
-                stolen_money[i] = stolen_money_exclude_first_house[i]
-            else:
-                stolen_money[i] = max_prev_money + nums[i] 
-                
-        return max(stolen_money)
-    
+            max_cur = max(max_prev_house, max_prev_prev_house + nums[i])
+            max_prev_prev_house = max_prev_house
+            max_prev_house = max_cur
+        return max_cur
+
+# https://leetcode.com/problems/house-robber-ii/
+# there are 2 sub-prolems, what is max money includes/excludes first house? 
