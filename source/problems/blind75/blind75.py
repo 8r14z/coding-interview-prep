@@ -519,7 +519,8 @@ class Solution:
         return min_jumpable_index == 0
 
 # https://leetcode.com/problems/clone-graph/
-# DFS or BFS 
+# DFS or BFS is fine
+# Used DFS in the solution
 class Node:
     def __init__(self, val = 0, neighbors = None):
         self.val = val
