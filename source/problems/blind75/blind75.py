@@ -462,27 +462,41 @@ class Solution:
         return dp[n]
 
 # space optimal sol        
-class Solution: 
+class Solution:
     def numDecodings(self, s: str) -> int:
         n = len(s)
-        prev = 1
         prev_prev = 0
+        prev = 1 if s[0] != '0' else 0
         
-        for i in range(n):
+        for i in range(1, n):
             char = s[i]
             ways = 0
-            # char can be a single digit
-            if char != '0': 
+            if char != '0': # char can be a single digit alone. e.g 2
                 ways += prev 
-            
-            # char can be 2nd digit of prev digit
-            if i > 0:
-                prev_char = s[i-1]
-                if (prev_char == '1' and char <= '9') or (prev_char == '2' and char <= '6'):
-                    ways += prev_prev
+                
+            # OR it can be the 2nd digit of previous char. e.g 12 
+            prev_char = s[i-1]
+            if (prev_char == '1' and char <= '9') or (prev_char == '2' and char <= '6'):
+                ways += (1 if i-1 == 0 else prev_prev)
+                
             prev_prev = prev
             prev = ways
         
         return prev
             
+# https://leetcode.com/problems/unique-paths/
+# fairly simple problem
+# dp table to track num of ways to reach position [i][j]
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:        
+        dp = [[0] * (n) for _ in range(m)]
             
+        for i in range(0, m):
+            for j in range(0, n):
+                if i == 0 or j == 0:
+                    dp[i][j] = 1
+                    continue 
+                dp[i][j] = dp[i-1][j] + dp[i][j-1]
+        
+        return dp[m-1][n-1]
+        
