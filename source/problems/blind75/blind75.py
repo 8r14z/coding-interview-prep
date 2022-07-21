@@ -500,3 +500,22 @@ class Solution:
         
         return dp[m-1][n-1]
         
+# https://leetcode.com/problems/jump-game/
+# keep track of the min index where current position can jump to
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)
+        if n == 0:
+            return False
+        if n == 1:
+            return True
+        
+        min_jumpable_index = n-1
+
+        for i in reversed(range(n-1)):
+            if i + nums[i] >= min_jumpable_index:
+                min_jumpable_index = i
+        
+        return min_jumpable_index == 0
+
+# https://leetcode.com/problems/clone-graph/
