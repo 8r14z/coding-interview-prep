@@ -520,7 +520,7 @@ class Solution:
 
 # https://leetcode.com/problems/clone-graph/
 # DFS or BFS is fine
-# Used DFS in the solution
+# Used DFS in the solution since it cosumes less memory
 class Node:
     def __init__(self, val = 0, neighbors = None):
         self.val = val
