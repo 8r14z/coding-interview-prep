@@ -434,3 +434,55 @@ class Solution:
             max_prev_house_ex_1 = max_cur_ex_1
         
         return max(max_prev_house, max_prev_prev_house_ex_1 + nums[-1])
+
+# https://leetcode.com/problems/decode-ways/
+# question is how many ways we can reach the current char
+# the current char can be single digit or 2nd digit of prev char
+# so cur_ways = prev_ways + prev_prev_ways
+# it's kinda similar to staircases problem (number of ways to reach stair x)
+# https://leetcode.com/problems/climbing-stairs/
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        n = len(s)
+        dp = [0] * (n+1)
+        dp[0] = 1
+        for i in range(1, n+1):
+            c_index = i-1
+            char = s[c_index]
+            ways = 0
+            if s[c_index] != '0': 
+                ways += dp[i-1]
+            
+            if c_index - 1 >= 0:
+                prev_char = s[c_index-1]
+                if (prev_char == '1' and char <= '9') or (prev_char == '2' and char <= '6'):
+                    ways += dp[i-2]
+            dp[i] = ways
+        
+        return dp[n]
+
+# space optimal sol        
+class Solution: 
+    def numDecodings(self, s: str) -> int:
+        n = len(s)
+        prev = 1
+        prev_prev = 0
+        
+        for i in range(n):
+            char = s[i]
+            ways = 0
+            # char can be a single digit
+            if char != '0': 
+                ways += prev 
+            
+            # char can be 2nd digit of prev digit
+            if i > 0:
+                prev_char = s[i-1]
+                if (prev_char == '1' and char <= '9') or (prev_char == '2' and char <= '6'):
+                    ways += prev_prev
+            prev_prev = prev
+            prev = ways
+        
+        return prev
+            
+            
