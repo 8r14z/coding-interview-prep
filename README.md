@@ -82,6 +82,8 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Tree traversal
 
 ### [Patterns](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
+Top pattern stats: https://algo.monster/problems/stats
+
 1. Sliding Window
 
    To perform an operation and keep two pointers on a specific/dynamic window size. Start from 1st on the left and keep shifting to right, and adjust the length of the window accordingly. In a sliding window, the two pointers usually move in the same direction will never overtake each other.
