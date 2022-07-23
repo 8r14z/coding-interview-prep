@@ -806,3 +806,49 @@ class Solution:
 
 # https://leetcode.com/problems/meeting-rooms-ii/
 # LC Premium
+
+# https://leetcode.com/problems/merge-k-sorted-lists/
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+import heapq
+class CompareableNode:
+    def __init__(self, node: ListNode = None):
+        self.node = node
+    
+    def __lt__(self, other):
+        return self.node.val < other.node.val
+
+class Solution(object):
+    def mergeKLists(self, lists):
+        k = len(lists)
+        if k == 0:
+            return None
+        
+        min_heap = []
+        for llist in lists:
+            if llist:
+                heapq.heappush(min_heap, CompareableNode(llist))
+            
+        if not min_heap:
+            return None
+        
+        head = cur = None
+        
+        while min_heap:
+            compareable_node = heapq.heappop(min_heap)
+            min_node = compareable_node.node           
+            if not head:
+                head = min_node
+                
+            if cur:
+                cur.next = min_node
+            cur = min_node
+            
+            next_node = min_node.next
+            if next_node:
+                heapq.heappush(min_heap, CompareableNode(next_node))
+            
+        return head
+        
