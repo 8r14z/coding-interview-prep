@@ -800,3 +800,9 @@ class Solution:
                 ans += 1
         
         return ans
+
+# https://leetcode.com/problems/meeting-rooms/
+# LC Premium
+
+# https://leetcode.com/problems/meeting-rooms-ii/
+# LC Premium
