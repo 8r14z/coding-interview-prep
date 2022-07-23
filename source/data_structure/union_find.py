@@ -3,7 +3,7 @@ class UnionFind:
         self.parent = {}
 
     def find(self, x):
-        if x not in id:
+        if x not in self.parent:
             return x
         # the routine to merge x to root
         root_x = self.find(self.parent[x])
