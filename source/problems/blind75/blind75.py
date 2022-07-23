@@ -779,3 +779,24 @@ class Solution:
                 new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
         
         return new_intervals
+
+# https://leetcode.com/problems/non-overlapping-intervals/
+# Greedily to find the max number of intervals can be execute -> min removals
+# Equal to the time scheduling problem to find the max number of tasks :) 
+# https://en.wikipedia.org/wiki/Interval_scheduling
+# Selecting the intervals that start earliest is not an optimal solution, because if the earliest interval happens to be very long, accepting it would make us reject many other shorter requests.
+# Selecting the shortest intervals or selecting intervals with the fewest conflicts is also not optimal.
+# [Earliest deadline first scheduling] The queue will be searched for the process closest to its deadline
+class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key=lambda interval:interval[1])
+        print(intervals)
+        ans = 0
+        cur = None
+        for interval in intervals:
+            if cur is None or cur[1] <= interval[0]:
+                cur = interval
+            else:
+                ans += 1
+        
+        return ans

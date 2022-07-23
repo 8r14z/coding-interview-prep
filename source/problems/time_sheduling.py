@@ -1,6 +1,7 @@
 # interval (start, end)
 # O(nlogn) for sorting
 # greedly find the earliest finish time :) 
+# https://www.youtube.com/watch?v=R6Skj4bT1HE
 def time_scheduling(intervals):
     sorted_intervals = sorted(intervals, key=lambda tup: tup[1])
     count = 0
