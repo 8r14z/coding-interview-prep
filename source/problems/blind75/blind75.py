@@ -665,3 +665,18 @@ class Solution:
         return ans
 
 # https://leetcode.com/problems/longest-consecutive-sequence/
+# keep all num in a set for quick access
+# the sequence is started when a num-1 not available <= meaning it's the min num in the sequence
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        numset = set(nums)
+        ans = -float('inf')
+        for num in nums:
+            if num - 1 not in numset: # start of sequence
+                length = 1
+                while num + length in numset:
+                    length += 1
+                ans = max(ans, length)
+        return ans
