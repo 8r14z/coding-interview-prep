@@ -747,3 +747,35 @@ class Solution:
         return ''.join(output)
 
 # https://leetcode.com/problems/graph-valid-tree/
+# LC Premium - no access :(
+
+# https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+# LC Premium as well :(
+
+# https://leetcode.com/problems/insert-interval/
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        index = bisect.bisect_left(intervals, newInterval[0], key=lambda tup:tup[0])
+        intervals.insert(index, newInterval)
+        
+        new_intervals = []
+        for interval in intervals:
+            if not new_intervals or interval[0] > new_intervals[-1][1]:
+                new_intervals.append(interval)
+            else:
+                new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
+    
+        return new_intervals
+
+# https://leetcode.com/problems/merge-intervals/
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort(key=lambda interval:(interval[0], interval[1]))
+        new_intervals = []
+        for interval in intervals:
+            if not new_intervals or interval[0] > new_intervals[-1][1]:
+                new_intervals.append(interval)
+            else:
+                new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
+        
+        return new_intervals
