@@ -681,6 +681,7 @@ class Solution:
                 ans = max(ans, length)
         return ans
 # Sol2 use Union-Find
+# Union Find implementation in (./source/data_structure/union_find.py)
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         if not nums:
