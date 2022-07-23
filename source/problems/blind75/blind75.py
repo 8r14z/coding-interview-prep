@@ -713,7 +713,6 @@ class Solution:
 # https://leetcode.com/problems/alien-dictionary/
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-
         adjencency_list = defaultdict(set)
         in_degree = {c: 0 for word in words for c in word}
     
@@ -746,3 +745,5 @@ class Solution:
             return ""
     
         return ''.join(output)
+
+# https://leetcode.com/problems/graph-valid-tree/
