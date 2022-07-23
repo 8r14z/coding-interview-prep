@@ -1,17 +1,18 @@
 class UnionFind:
-    # initialize the data structure that maps the node to its set ID
     def __init__(self):
-        self.id = {}
+        self.parent = {}
 
-    # find the Set ID of Node x
     def find(self, x):
-        y = self.id.get(x, x)
-        # check if the current node is a Set ID node
-        if y != x:
-            # set the value to Set ID node of node y, and change the hash value of node x to Set ID value of node y
-            self.id[x] = y = self.find(y)
-        return y
+        if x not in id:
+            return x
+        # the routine to merge x to root
+        root_x = self.find(self.parent[x])
+        self.parent[x] = root_x
+        return root_x
 
-    # union two different sets setting one Set's parent to the other parent
+    # union set x to set y
     def union(self, x, y):
-        self.id[self.find(x)] = self.find(y)
+        root_x = self.find(x)
+        root_y = self.find(y)
+        if root_x != root_y:
+            self.parent[root_x] = root_y

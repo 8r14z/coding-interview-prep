@@ -686,28 +686,25 @@ class Solution:
         if not nums:
             return 0       
         
-        parent = {i:i for i in nums}
+        parent = {}
         
         def find(x):
-            if x == parent[x]:
+            if x not in parent:
                 return x
             rootx = find(parent[x])
             parent[x] = rootx
             return rootx
         
         def union(u, v):
-            rootu = find(u)
-            rootv = find(v)
-            if rootv != rootu:
-                parent[rootv] = rootu
+            parent[find(v)] = find(u)
                 
         numset = set(nums)
-        for n in nums:
-            if n-1 in parent:
+        for n in numset:
+            if n-1 in numset:
                 union(n-1, n)
 
         res = defaultdict(int)
-        for v in parent:
+        for v in numset:
             v = find(v)
             res[v] += 1
         return max(res.values())
