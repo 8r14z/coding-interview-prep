@@ -680,3 +680,34 @@ class Solution:
                     length += 1
                 ans = max(ans, length)
         return ans
+# Sol2 use Union-Find
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        if not nums:
+            return 0       
+        
+        parent = {i:i for i in nums}
+        
+        def find(x):
+            if x == parent[x]:
+                return x
+            rootx = find(parent[x])
+            parent[x] = rootx
+            return rootx
+        
+        def union(u, v):
+            rootu = find(u)
+            rootv = find(v)
+            if rootv != rootu:
+                parent[rootv] = rootu
+                
+        numset = set(nums)
+        for n in nums:
+            if n-1 in parent:
+                union(n-1, n)
+
+        res = defaultdict(int)
+        for v in parent:
+            v = find(v)
+            res[v] += 1
+        return max(res.values())
