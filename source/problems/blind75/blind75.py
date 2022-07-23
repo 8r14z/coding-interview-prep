@@ -585,3 +585,52 @@ class Solution:
                 return False
             
         return True
+
+# https://leetcode.com/problems/pacific-atlantic-water-flow/
+# dfs from edges and hold 2 set of statuses if a node can reach alantic or pacific
+# the result is alantic[i][j] and pacific[i][j]
+from collections import deque
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        m = len(heights)
+        n = len(heights[0])
+        if m < 1 and n < 1:
+            return []
+        
+        def neighbors(i, j):
+            neighbors = []
+            height = heights[i][j]
+            if i > 0 and height <= heights[i-1][j]:
+                neighbors.append([i-1, j])
+            if i < m-1 and height <= heights[i+1][j]:
+                neighbors.append([i+1, j])
+            if j > 0 and height <= heights[i][j-1]:
+                neighbors.append([i, j-1])
+            if j < n-1 and height <= heights[i][j+1]:
+                neighbors.append([i, j+1])
+            return neighbors
+
+        def dfs(i, j, visited):
+            visited[i][j] = True
+            for ni,nj in neighbors(i,j):
+                if not visited[ni][nj]:
+                    dfs(ni, nj, visited)
+
+        pacific_visited = [[False] * n for _ in range(m)]
+        atlantic_visited = [[False] * n for _ in range(m)]
+        
+        for i in range(m):
+            dfs(i, 0, pacific_visited)
+            dfs(i, n-1, atlantic_visited)
+        
+        for i in range(n):
+            dfs(0, i, pacific_visited)
+            dfs(m-1, i, atlantic_visited)
+        
+        result = []
+        for i in range(m):
+            for j in range (n):
+                if pacific_visited[i][j] and atlantic_visited[i][j]:
+                    result.append([i, j])
+                    
+        return result
