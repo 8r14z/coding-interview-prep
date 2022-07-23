@@ -636,6 +636,7 @@ class Solution:
         return result
 
 # https://leetcode.com/problems/number-of-islands
+# DFS - space optimization by reuse the grid :)
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         n = len(grid)
@@ -662,3 +663,4 @@ class Solution:
                     dfs(i,j, visited)
                     ans += 1
         return ans
+
