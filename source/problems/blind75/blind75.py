@@ -634,3 +634,31 @@ class Solution:
                     result.append([i, j])
                     
         return result
+
+# https://leetcode.com/problems/number-of-islands
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        n = len(grid)
+        m = len(grid[0])
+
+        def dfs(i, j, visited):
+            if i < 0 or i >= n or j < 0 or j >= m or grid[i][j] == '0':
+                return    
+            
+            if grid[i][j] == '#':
+                return
+
+            grid[i][j] = '#'
+            dfs(i+1, j, visited)
+            dfs(i-1, j, visited)
+            dfs(i, j+1, visited)
+            dfs(i, j-1, visited)
+            
+        visited = set()
+        ans = 0
+        for i in range(n):
+            for j in range(m):
+                if grid[i][j] == '1':
+                    dfs(i,j, visited)
+                    ans += 1
+        return ans
