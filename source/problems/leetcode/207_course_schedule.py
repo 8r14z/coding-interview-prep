@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/course-schedule/
 class Solution:
-    def canFinish(self, numCourses: int, prerequisites: [[int]]) -> bool:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         def build_graph(n, edges):
             graph = {}
             for edge in edges:
@@ -34,4 +34,3 @@ class Solution:
                 return False
             
         return True
-print(Solution().canFinish(5, [[1,4],[2,4],[3,1],[3,2]]))
