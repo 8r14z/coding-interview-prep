@@ -807,6 +807,59 @@ class Solution:
 # https://leetcode.com/problems/meeting-rooms-ii/
 # LC Premium
 
+
+# https://leetcode.com/problems/reverse-linked-list/
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        cur = head
+        while cur:
+            next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next
+            
+        return prev
+
+# https://leetcode.com/problems/linked-list-cycle/
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head:
+            return False
+        
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow is fast:
+                return True
+            
+        return False
+
+# https://leetcode.com/problems/merge-two-sorted-lists/
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        if not list1:
+            return list2
+        if not list2:
+            return list1
+        
+        if list1.val <= list2.val:
+            list1.next = self.mergeTwoLists(list1.next, list2)
+            return list1
+        else:
+            list2.next = self.mergeTwoLists(list1, list2.next)
+            return list2
+
 # https://leetcode.com/problems/merge-k-sorted-lists/
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -822,33 +875,22 @@ class CompareableNode:
 
 class Solution(object):
     def mergeKLists(self, lists):
-        k = len(lists)
-        if k == 0:
-            return None
-        
         min_heap = []
-        for llist in lists:
-            if llist:
-                heapq.heappush(min_heap, CompareableNode(llist))
-            
+        for head in lists:
+            if head:
+                heapq.heappush(min_heap, CompareableNode(head))
+        
         if not min_heap:
             return None
         
-        head = cur = None
-        
+        head = min_heap[0].node
+        cur = None
         while min_heap:
-            compareable_node = heapq.heappop(min_heap)
-            min_node = compareable_node.node           
-            if not head:
-                head = min_node
-                
+            min_node = heapq.heappop(min_heap).node
             if cur:
                 cur.next = min_node
             cur = min_node
-            
-            next_node = min_node.next
-            if next_node:
-                heapq.heappush(min_heap, CompareableNode(next_node))
-            
+            if cur.next:
+                heapq.heappush(min_heap, CompareableNode(cur.next))
+                
         return head
-        
