@@ -894,3 +894,52 @@ class Solution(object):
                 heapq.heappush(min_heap, CompareableNode(cur.next))
                 
         return head
+
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        first = head
+        for _ in range(n):
+            first = first.next
+        
+        if not first:
+            return head.next
+        
+        second = head
+        while first.next:
+            first = first.next
+            second = second.next
+        second.next = second.next.next
+        return head
+        
+# https://leetcode.com/problems/reorder-list/
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        if not head:
+            return
+        
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        def reverse(head):
+            prev = None
+            cur = head
+            while cur:
+                next = cur.next
+                cur.next = prev
+                prev = cur
+                cur = next
+            return prev
+                
+        tail = reverse(slow)
+        
+        while tail.next:
+            head_next = head.next
+            tail_next = tail.next
+            head.next = tail
+            tail.next = head_next
+            head = head_next
+            tail = tail_next
+            
