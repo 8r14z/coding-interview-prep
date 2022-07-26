@@ -1,10 +1,9 @@
 # https://leetcode.com/problems/asteroid-collision/
-
 class Solution(object):
     def asteroidCollision(self, asteroids):
         ans = []
         for new in asteroids:
-            while ans and new < 0 < ans[-1]:
+            while ans and ans[-1] > 0 > new:
                 if ans[-1] < -new:
                     ans.pop()
                     continue
