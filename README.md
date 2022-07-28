@@ -2,7 +2,7 @@
 
 This is a notebook I'm using to take note when practicing for code interviews. It has been helping me crack the interviews at:
 - Amazon
-- Facebook
+- Facebook (Meta)
 - Snapchat
 - Datadog
 - ...
