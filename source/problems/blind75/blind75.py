@@ -943,9 +943,36 @@ class Solution:
             head = head_next
             tail = tail_next
             
+# https://leetcode.com/problems/set-matrix-zeroes/
+# use first row and first col to store the state if there is a zero found in that col/row
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        m = len(matrix)
+        n = len(matrix[0])
+        
+        has_zero = False
+        
+        for i in range(m):
+            if matrix[i][0] == 0:
+                has_zero = True
+            for j in range(1,n):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = matrix[0][j] = 0
+                    
+        for i in range(1,m):
+            for j in range(1,n):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+        
+        if matrix[0][0] == 0:
+            for j in range(n):
+                matrix[0][j] = 0
+                
+        if has_zero:
+            for i in range(m):
+                matrix[i][0] = 0
 
-
-# ..........
+# 
 
 
 

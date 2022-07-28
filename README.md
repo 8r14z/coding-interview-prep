@@ -1,9 +1,10 @@
 # Everything You Need For Coding Interviews
 
-This is a notebook I'm using to take note when practicing for code interviews. This helps me landed offers at
+This is a notebook I'm using to take note when practicing for code interviews. It has been helping me pass interview at:
 - Amazon
 - Facebook
 - Snapchat
+- Datadog
 - ...
 
 ### TL;DR - how to use this repo?
