@@ -68,7 +68,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Graph
 - Union-Find (Disjoint Set)
 
-**Implemented in Python in [source/data_structure](source/data_structure/)**
+*Implemented in Python in [source/data_structure](source/data_structure/)*
 
 ### P0 Algorithms
 - Sorting: insertion sort, selection sort, heap sort, shell short, merge sort, quick sort, radix sort, bucket sort, etc
@@ -76,7 +76,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - DFS/BFS/Topological Sort
 - Shortest Path: Dijktra, Bellman-ford, Floy (optional)
 
-**Implemented in Python in [source/algorithms](source/algorithms/)**
+*Implemented in Python in [source/algorithms](source/algorithms/)*
 
 ### Technique 
 - Brute-force
