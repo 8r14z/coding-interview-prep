@@ -43,7 +43,7 @@ No need books, stick to above links (I did so I can tell you need not). These ar
 - [Elements of Programming Interviews - Python](https://www.amazon.co.uk/Elements-Programming-Interviews-Python-Insiders/dp/1537713949/ref=pd_vtp_sccl_3_30/259-4758939-1754565?pd_rd_w=V5IEj&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=KNXHF80BJ3WFA15N4KFA&pd_rd_wg=3H5hs&pd_rd_r=a2da7e73-472d-4101-8d97-8f0b6025b73d&pd_rd_i=1537713949&psc=1)
 
 ### Practice
-- [Blind75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) - a curated list of leetcode problems - [Solutions](./source/problems/blind75/)
+- [Blind75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) - a curated list of leetcode problems - [Solutions](./source/problems/blind75/blind75.py)
 - [Grind75](https://www.techinterviewhandbook.org/grind75) - the same guy who made Blind75 list decided to make something fancier
 - [AlgoMonster](https://algo.monster/problems/stats)
 - [Leetcode](https://leetcode.com/problemset/all/) - highly recommend to buy premium for 1 month
