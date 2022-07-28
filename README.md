@@ -58,7 +58,7 @@ To quickly revisit algorithms, data structures and their time/space complexity
 ### Pick A Language and Stick With It
 I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) due to its simplicity and syntax sugar. Also, it supports a wide range of built-in data structures which are super convenient for coding interviews (e.g [heapq](https://docs.python.org/3/library/heapq.html))
 
-### Data Structures
+### P0 Data Structures
 - Array
 - Stack & Queue 
 - LinkedList 
@@ -70,12 +70,11 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 
 **Implemented in Python in [source/data_structure](source/data_structure/)**
 
-### Algorithms
+### P0 Algorithms
 - Sorting: insertion sort, selection sort, heap sort, shell short, merge sort, quick sort, radix sort, bucket sort, etc
 - Searching: binary search
 - DFS/BFS/Topological Sort
-- Tree traversal: in-order, pre-order, post-order
-- Shortest Path: Dijktra, Bellman-ford, Floy
+- Shortest Path: Dijktra, Bellman-ford, Floy (optional)
 
 **Implemented in Python in [source/algorithms](source/algorithms/)**
 
