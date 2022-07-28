@@ -62,10 +62,10 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Array
 - Stack & Queue 
 - LinkedList 
-- Heaps
-- Trees, Binary Search Tree, Balanced BST, Tries
+- Heap
+- Tree, Binary Search Tree, Balanced BST, Trie
 - Hash Table
-- Graphs
+- Graph
 - Union-Find (Disjoint Set)
 
 **Implemented in Python in [source/data_structure](source/data_structure/)**
