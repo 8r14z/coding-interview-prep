@@ -71,7 +71,11 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 **Implemented in Python in [source/data_structure](source/data_structure/)**
 
 ### Algorithms
-- Sorting/Searching/DFS/BFS/Tree traversal
+- Sorting: insertion sort, selection sort, heap sort, shell short, merge sort, quick sort, radix sort, bucket sort, etc
+- Searching: binary search
+- DFS/BFS/Topological Sort
+- Tree traversal: in-order, pre-order, post-order
+- Shortest Path: Dijktra, Bellman-ford, Floy
 
 **Implemented in Python in [source/algorithms](source/algorithms/)**
 
