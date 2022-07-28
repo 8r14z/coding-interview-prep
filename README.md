@@ -63,7 +63,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Stack & Queue 
 - LinkedList 
 - Heaps
-- Trees, BST/Balanced BST, Tries
+- Trees, Binary Search Tree, Balanced BST, Tries
 - Hash Table
 - Graphs
 - Union-Find (Disjoint Set)
