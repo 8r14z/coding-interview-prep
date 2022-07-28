@@ -66,6 +66,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 - Trees, BST/Balanced BST, Tries
 - Hash Table
 - Graphs
+- Union-Find (Disjoint Set)
 
 **Implemented in Python in [source/data_structure](source/data_structure/)**
 
