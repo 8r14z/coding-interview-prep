@@ -1180,6 +1180,58 @@ class Solution:
                 right -= 1
         return True
 
+# https://leetcode.com/problems/longest-palindromic-substring/
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        def palindrome(s, l, r):
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                l -= 1
+                r += 1
+            return r - l - 1
+        
+        start = end = 0
+        for i in range(len(s)):
+            l1 = palindrome(s, i, i)
+            l2 = palindrome(s, i, i+1)
+            l = max(l1,l2)
+            if l > (end-start+1):
+                start = i - (l-1)//2
+                end = i + l//2
+                
+        return s[start:end+1]
+
+# https://leetcode.com/problems/palindromic-substrings/
+
+# https://leetcode.com/problems/encode-and-decode-strings/
+# LC Premium
+
+# https://leetcode.com/problems/maximum-depth-of-binary-tree/
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        
+        stack = [root]
+        depth = {root: 1}
+        res = 0
+        while stack: 
+            node = stack.pop()
+            
+            left = node.left
+            right = node.right
+            if not left and not right:
+                res = max(res, depth[node])
+                
+            if left and left not in depth:
+                stack.append(left)
+                depth[left] = 1 + depth[node]
+                
+            if right and right not in depth:
+                stack.append(right)
+                depth[right] = 1 + depth[node]
+                
+        return res
+
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
