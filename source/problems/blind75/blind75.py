@@ -1015,6 +1015,53 @@ class Solution:
 
         return result
 
+# https://leetcode.com/problems/rotate-image/
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        n = len(matrix)
+        
+        for i in range(n):
+            for j in range(i+1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+                
+        for i in range(n):
+            for j in range(n//2):
+                matrix[i][j], matrix[i][n-1-j] = matrix[i][n-1-j], matrix[i][j]
+
+# https://leetcode.com/problems/word-search/
+# Just use DFS to find the word
+# One trick to save extra memory is to modify the board content (e.g to #)
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        l = len(word)
+        n = len(board)
+        m = len(board[0])
+        VISITED = '#'
+        
+        def dfs(i, j, wi):
+            if wi == l:
+                return True
+            
+            if i >= n or i < 0:
+                return False
+            if j >= m or j < 0:
+                return False
+            if board[i][j] == VISITED:
+                return False
+            if board[i][j] != word[wi]:
+                return False
+            
+            board[i][j] = VISITED
+            found = dfs(i+1, j, wi+1) or dfs(i-1, j, wi+1) or dfs(i, j+1, wi+1) or dfs(i, j-1, wi+1)
+            board[i][j] = word[wi]
+            return found
+        
+        for i in range(n):
+            for j in range(m):
+                if dfs(i, j, 0):
+                    return True
+        
+        return False
 
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
