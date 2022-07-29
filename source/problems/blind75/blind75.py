@@ -972,8 +972,48 @@ class Solution:
             for i in range(m):
                 matrix[i][0] = 0
 
-# 
+# https://leetcode.com/problems/spiral-matrix/
+# just follow the order
+# nothing hard but it's a little bit frustrating with repeating items added -> use count < total to prevet that
+class Solution:
+    def spiralOrder(self, matrix):
+        row = len(matrix)
+        col = len(matrix[0])
+        total = row*col
+        count = 0
 
+        start_row = start_col = 0
+        end_row = row-1
+        end_col = col-1
+
+        result = []
+
+        while count < total:
+            for j in range(start_col, end_col+1):
+                if count < total:
+                    count += 1
+                    result.append(matrix[start_row][j])
+            start_row += 1
+
+            for i in range(start_row, end_row+1):
+                if count < total:
+                    count += 1
+                    result.append(matrix[i][end_col])
+            end_col -= 1
+            
+            for j in range(end_col, start_col-1, -1):
+                if count < total:
+                    count += 1
+                    result.append(matrix[end_row][j])
+            end_row -= 1
+
+            for i in range(end_row, start_row-1, -1):
+                if count < total:
+                    count += 1
+                    result.append(matrix[i][start_col])
+            start_col += 1
+
+        return result
 
 
 # https://leetcode.com/problems/validate-binary-search-tree/
