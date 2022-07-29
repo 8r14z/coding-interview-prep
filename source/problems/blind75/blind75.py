@@ -1107,6 +1107,38 @@ class Solution:
             
         return res
 
+# https://leetcode.com/problems/minimum-window-substring/
+# --- 
+
+# https://leetcode.com/problems/valid-anagram/
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        
+        chars = [0] * 26
+        for c in s:
+            chars[ord(c) - ord('a')] += 1
+        
+        for c in t:
+            chars[ord(c) - ord('a')] -= 1
+            
+        return max(chars) == 0
+
+# https://leetcode.com/problems/group-anagrams/
+from collections import defaultdict
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        map = defaultdict(list)
+        
+        for s in strs:
+            mask = [0] * 26
+            for c in s:
+                mask[ord(c) - ord('a')] += 1
+            map[tuple(mask)].append(s)
+            
+        return map.values()
+
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
