@@ -1126,11 +1126,12 @@ class Solution:
         return max(chars) == 0
 
 # https://leetcode.com/problems/group-anagrams/
+# if a char only appears once in any string, we can use binary mask :) 
 from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         map = defaultdict(list)
-        
+
         for s in strs:
             mask = [0] * 26
             for c in s:
