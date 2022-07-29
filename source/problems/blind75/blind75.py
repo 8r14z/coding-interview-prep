@@ -1063,7 +1063,6 @@ class Solution:
         
         return False
 
-
 # https://leetcode.com/problems/longest-substring-without-repeating-characters/
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -1083,7 +1082,30 @@ class Solution:
 
         return res
 
-
+# https://leetcode.com/problems/longest-repeating-character-replacement/
+# sliding windown, one condition to keep track is the lenght of substring - most repeating char count <= k
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        start = 0
+        res = 0
+        
+        chars = [0] * 26
+        count = repeating_count = 0
+        
+        for c in s:
+            count += 1
+            chars[ord(c)-ord('A')] += 1
+            repeating_count = max(repeating_count, chars[ord(c)-ord('A')])
+            
+            while count - repeating_count > k:
+                start_index = ord(s[start])-ord('A')
+                chars[start_index] -= 1
+                count -= 1
+                start += 1
+                
+            res = max(res, count)
+            
+        return res
 
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
