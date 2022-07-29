@@ -1063,6 +1063,28 @@ class Solution:
         
         return False
 
+
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        if n < 1: return 0
+
+        res = float('-inf')
+        previous_index = {}
+        start = 0
+        for end, c in enumerate(s):
+            if c in previous_index and previous_index[c] >= start:
+                start = previous_index[c] + 1
+
+            previous_index[c] = end
+            cur_non_repeating_length = end-start+1
+            res = max(res, cur_non_repeating_length)
+
+        return res
+
+
+
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
