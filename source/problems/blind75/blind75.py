@@ -1140,6 +1140,46 @@ class Solution:
             
         return map.values()
 
+# https://leetcode.com/problems/valid-parentheses/
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        
+        for c in s:
+            if not stack:
+                stack.append(c)
+                continue
+            
+            if ((c == ')' and stack[-1] == '(') 
+                or (c == '}' and stack[-1] == '{')
+                or (c == ']' and stack[-1] == '[')):
+                stack.pop()
+            else:
+                stack.append(c)
+        
+        return len(stack) == 0
+
+# https://leetcode.com/problems/valid-palindrome/
+# O(1) space
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left = 0
+        right = len(s)-1
+        while left < right:
+            if not s[left].isalnum() and not s[right].isalnum():
+                left += 1
+                right -= 1
+            elif not s[left].isalnum():
+                left += 1
+            elif not s[right].isalnum():
+                right -= 1
+            elif s[left].lower() != s[right].lower():
+                return False
+            else:
+                left += 1
+                right -= 1
+        return True
+
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
