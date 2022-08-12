@@ -5,6 +5,7 @@ This is a notebook I'm using to take note when practicing for code interviews. I
 - Facebook (Meta)
 - Snapchat
 - Datadog
+- Tiktok
 - ...
 
 ### TL;DR - how to use this repo?
