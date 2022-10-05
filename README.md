@@ -1,12 +1,6 @@
 # Everything You Need For Coding Interviews
 
-This is a notebook I'm using to take note when practicing for code interviews. It has been helping me crack the interviews at:
-- Amazon 
-- Facebook (Meta)
-- Snapchat
-- Datadog
-- Tiktok
-- ...
+This is a notebook I'm using to take note when practicing for code interviews. It has been helping me crack the interviews at: Amazon, Meta (Facebook), Google, Snapchat, Datadog, Reddit, Tiktok,...
 
 ### TL;DR - how to use this repo?
 1. Read [README.md](README.md)
