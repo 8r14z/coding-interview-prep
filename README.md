@@ -19,7 +19,7 @@ This is a notebook I'm using to take note when practicing for coding interviews.
 - [techinterviewhandbook.com](https://www.techinterviewhandbook.org/)
 
 ```
-2 geeksforgeeks links have most important things
+2 geeksforgeeks links have almost everything
 ```
 
 ### Youtube Resources
