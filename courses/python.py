@@ -64,3 +64,5 @@ from collections import deque
 queue = deque()
 queue.popleft()
 
+range(4) # [0, 4)
+

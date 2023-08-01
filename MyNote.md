@@ -52,9 +52,9 @@ for num1 in hashNums1:
 
 **Proof**
 
-Suppose you want to choose a subset. For each element, you have two choices: either you put it in your subset, or you don't; and these choices are all independent.
+Supposedly, you want to choose a subset, for each element in the array, you have two choices, either including it in the subset, or not; and these choices are all independent.
 
-2 for a[0], 2 for a[1],... => 2 * 2 * 2 .... = 2^n
+2 for a[0], 2 for a[1],..., 2 for a[n] => 2 * 2 * 2 ... * 2 = 2^n
 
 Remark: this works also for the empty set. An empty set has exactly one subset, namely the empty set. And the fact that 2^0=1 reflects the fact that there is only one way to pick no elements at all!
 
