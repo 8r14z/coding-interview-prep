@@ -147,7 +147,7 @@ Use...
 - Heap when there is priorization involved (find min, find max, etc)
 - Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
 
-Know how to analysis time complexity will be very helpful...
+Know how to analyze time complexity will be very helpful. There are a few common formulas used for complexity analysis.
 
 <img src="img/formula.png" width=500/>
 
