@@ -46,3 +46,21 @@ cde.foo()
 
 cde.class_method()
 print(OOP.class_var)
+
+array = []
+array.append(1)
+array.pop()
+
+set = set()
+set.add(1)
+
+dictionary = {}
+dictionary['key'] = 'value'
+
+for item in array:
+    print(item)
+
+from collections import deque
+queue = deque()
+queue.popleft()
+
