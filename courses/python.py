@@ -47,6 +47,7 @@ cde.foo()
 cde.class_method()
 print(OOP.class_var)
 
+# Data structures
 array = []
 array.append(1)
 array.pop()
@@ -65,4 +66,11 @@ queue = deque()
 queue.popleft()
 
 range(4) # [0, 4)
+
+# Heap
+import heapq
+heap_array = []
+heapq.heapify(heap_array)
+min_value = heapq.heappop(heap_array)
+heapq.heappush(1)
 
