@@ -148,7 +148,8 @@ Use...
 - Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
 
 Know how to analysis time complexity will be very helpful...
-<img src="img/formula.png" width=200/>
+
+<img src="img/formula.png"/>
 
 To optimize Space Complexity. Try...
 - In-place modification on exisiting space
