@@ -147,7 +147,8 @@ Use...
 - Heap when there is priorization involved (find min, find max, etc)
 - Tree to improve insertion/removal/lookup efficiency - O(log(n)) on average. 
 
-Know how to analysis time complexity will be very helpful... //TODO: add useful math formulas here
+Know how to analysis time complexity will be very helpful...
+<img src="img/formula.png" width=200/>
 
 To optimize Space Complexity. Try...
 - In-place modification on exisiting space
