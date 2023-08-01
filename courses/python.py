@@ -74,3 +74,10 @@ heapq.heapify(heap_array)
 min_value = heapq.heappop(heap_array)
 heapq.heappush(1)
 
+x = 4^2 # x = 4^2
+
+import bisect
+sorted_array = []
+search_value = 1
+bisect.bisect(sorted_array, search_value) # left <= i < right, same as bisect_right
+bisect.bisect_left(sorted_array, search_value) # left < i <= right
