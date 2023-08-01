@@ -87,7 +87,7 @@ for mask in range(2**N):
            sum += arr[i] 
 ```
 
-9. DP pattern can be recognized when the current problem result can be influenced by the smaller sub-problem :) The DP problem usually is stated by "find number of works ....", "find min number works", "find max number of works", "longest something", "shortest something",...
+9. DP patterns can be recognized when the current problem's result can be influenced by the smaller sub-problem. A DP problem usually is stated by "find number of works ....", "find min number works", "find max number of works", "longest something", "shortest something",...
 
 10. Sometime we can use the algorithm to find the smallest to find the largest (or opposite) by reverting all numbers to opposite sign (1 -> -1, -1 -> 1, etc). \
 This trick is applied when u wanna use heapq implementation in Python, by default it's min-heap, if we wawnna covert it to max-heap, can just multiply all elements by -1 and use the min-heap :) \
