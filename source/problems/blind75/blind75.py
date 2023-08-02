@@ -759,6 +759,8 @@ class Solution:
 # LC Premium as well :(
 
 # https://leetcode.com/problems/insert-interval/
+START = 0
+END = 1
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         index = bisect.bisect_left(intervals, newInterval[0], key=lambda tup:tup[0])
@@ -766,10 +768,10 @@ class Solution:
         
         new_intervals = []
         for interval in intervals:
-            if not new_intervals or interval[0] > new_intervals[-1][1]:
+            if not new_intervals or interval[START] > new_intervals[-1][END]:
                 new_intervals.append(interval)
             else:
-                new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
+                new_intervals[-1][END] = max(new_intervals[-1][END], interval[END])
     
         return new_intervals
 
@@ -779,10 +781,10 @@ class Solution:
         intervals.sort(key=lambda interval:(interval[0], interval[1]))
         new_intervals = []
         for interval in intervals:
-            if not new_intervals or interval[0] > new_intervals[-1][1]:
+            if not new_intervals or interval[START] > new_intervals[-1][END]:
                 new_intervals.append(interval)
             else:
-                new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
+                new_intervals[-1][END] = max(new_intervals[-1][END], interval[END])
         
         return new_intervals
 
