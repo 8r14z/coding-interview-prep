@@ -1259,6 +1259,45 @@ class Solution:
                 depth[right] = 1 + depth[node]
                 
         return res
+    
+# https://leetcode.com/problems/same-tree/
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p and not q:
+            return True
+        elif not p or not q:
+            return False 
+
+        return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right) 
+    
+# https://leetcode.com/problems/invert-binary-tree/
+# Solve recursively or iteration as following
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root: 
+            return None
+
+        queue = deque([root])
+
+        while queue:
+            node = queue.popleft()
+            left = node.left
+            right = node.right
+            node.left = right
+            node.right = left 
+            
+            if left:
+                queue.append(left)
+            if right:
+                queue.append(right)
+
+        return root
 
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:
