@@ -234,10 +234,15 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/sum-of-two-integers/
+# https://leetcode.com/problems/sum-of-two-integers/solutions/132479/simple-explanation-on-how-to-arrive-at-the-solution/
+# https://leetcode.com/problems/sum-of-two-integers/solutions/489210/read-this-if-you-want-to-learn-about-masks/
 class Solution:
     def getSum(self, a, b):
-        if b == 0: return a
-        return self.getSum(a ^ b, (a & b) << 1)
+        while b != 0:
+            carry = (a & b) << 1
+            a = a ^ b
+            b = carry
+        return a
 
 # https://leetcode.com/problems/number-of-1-bits/
 class Solution:

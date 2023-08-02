@@ -83,4 +83,4 @@ bisect.bisect(sorted_array, search_value) # left <= i < right, same as bisect_ri
 bisect.bisect_left(sorted_array, search_value) # left < i <= right
 
 
-# https://docs.python.org/3/library/stdtypes.html Python 3.11
+# Python 3.11 https://docs.python.org/3/library/stdtypes.html 
