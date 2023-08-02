@@ -81,3 +81,6 @@ sorted_array = []
 search_value = 1
 bisect.bisect(sorted_array, search_value) # left <= i < right, same as bisect_right
 bisect.bisect_left(sorted_array, search_value) # left < i <= right
+
+
+# https://docs.python.org/3/library/stdtypes.html Python 3.11
