@@ -797,12 +797,12 @@ class Solution:
 # [Earliest deadline first scheduling] The queue will be searched for the process closest to its deadline
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        intervals.sort(key=lambda interval:interval[1])
-        print(intervals)
+        intervals.sort(key=lambda interval:interval[END])
+        
         ans = 0
         cur = None
         for interval in intervals:
-            if cur is None or cur[1] <= interval[0]:
+            if cur is None or cur[END] <= interval[START]:
                 cur = interval
             else:
                 ans += 1
