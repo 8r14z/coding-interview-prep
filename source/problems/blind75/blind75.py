@@ -3,13 +3,15 @@
 # https://leetcode.com/problems/two-sum/
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        temp = {} 
-        for (i, val) in enumerate(nums):
-            num = target - val
-            if num in temp:
-                return [temp[num], i]
-            temp[val] = i
-            
+        seen_value_indices = {}
+
+        for index, num in enumerate(nums):
+            prev_seen_value = target - num 
+            if prev_seen_value in seen_value_indices:
+                prev_seen_index = seen_value_indices[prev_seen_value]
+                return [prev_seen_index, index]
+            seen_value_indices[num] = index
+
         return []
 
 
