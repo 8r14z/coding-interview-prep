@@ -798,7 +798,7 @@ class Solution:
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         intervals.sort(key=lambda interval:interval[END])
-        
+
         ans = 0
         cur = None
         for interval in intervals:
@@ -1116,7 +1116,7 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/minimum-window-substring/
-# --- 
+# --- hard --- skip
 
 # https://leetcode.com/problems/valid-anagram/
 class Solution:
@@ -1209,6 +1209,26 @@ class Solution:
         return s[start:end+1]
 
 # https://leetcode.com/problems/palindromic-substrings/
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        def count_palindrome_in_range(i, j):
+            answer = 0
+            while i >= 0 and j < len(s) and s[i] == s[j]:
+                i -= 1
+                j += 1
+                answer += 1
+
+            return answer
+
+        s_len = len(s)
+        answer = 0
+
+        for i in range(s_len):
+            odd_len_count = count_palindrome_in_range(i, i)
+            even_len_count = count_palindrome_in_range(i, i+1)
+            answer += (odd_len_count + even_len_count)
+
+        return answer
 
 # https://leetcode.com/problems/encode-and-decode-strings/
 # LC Premium
