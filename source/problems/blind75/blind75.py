@@ -14,7 +14,6 @@ class Solution:
 
         return []
 
-
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 INF = float('inf')
 class Solution:
