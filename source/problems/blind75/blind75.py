@@ -1412,3 +1412,45 @@ class Solution:
             return is_valid(node.left, min, node.val) and is_valid(node.right, node.val, max)
             
         return is_valid(root, -INF, INF)
+
+# https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        stack = [root]
+        visited = set([root])
+        count = 0
+
+        while stack:
+            left = stack[-1].left
+            if left and left not in visited:
+                stack.append(left)
+                continue
+
+            node = stack.pop()
+            visited.add(node)
+
+            count += 1
+            if count == k:
+                return node.val
+            
+            right = node.right
+            if right and right not in visited:
+                stack.append(right)
+            
+        return None
+    
+
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+# Intuition: it's BST so all left nodes are less than root, all right nodes are greater than root
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+
+        if root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        elif root.val < p.val and root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        else:
+            return root
+        
