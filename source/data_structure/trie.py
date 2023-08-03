@@ -31,7 +31,7 @@ class Trie:
         cur = self.root
 
         for c in prefix:
-            if c not in prefix:
+            if c not in cur.children[c]:
                 return False
             cur = cur.children[c]
 
