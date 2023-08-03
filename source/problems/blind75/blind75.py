@@ -1363,7 +1363,6 @@ class Solution:
 # preorder tree will let us pick the root node of the tree/substree
 # The root's left child is in left subarray of inorder array [start, root_index - 1]
 # The root's right child is in right subarray in inorder array [root_index + 1, end]
-
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         n = len(preorder)
