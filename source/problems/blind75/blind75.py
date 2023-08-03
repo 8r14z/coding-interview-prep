@@ -1116,7 +1116,7 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/minimum-window-substring/
-# --- hard --- skip
+# ---
 
 # https://leetcode.com/problems/valid-anagram/
 class Solution:
@@ -1298,6 +1298,101 @@ class Solution:
                 queue.append(right)
 
         return root
+
+# https://leetcode.com/problems/binary-tree-maximum-path-sum/
+# --- 
+
+# https://leetcode.com/problems/binary-tree-level-order-traversal/
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        result = []
+        
+        if not root:
+            return result
+        
+        queue = deque([root])
+        
+        while queue:
+            cur_level_count = len(queue)
+            cur_level = []
+
+            for _ in range(cur_level_count):
+                node = queue.popleft()
+                cur_level.append(node.val)
+                
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+            result.append(cur_level)
+
+        return result
+    
+# https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+# ---
+
+# https://leetcode.com/problems/subtree-of-another-tree/
+# Time Complexity is O(m*n) with m and n are size of corresponding trees
+# For each node of root we run `isSameTree`
+# 
+# An optimization is to serialize trees into strings, then use KMP or Rabin-Karp (hashing) to search substring
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        def isSameTree(p, q):
+            if not p and not q:
+                return True
+            elif not p or not q:
+                return False
+
+            return p.val == q.val and isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+        
+        if not subRoot: 
+            return True
+        
+        if not root:
+            return False
+
+        return isSameTree(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+
+# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+# unique value
+# Intuition: 
+# preorder travels the tree in Node - Left - Right order
+# inorder travels the tree in Left - Node - Right order
+# preorder tree will let us pick the root node of the tree/substree
+# The root's left child is in left subarray of inorder array [start, root_index - 1]
+# The root's right child is in right subarray in inorder array [root_index + 1, end]
+
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        n = len(preorder)
+        self.cur_root_index = 0
+
+        inorder_node_indicies = {}
+        for i, v in enumerate(inorder):
+            inorder_node_indicies[v] = i
+
+        def build_tree(start, end):
+            if start > end:
+                return None
+            
+            cur_val = preorder[self.cur_root_index]
+            self.cur_root_index += 1
+
+            root = TreeNode(val = cur_val)
+
+            if start == end: # no children, inorder array one item
+                return root
+
+            cur_inorder_index = inorder_node_indicies[cur_val]
+            root.left = build_tree(start, cur_inorder_index - 1)
+            root.right = build_tree(cur_inorder_index + 1, end)
+
+            return root
+
+        return build_tree(0, n-1)
+
 
 # https://leetcode.com/problems/validate-binary-search-tree/
 class TreeNode:

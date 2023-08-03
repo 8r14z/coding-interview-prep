@@ -84,3 +84,5 @@ bisect.bisect_left(sorted_array, search_value) # left < i <= right
 
 
 # Python 3.11 https://docs.python.org/3/library/stdtypes.html 
+
+c = ord('C') - ord('A') # 2
