@@ -1,4 +1,4 @@
-# https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
+# h-ttps://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
 # https://leetcode.com/problems/two-sum/
 class Solution:
@@ -234,8 +234,8 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/sum-of-two-integers/
-# https://leetcode.com/problems/sum-of-two-integers/solutions/132479/simple-explanation-on-how-to-arrive-at-the-solution/
-# https://leetcode.com/problems/sum-of-two-integers/solutions/489210/read-this-if-you-want-to-learn-about-masks/
+# h-ttps://leetcode.com/problems/sum-of-two-integers/solutions/132479/simple-explanation-on-how-to-arrive-at-the-solution/
+# h-ttps://leetcode.com/problems/sum-of-two-integers/solutions/489210/read-this-if-you-want-to-learn-about-masks/
 class Solution:
     def getSum(self, a, b):
         while b != 0:
@@ -446,7 +446,7 @@ class Solution:
 # the current char can be single digit or 2nd digit of prev char
 # so cur_ways = prev_ways + prev_prev_ways
 # it's kinda similar to staircases problem (number of ways to reach stair x)
-# https://leetcode.com/problems/climbing-stairs/
+# h-ttps://leetcode.com/problems/climbing-stairs/
 class Solution:
     def numDecodings(self, s: str) -> int:
         n = len(s)
@@ -791,7 +791,7 @@ class Solution:
 # https://leetcode.com/problems/non-overlapping-intervals/
 # Greedily to find the max number of intervals can be execute -> min removals
 # Equal to the time scheduling problem to find the max number of tasks :) 
-# https://en.wikipedia.org/wiki/Interval_scheduling
+# h-ttps://en.wikipedia.org/wiki/Interval_scheduling
 # Selecting the intervals that start earliest is not an optimal solution, because if the earliest interval happens to be very long, accepting it would make us reject many other shorter requests.
 # Selecting the shortest intervals or selecting intervals with the fewest conflicts is also not optimal.
 # [Earliest deadline first scheduling] The queue will be searched for the process closest to its deadline
@@ -814,7 +814,6 @@ class Solution:
 
 # https://leetcode.com/problems/meeting-rooms-ii/
 # LC Premium
-
 
 # https://leetcode.com/problems/reverse-linked-list/
 class ListNode:
@@ -1455,3 +1454,85 @@ class Solution:
             return root
         
 # https://leetcode.com/problems/implement-trie-prefix-tree/
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.word_end = False
+
+class Trie:
+    def __init__(self):
+        self.root = Node()
+
+    def insert(self, word: str) -> None:
+        root = self.root
+        for c in word:
+            if c not in root.children:
+                root.children[c] = Node()
+            root = root.children[c]
+        
+        root.word_end = True
+
+    def search(self, word: str) -> bool:
+        root = self.root
+        for c in word:
+            if c not in root.children:
+                return False
+            root = root.children[c]
+
+        return root.word_end
+
+    def startsWith(self, prefix: str) -> bool:
+        root = self.root
+        for c in prefix:
+            if c not in root.children:
+                return False
+            root = root.children[c]
+        
+        return True
+
+# https://leetcode.com/problems/design-add-and-search-words-data-structure/
+# Query trie node, if char == '.', query all children nodes
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.word_end = False
+
+class WordDictionary:
+
+    def __init__(self):
+        self.root = Node()
+        
+    def addWord(self, word: str) -> None:
+        root = self.root
+        for c in word:
+            if c not in root.children:
+                root.children[c] = Node()
+            root = root.children[c]
+        
+        root.word_end = True
+
+    def search(self, word: str) -> bool:
+        return self.__match(0, word, self.root)
+
+    def __match(self, i, word, node) -> bool:
+        for j in range(i, len(word)):
+            char = word[j]
+            if char == '.':
+                for child in node.children.values():
+                    if self.__match(j+1, word, child):
+                        return True
+                return False
+            else:
+                if char not in node.children:
+                    return False
+                node = node.children[char]
+            
+        return node.word_end
+
+# https://leetcode.com/problems/word-search-ii/
+
+#  https://leetcode.com/problems/merge-k-sorted-lists/
+
+# https://leetcode.com/problems/top-k-frequent-elements/
+
+# https://leetcode.com/problems/find-median-from-data-stream/
