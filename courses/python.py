@@ -86,3 +86,16 @@ bisect.bisect_left(sorted_array, search_value) # left < i <= right
 # Python 3.11 https://docs.python.org/3/library/stdtypes.html 
 
 c = ord('C') - ord('A') # 2
+
+array = []
+for item in array:
+    pass
+for i, item in enumerate(array):
+    pass
+
+dict = {}
+for key in dict:
+    pass
+for key,value in dict.items():
+    pass
+

@@ -1492,6 +1492,7 @@ class Trie:
 
 # https://leetcode.com/problems/design-add-and-search-words-data-structure/
 # Query trie node, if char == '.', query all children nodes
+# Time: O(n)
 class Node:
     def __init__(self):
         self.children = {}
@@ -1530,9 +1531,39 @@ class WordDictionary:
         return node.word_end
 
 # https://leetcode.com/problems/word-search-ii/
+# ---
 
 #  https://leetcode.com/problems/merge-k-sorted-lists/
+# --duplicated--
 
 # https://leetcode.com/problems/top-k-frequent-elements/
+from collections import Counter
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counter = Counter(nums)
+        most_frequent = counter.most_common(k)
+        return [value for value, _ in most_frequent]
 
+# S.2 use max heap
+from collections import defaultdict
+import heapq
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        frequencies = defaultdict(int)
+        for num in nums:
+            frequencies[num] += 1
+
+        max_heap = []
+        for num, count in frequencies.items():
+            heapq.heappush(max_heap, (-1 * count, num))
+        
+        result = []
+        for _ in range(k):
+            count, num = heapq.heappop(max_heap)
+            result.append(num)
+
+        return result
+    
 # https://leetcode.com/problems/find-median-from-data-stream/
+# ---
