@@ -73,22 +73,17 @@ class Solution:
 # https://leetcode.com/problems/maximum-product-subarray/
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        n = len(nums)
-        if n < 2:
-            return nums[0]
-        
-        max_product_so_far = min_product_so_far = 1
-        result = -float('inf')
-        
-        for i in range(n):
-            cur_num = nums[i]
-            local_max_product = max(max_product_so_far * cur_num, min_product_so_far * cur_num, cur_num)
-            local_min_product = min(max_product_so_far * cur_num, min_product_so_far * cur_num, cur_num)
-            
-            max_product_so_far = local_max_product
-            min_product_so_far = local_min_product
-            
-            result = max(max_product_so_far, result)
+        min_subarray = nums[0]
+        max_subarray = nums[0]
+        result = nums[0]
+
+        for i in range(1, len(nums)):
+            new_max_subarray = max(max_subarray * nums[i], min_subarray * nums[i], nums[i])
+            new_min_subarray = min(max_subarray * nums[i], min_subarray * nums[i], nums[i])
+            result = max(result, new_max_subarray)
+
+            max_subarray = new_max_subarray
+            min_subarray = new_min_subarray
 
         return result
 
