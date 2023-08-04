@@ -90,27 +90,22 @@ class Solution:
 # https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        first = nums[0]
-        last = nums[-1]
-        if first < last or len(nums) == 1:
-            return first
+        n = len(nums)
+        if n == 1 or nums[0] < nums[-1]:
+            return nums[0]
         
-        def search_min():
-            n = len(nums)
-            low = 0
-            high = n-1
-            min_idx = high
-            while low <= high:
-                mid = (low + high) // 2
-                if nums[mid] >= first:
-                    low = mid + 1
-                else:
-                    min_idx = min(min_idx, mid)
-                    high = mid - 1
-                    
-            return nums[min_idx]
+        left = 0 
+        right = len(nums)-1
+        min_idx = right
+        while left <= right: 
+            mid = (left + right) // 2
+            if nums[mid] >= nums[-1]:
+                left = mid + 1
+            else:
+                min_idx = min(min_idx, mid)
+                right = mid - 1
         
-        return search_min()
+        return nums[min_idx]
 
 # https://leetcode.com/problems/search-in-rotated-sorted-array/
 class Solution:
@@ -153,6 +148,33 @@ class Solution:
             if index == -1:
                 index = find_target_index(min_index, n-1)
             return index
+
+# S.2
+# Intuition: if low value <= mid, left portion is sorted, try search target within left portion, otherwise search right portion
+# else right portion is merged, ...
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        low = 0
+        high = n-1
+
+        while low <= high:
+            mid = (low + high) // 2
+            if nums[mid] == target:
+                return mid
+
+            if nums[low] <= nums[mid]: # left portion is merged
+                if nums[low] <= target and target <= nums[mid]:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            else:
+                if nums[mid] <= target and target <= nums[high]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
+                    
+        return -1
             
 # https://leetcode.com/problems/3sum/
 ## S.1 - hash table 
