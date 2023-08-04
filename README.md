@@ -163,7 +163,7 @@ To optimize Space Complexity. Try...
 - Test the code with a few test cases and state edge cases
 - It'll surprise the interviewers if you know some advanced DS&A like [Fibonacci Heap](https://en.wikipedia.org/wiki/Fibonacci_heap) which is far optimal (also is harder to implement) than Binary Heap in insertion - O(1), or [Skip List](https://en.wikipedia.org/wiki/Skip_list) which have average search/insert/delete as O(log n) - compared to O(n) of array/list
 
-Interviewers will evaluate a candidate through 5 demensions in the coding interview. There is an [article](https://www.techinterviewhandbook.org/coding-interview-rubrics/) explained this in details
+Interviewers will evaluate a candidate through 5 demensions in the coding interview. There is an [article](https://www.techinterviewhandbook.org/coding-interview-rubrics/) explained these in details
 
 - Communication: Does the candidate make clarifications, communicate their approach and explain while coding?
 - Problem Solving: Does the candidate show they understand the problem and are able to come up with a sound approach, conduct trade-offs analysis and optimize their approach?
