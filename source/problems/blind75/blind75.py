@@ -15,20 +15,15 @@ class Solution:
         return []
 
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-INF = float('inf')
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        n = len(prices)
         max_profit = 0
-        max_price = -INF
+        min_price = float('inf')
         
-        for i in reversed(range(n)):
-            if (max_price >= prices[i]):
-                cur_profit = max_price - prices[i]
-                max_profit = cur_profit if cur_profit > max_profit else max_profit
-            else:
-                max_price = prices[i]
-                
+        for price in prices:
+            min_price = min(price, min_price)
+            max_profit = max(max_profit, price - min_price)
+
         return max_profit
 
 # https://leetcode.com/problems/contains-duplicate/
@@ -46,36 +41,34 @@ class Solution:
 # https://leetcode.com/problems/product-of-array-except-self/
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        
         n = len(nums)
-        if (n <= 1):
-            return nums
-        
-        ans = [0] * n
-        
+        result = [0] * n
+
         prefix = nums[0]
         for i in range(1, n):
-            ans[i] = prefix
+            result[i] = prefix
             prefix *= nums[i]
         
-        postfix = nums[-1]
+        postfix = nums[n-1]
         for i in reversed(range(n-1)):
-            ans[i] = postfix if i == 0 else ans[i] * postfix
-            postfix *= nums[i]
-        
-        return ans
+            if i == 0:
+                result[0] = postfix
+            else:
+                result[i] *= postfix
+                postfix *= nums[i]
+
+        return result
 
 # https://leetcode.com/problems/maximum-subarray/
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        n = len(nums)
-        max_so_far = 0
-        res = -float('inf')
-        for i in range(n):
-            max_so_far = max(max_so_far + nums[i], nums[i])
-            res = max(res, max_so_far)
-            
-        return res
+        subarray_sum = nums[0]
+        result = subarray_sum
+        for i in range(1, len(nums)):
+            subarray_sum = max(subarray_sum + nums[i], nums[i])
+            result = max(result, subarray_sum)
+
+        return result
 
 # https://leetcode.com/problems/maximum-product-subarray/
 class Solution:
