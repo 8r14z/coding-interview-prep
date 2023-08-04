@@ -159,6 +159,6 @@ To optimize Space Complexity. Try...
 - Always ask clarifying questions / clarify doubts BEFORE jumping into implementation 
 - Communicate the approach with interviewers - "THINK OUT LOUD"
 - State tradeoffs between different approaches (time vs. space complexity)
-- Write CLEAN code and be collaborative (communicate your thought process throughfully)
+- Write CLEAN code and working code, be communicate your thought process throughfully
 - Test your code with a few test cases and state edge cases
 - It'll surprise the interviewers if you know some advanced DS&A like [Fibonacci Heap](https://en.wikipedia.org/wiki/Fibonacci_heap) which is far optimal (also is harder to implement) than Binary Heap in insertion - O(1), or [Skip List](https://en.wikipedia.org/wiki/Skip_list) which have average search/insert/delete as O(log n) - compared to O(n) of array/list
