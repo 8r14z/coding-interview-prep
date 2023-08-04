@@ -155,7 +155,7 @@ To optimize Space Complexity. Try...
 - Avoid duplicated memories. E.g think twice we really need an extra array to do the job instead of a simple variable 
 
 ### Interview Hacks
-- Ask interviewers if you can assume some validation (input correctness, etc). That saves huge amount of time to avoid writing extra code in the interviews
+- Ask interviewers if you can assume some facts (input correctness, etc). That saves huge amount of time to avoid writing extra code in the interviews
 - Always ask clarifying questions / clarify doubts BEFORE jumping into implementation 
 - Communicate the approach with interviewers - "THINK OUT LOUD"
 - State tradeoffs between different approaches (time vs. space complexity)
@@ -169,3 +169,4 @@ To optimize Space Complexity. Try...
 - Technical competency
 - Testing
 - Advanced knowledge
+
