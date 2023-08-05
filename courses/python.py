@@ -79,8 +79,8 @@ x = 4^2 # x = 4^2
 import bisect
 sorted_array = []
 search_value = 1
-bisect.bisect(sorted_array, search_value) # left <= i < right, same as bisect_right
-bisect.bisect_left(sorted_array, search_value) # left < i <= right
+bisect.bisect(sorted_array, search_value) # left <= i < right, same as bisect_right ==> less than any value on right
+bisect.bisect_left(sorted_array, search_value) # left < i <= right => greater any value on left
 
 
 # Python 3.11 https://docs.python.org/3/library/stdtypes.html 

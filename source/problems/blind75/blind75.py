@@ -247,12 +247,15 @@ class Solution:
 # h-ttps://leetcode.com/problems/sum-of-two-integers/solutions/132479/simple-explanation-on-how-to-arrive-at-the-solution/
 # h-ttps://leetcode.com/problems/sum-of-two-integers/solutions/489210/read-this-if-you-want-to-learn-about-masks/
 class Solution:
-    def getSum(self, a, b):
-        while b != 0:
-            carry = (a & b) << 1
-            a = a ^ b
+    def getSum(self, a: int, b: int) -> int:
+        mask = 0xffffffff # 4 bytes
+
+        while (b & mask) != 0:
+            carry = ( a & b ) << 1
+            a = (a ^ b) 
             b = carry
-        return a
+        
+        return (a & mask) if b > 0 else a
 
 # https://leetcode.com/problems/number-of-1-bits/
 class Solution:
@@ -317,22 +320,22 @@ class Solution:
 # And at each amount of money, we will need to question whether we should include a coin in [coins] or not
 #
 # O(n * amount)
-INF = float('inf')
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        if amount < 1 or len(coins) < 1:
+        n = len(coins)
+        if n == 0 or amount == 0:
             return 0
-        
-        min_coins = [0] * (amount + 1)
-        
+
+        min_coins_at_amount = [0]
+
         for cur_amount in range(1, amount+1):
-            min_coin_at_cur_amount = INF
+            min_coins = float('inf')
             for coin in coins:
-                if coin <= cur_amount and min_coins[cur_amount - coin] != INF:
-                    min_coin_at_cur_amount = min(min_coin_at_cur_amount, min_coins[cur_amount - coin] + 1)
-            min_coins[cur_amount] = min_coin_at_cur_amount
-            
-        return min_coins[amount] if min_coins[amount] != INF else -1
+                if coin <= cur_amount:
+                    min_coins = min(min_coins, min_coins_at_amount[cur_amount - coin] + 1)
+            min_coins_at_amount.append(min_coins)
+
+        return min_coins_at_amount[amount] if min_coins_at_amount[amount] != float('inf') else -1
 
 # https://leetcode.com/problems/longest-increasing-subsequence/
 # [../leetcode/300_longest_increasing_subseq.py] for DP solution
@@ -460,22 +463,19 @@ class Solution:
 class Solution:
     def numDecodings(self, s: str) -> int:
         n = len(s)
-        dp = [0] * (n+1)
-        dp[0] = 1 # base case
-        for i in range(1, n+1):
-            c_index = i-1
-            char = s[c_index]
-            ways = 0
-            if s[c_index] != '0': 
-                ways += dp[i-1]
+        memo = [0] * n
+        memo[0] = 1 if s[0] != '0' else 0
+
+        for i in range(1, n):
+            c = s[i]
+            if c != '0': # if c == '0' it can NOT stand alone
+                memo[i] = memo[i-1]
             
-            if c_index - 1 >= 0:
-                prev_char = s[c_index-1]
-                if (prev_char == '1' and char <= '9') or (prev_char == '2' and char <= '6'):
-                    ways += dp[i-2]
-            dp[i] = ways
-        
-        return dp[n]
+            pre = s[i-1]
+            if (pre == '1' and c <= '9') or (pre == '2' and c <= '6'):
+                memo[i] += (memo[i-2] if i >= 2 else 1)
+
+        return memo[-1]
 
 # space optimal sol        
 class Solution:
