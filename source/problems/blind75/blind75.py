@@ -1085,7 +1085,7 @@ class Solution:
         previous_index = {}
         start = 0
         for end, c in enumerate(s):
-            if c in previous_index and previous_index[c] >= start:
+            if c in previous_index and previous_index[c] >= start: # repeating char can be before start
                 start = previous_index[c] + 1
 
             previous_index[c] = end
