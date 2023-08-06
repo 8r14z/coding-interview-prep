@@ -566,40 +566,35 @@ class Solution:
 
 # https://leetcode.com/problems/course-schedule/
 # DFS to find cyclic graph
+from collections import defaultdict
 class Solution:
+    def __init__(self):
+        self.visited = set()
+        self.finished = set()
+        self.graph = defaultdict(list)
+
+    def found_cycle_at_node(self, node):
+        self.visited.add(node)
+
+        for neighbor in self.graph[node]:
+            if neighbor not in self.visited:
+                if self.found_cycle_at_node(neighbor):
+                    return True
+            elif neighbor not in self.finished:
+                return True
+
+        self.finished.add(node)
+        return False
+        
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        def build_graph(n, edges):
-            graph = {}
-            for edge in edges:
-                q, p = edge[0], edge[1]
-                if q in graph:
-                    graph[q].append(p)
-                else:
-                    graph[q] = [p]
-            return graph
-        
-        def found_cycle(start, graph, visited, finished):
-            visited.add(start)
-            if start in graph:
-                for neighbor in graph[start]:
-                    if neighbor not in visited:
-                        if found_cycle(neighbor, graph, visited, finished):
-                            return True
-                    elif neighbor not in finished: # ancestor
-                        return True
-            finished.add(start)
-            return False
-                    
-        graph = build_graph(numCourses, prerequisites)
-        visited = set()
-        finished = set()
-        
+        for edge in prerequisites:
+            p,q = edge
+            self.graph[p].append(q)
+
         for i in range(numCourses):
-            if i in visited:
-                continue
-            if found_cycle(i, graph, visited, finished):
+            if self.found_cycle_at_node(i):
                 return False
-            
+
         return True
 
 # https://leetcode.com/problems/pacific-atlantic-water-flow/
