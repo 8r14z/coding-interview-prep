@@ -1560,7 +1560,7 @@ class Solution:
 
         max_heap = []
         for num, count in frequencies.items():
-            heapq.heappush(max_heap, (-1 * count, num))
+            heapq.heappush(max_heap, (-1 * count, num)) # revert sign of counter since python heap is min heap 
         
         result = []
         for _ in range(k):
