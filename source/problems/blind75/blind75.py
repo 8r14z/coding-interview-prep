@@ -1096,6 +1096,7 @@ class Solution:
 
 # https://leetcode.com/problems/longest-repeating-character-replacement/
 # sliding windown, one condition to keep track is the lenght of substring - most repeating char count <= k
+# Intuition: substring should have length - max repeated chars <= K to be able to replace :) 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         answer = float('-inf')
