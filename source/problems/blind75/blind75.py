@@ -1098,26 +1098,24 @@ class Solution:
 # sliding windown, one condition to keep track is the lenght of substring - most repeating char count <= k
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
+        answer = float('-inf')
+        
+        char_count = [0] * 26
         start = 0
-        res = 0
-        
-        chars = [0] * 26
-        count = repeating_count = 0
-        
-        for c in s:
-            count += 1
-            chars[ord(c)-ord('A')] += 1
-            repeating_count = max(repeating_count, chars[ord(c)-ord('A')])
+        for i in range(len(s)):
+            c = s[i]
+            char_count[ord(c) - ord('A')] += 1
+            max_repeating_count = max(char_count)
+            substring_length = i + 1 - start
             
-            while count - repeating_count > k:
-                start_index = ord(s[start])-ord('A')
-                chars[start_index] -= 1
-                count -= 1
-                start += 1
-                
-            res = max(res, count)
+            if substring_length - max_repeating_count > k: # can NOT replace 
+                char_count[ord(s[start]) - ord('A')] -= 1
+                substring_length -= 1
             
-        return res
+            start = i + 1 - substring_length
+            answer = max(answer, substring_length)
+
+        return answer
 
 # https://leetcode.com/problems/minimum-window-substring/
 # ---
