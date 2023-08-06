@@ -807,7 +807,7 @@ class Solution:
         ans = 0
         cur = None
         for interval in intervals:
-            if cur is None or cur[END] <= interval[START]:
+            if cur is None or interval[START] >= cur[END]:
                 cur = interval
             else:
                 ans += 1
@@ -849,7 +849,7 @@ class Solution:
             return False
         
         slow = fast = head
-        while fast and fast.next:
+        while fast.next:
             slow = slow.next
             fast = fast.next.next
             if slow is fast:
@@ -947,7 +947,7 @@ class Solution:
                 
         tail = reverse(slow)
         
-        while tail.next:
+        while tail.next: # the last node in head ll is still linked to last node in tail ll
             head_next = head.next
             tail_next = tail.next
             head.next = tail
