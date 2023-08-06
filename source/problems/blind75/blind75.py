@@ -1373,7 +1373,7 @@ class Solution:
 
         inorder_node_indicies = {}
         for i, v in enumerate(inorder):
-            inorder_node_indicies[v] = i
+            inorder_node_indicies[v] = i # this is possible because unique values
 
         def build_tree(start, end):
             if start > end:
