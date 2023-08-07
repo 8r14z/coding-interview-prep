@@ -1206,7 +1206,7 @@ class Solution:
             l2 = palindrome(s, i, i+1)
             l = max(l1,l2)
             if l > (end-start+1):
-                start = i - (l-1)//2 # we consider even length with i and i+1 thus l-1 will cater for lower index
+                start = i - (l-1)//2 # we consider even length with [i] and i+1 thus l-1 will cater for lower index
                 end = i + l//2
                 
         return s[start:end+1]
