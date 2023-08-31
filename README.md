@@ -67,6 +67,7 @@ I'd strongly recommend [Python](https://www.geeksforgeeks.org/python-programming
 
 ### P0 Algorithms
 - Sorting: insertion sort, selection sort, heap sort, shell short, merge sort, quick sort, radix sort, bucket sort, etc
+**TIL: New sorting algo - [Dutch National Flag](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) or 3-way partition, designed specifically to sort array containing 3 distinct values**
 - Searching: binary search
 - DFS/BFS/Topological Sort
 - Shortest Path: Dijktra, Bellman-ford, Floy (optional)
