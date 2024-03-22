@@ -18,6 +18,30 @@ class OOP:
     def __del__(self):
         print('destroyed')
 
+    # equal, ==
+    def __eq__(self, other):
+        pass
+
+    # not equal. !=
+    def __ne__(self, other):
+        pass
+
+    # less than, <
+    def __lt__(self, other):
+        pass
+
+    # less than or equal to, <=
+    def __le__(self, other):
+        pass
+    
+    # greater than, >
+    def __gt__(self, other):
+        pass 
+
+    # greater than or equal to, >=
+    def __ge__(self, other):
+        pass
+
     def foo(self):
         print(self.instance_var)    
 
