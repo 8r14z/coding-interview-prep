@@ -54,3 +54,37 @@ class Solution:
         i += skipCount
 
         return i == len(word)
+    
+# https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        stack = []
+        invalidClose = set()
+        for i in range(len(s)):
+            c = s[i]
+            if c == '(':
+                stack.append(c)
+            elif c == ')':
+                if not stack:
+                    invalidClose.add(i)
+                else:
+                    stack.pop()
+                    
+        stack = []
+        invalidOpen = set()
+        for i in range(len(s)-1, -1, -1):
+            c = s[i]
+            if c == ')':
+                stack.append(c)
+            elif c == '(':
+                if not stack:
+                    invalidOpen.add(i)
+                else:
+                    stack.pop()
+
+        res = ''
+        for i, c in enumerate(s):
+            if i not in invalidOpen and i not in invalidClose:
+                res += c
+
+        return res
