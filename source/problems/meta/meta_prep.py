@@ -88,3 +88,18 @@ class Solution:
                 res += c
 
         return res
+    
+# https://leetcode.com/problems/nested-list-weight-sum/ 
+class Solution:
+    def depthSum(self, nestedList: List[NestedInteger]) -> int:
+        def sumAtDepth(sublist, depth):
+            res = 0
+            for element in sublist:
+                if element.isInteger():
+                    res += (element.getInteger() * depth)
+                else:
+                    res += sumAtDepth(element.getList(), depth+1)
+            return res
+
+        return sumAtDepth(nestedList, 1)
+    
