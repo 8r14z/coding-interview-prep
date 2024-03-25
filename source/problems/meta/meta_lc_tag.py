@@ -131,3 +131,45 @@ class Solution:
             q = q.parent
         
         return q
+
+# https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
+# simple yet needing to skip zero values to efficiently store :) 
+class SparseVector:
+    def __init__(self, nums: List[int]):
+        self.numPerIndicies = {} 
+        for i, num in enumerate(nums):
+            if num != 0:
+                self.numPerIndicies[i] = num
+
+    # Return the dotProduct of two sparse vectors
+    def dotProduct(self, vec: 'SparseVector') -> int:
+        res = 0
+        for i, num in vec.numPerIndicies.items():
+            if i in self.numPerIndicies:
+                thisNum = self.numPerIndicies[i]
+                res += (num * thisNum)
+        return res
+
+# https://leetcode.com/problems/valid-palindrome-ii/
+def isPalindrome(s, start, end):
+    while start < end:
+        if s[start] != s[end]:
+            return False
+        start += 1
+        end -= 1
+
+    return True
+
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        left = 0
+        right = len(s)-1
+        
+        while left < right:
+            if s[left] == s[right]:
+                left += 1
+                right -=1
+            else:
+                return isPalindrome(s, left+1, right) or isPalindrome(s, left, right-1)
+
+        return True
