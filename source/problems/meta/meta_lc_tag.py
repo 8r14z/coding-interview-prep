@@ -114,16 +114,16 @@ class Solution:
                 level += 1
                 node = node.parent
             return level
-            
-        temp = p
-        levelP = getLevel(p)
-        levelQ = getLevel(q)
 
-        if levelP > levelQ:
-            for _ in range(levelP - levelQ):
+        temp = p
+        pLevel = getLevel(p)
+        qLevel = getLevel(q)
+
+        if pLevel > qLevel:
+            for _ in range(pLevel - qLevel):
                 p = p.parent
-        if levelQ > levelP:
-            for _ in range(levelQ - levelP):
+        if qLevel > pLevel:
+            for _ in range(qLevel - pLevel):
                 q = q.parent
         
         while q != p:
