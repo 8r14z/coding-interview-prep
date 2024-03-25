@@ -105,3 +105,29 @@ class Solution:
 
         return sumAtDepth(nestedList, 1)
     
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/
+class Solution:
+    def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+        temp = p
+        levelP = 0
+        while temp:
+            levelP += 1
+            temp = temp.parent
+        temp = q
+        levelQ = 0
+        while temp:
+            levelQ += 1
+            temp = temp.parent
+
+        if levelP > levelQ:
+            for _ in range(levelP - levelQ):
+                p = p.parent
+        if levelQ > levelP:
+            for _ in range(levelQ - levelP):
+                q = q.parent
+        
+        while q != p:
+            p = p.parent
+            q = q.parent
+        
+        return q
