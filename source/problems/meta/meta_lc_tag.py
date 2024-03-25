@@ -108,16 +108,16 @@ class Solution:
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/
 class Solution:
     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+        def getLevel(node):
+            level = 0
+            while node:
+                level += 1
+                node = node.parent
+            return level
+            
         temp = p
-        levelP = 0
-        while temp:
-            levelP += 1
-            temp = temp.parent
-        temp = q
-        levelQ = 0
-        while temp:
-            levelQ += 1
-            temp = temp.parent
+        levelP = getLevel(p)
+        levelQ = getLevel(q)
 
         if levelP > levelQ:
             for _ in range(levelP - levelQ):
