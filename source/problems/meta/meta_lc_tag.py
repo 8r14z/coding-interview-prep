@@ -160,7 +160,7 @@ def isPalindrome(s, start, end):
 
     return True
 
-class Solution:
+class Solution
     def validPalindrome(self, s: str) -> bool:
         left = 0
         right = len(s)-1
@@ -174,3 +174,27 @@ class Solution:
 
         return True
 
+# https://leetcode.com/problems/random-pick-with-weight
+class Solution:
+
+    def __init__(self, w: List[int]):
+        prefix_sums = [w[0]]
+        for i in range(1, len(w)):
+            prefix_sums.append(w[i] + prefix_sums[i-1])
+        
+        self.prefix_sums = prefix_sums
+        self.total = prefix_sums[-1]
+
+    def pickIndex(self) -> int:
+        target = self.total * random.random()
+        low = 0 
+        high = len(self.prefix_sums)
+        result = high
+        while low <= high:
+            mid = (low+high)//2
+            if self.prefix_sums[mid] > target:
+                result = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+        return result
