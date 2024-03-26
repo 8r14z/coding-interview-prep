@@ -198,3 +198,40 @@ class Solution:
             else:
                 low = mid + 1
         return result
+
+# https://leetcode.com/problems/basic-calculator-ii/
+class Solution:
+    def calculate(self, s: str) -> int:
+        numStack = []
+        op = '+'
+        curNum = ''
+
+        for i,c in enumerate(s):
+            if c.isdigit():
+                curNum += c
+            
+            if i == len(s) - 1 or c in ['+', '-', '*', '/']:
+                integer = int(curNum)
+                
+                if op == '+':
+                    pass
+                elif op == '-':
+                    integer *= -1
+                elif op == '*':
+                    if numStack:
+                        lastNum = numStack.pop()
+                        integer = lastNum * integer
+                else:
+                    if numStack:
+                        lastNum = numStack.pop()
+                        integer = lastNum // integer if lastNum >= 0 else -(abs(lastNum) // integer) # -3 / 2 == 2 in python, all devision is rounded down.
+
+                numStack.append(integer)
+
+                op = c
+                curNum = ''
+
+        res = 0
+        for num in numStack:
+            res += num
+        return res
