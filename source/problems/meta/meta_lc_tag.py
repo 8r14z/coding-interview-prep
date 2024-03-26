@@ -235,3 +235,20 @@ class Solution:
         for num in numStack:
             res += num
         return res
+
+# https://leetcode.com/problems/buildings-with-an-ocean-view/
+class Solution:
+    def findBuildings(self, heights: List[int]) -> List[int]:
+        if not heights:
+            return []
+
+        res = []
+        maxHeight = -1
+        for i in range(len(heights)-1, -1, -1):
+            curHeight = heights[i]
+            if curHeight > maxHeight:
+                res.append(i)
+                maxHeight = curHeight
+                
+        res.reverse()
+        return res
