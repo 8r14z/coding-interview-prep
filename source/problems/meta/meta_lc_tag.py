@@ -305,3 +305,24 @@ class Solution:
         
         return sum
 
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+# DFS down to leaf and stop when find q or p is found
+# if we can find both q and p on both left and right of a given node, the node is lowest common ancestor
+# it we can only either q or p, so q or p is the lowest common ancestor. 
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+        
+        if root == p or root == q:
+            return root
+
+        # find p/q on the left child
+        leftAncestor = self.lowestCommonAncestor(root.left, p, q) 
+        # find p/q on the right child
+        rightAncestor = self.lowestCommonAncestor(root.right, p, q)
+
+        if leftAncestor and rightAncestor:
+            return root
+        else:
+            return leftAncestor or rightAncestor
