@@ -326,3 +326,34 @@ class Solution:
             return root
         else:
             return leftAncestor or rightAncestor
+
+# https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+class Solution:
+    def treeToDoublyList(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        if not root:
+            return None
+        
+        def inorder(node):
+            if not node:
+                return
+
+            inorder(node.left)
+
+            if not self.head:
+                # save the head once
+                self.head = node
+            
+            if self.tail:
+                node.left = self.tail
+                self.tail.right = node
+
+            self.tail = node
+
+            inorder(node.right)
+
+        self.head = self.tail = None
+        inorder(root)
+        self.head.left = self.tail
+        self.tail.right = self.head
+        
+        return self.head
