@@ -286,3 +286,22 @@ class Solution:
                 left = pivot_index + 1
                 
         return -1
+    
+# https://leetcode.com/problems/range-sum-of-bst/
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        if not root:
+            return 0
+
+        sum = 0
+        if root.val >= low and root.val <= high:
+            sum += root.val
+        
+        if root.val > low: # left child < root.val
+            sum += self.rangeSumBST(root.left, low, high)
+
+        if root.val < high: # right child > root.val
+            sum += self.rangeSumBST(root.right, low, high)
+        
+        return sum
+
