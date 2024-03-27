@@ -373,3 +373,37 @@ class Solution:
                 pathStack.append(subpath)
         
         return '/' + '/'.join(pathStack)
+
+# https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        stack = []
+        res = 0
+        for c in s:
+            if c == '(':
+                stack.append(c)
+            else:
+                if stack:
+                    stack.pop()
+                else:
+                    res += 1
+
+        return res + len(stack)
+
+# https://leetcode.com/problems/moving-average-from-data-stream/
+from collections import deque
+class MovingAverage:
+
+    def __init__(self, size: int):
+        self.size = size
+        self.queue = deque()
+        self.total = 0
+
+    def next(self, val: int) -> float:
+        self.total += val
+        self.queue.append(val)
+        if len(self.queue) > self.size:
+            headVal = self.queue.popleft()
+            self.total -= headVal
+
+        return self.total / len(self.queue)
