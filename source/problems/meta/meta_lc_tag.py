@@ -357,3 +357,19 @@ class Solution:
         self.tail.right = self.head
         
         return self.head
+
+# https://leetcode.com/problems/simplify-path/
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        pathStack = []
+
+        for subpath in path.split('/'):
+            if subpath == '.' or len(subpath) == 0:
+                continue
+            elif subpath == '..':
+                if pathStack:
+                    pathStack.pop()
+            else:
+                pathStack.append(subpath)
+        
+        return '/' + '/'.join(pathStack)
