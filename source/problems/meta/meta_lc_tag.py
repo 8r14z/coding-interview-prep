@@ -407,3 +407,25 @@ class MovingAverage:
             self.total -= headVal
 
         return self.total / len(self.queue)
+
+# https://leetcode.com/problems/powx-n/
+# intuiation: x^n = (x^2)^(n/2) = (x^4)^(n/4) = ...(x^logn)^1
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1
+        
+        if n < 0:
+            x = 1/x
+            n *= -1
+        
+        res = 1
+        while n != 0:
+            if n % 2:
+                res *= x
+                n -= 1
+            
+            x *= x
+            n //= 2
+
+        return res
