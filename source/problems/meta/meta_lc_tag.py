@@ -429,3 +429,21 @@ class Solution:
             n //= 2
 
         return res
+
+#https://leetcode.com/problems/subarray-sum-equals-k/
+from collections import defaultdict
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        prevSum = defaultdict(int)
+        cumulativeSum = 0
+        count = 0
+        for num in nums:
+            cumulativeSum += num
+            if cumulativeSum == k:
+                count += 1
+            if cumulativeSum - k in prevSum:
+                count += prevSum[cumulativeSum - k]
+            
+            prevSum[cumulativeSum] += 1
+        
+        return count
