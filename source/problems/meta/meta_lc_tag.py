@@ -497,3 +497,32 @@ class Solution:
 
         return low
             
+# https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
+from collections import defaultdict
+
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        res = 0
+        if not root:
+            return 0
+        
+        sumAtNode = defaultdict(int)
+        sumAtNode[root] = root.val
+        stack = [root]
+        
+        while stack:
+            node = stack.pop()
+
+            if not node.left and not node.right:
+                res += sumAtNode[node]
+            
+            if node.left:
+                leftNode = node.left
+                sumAtNode[leftNode] = sumAtNode[node] * 10 + leftNode.val
+                stack.append(leftNode)
+            if node.right:
+                rightNode = node.right
+                sumAtNode[rightNode] = sumAtNode[node] * 10 + rightNode.val
+                stack.append(rightNode)
+
+        return res
