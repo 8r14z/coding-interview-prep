@@ -447,3 +447,29 @@ class Solution:
             prevSum[cumulativeSum] += 1
         
         return count
+
+# https://leetcode.com/problems/custom-sort-string/description/
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        frequency = {}
+        for c in order:
+            frequency[c] = 0
+
+        for c in s:
+            if c in frequency:
+                frequency[c] += 1
+        
+        res = ''
+        i = 0
+        for c in s:
+            if c not in frequency:
+                res += c
+            else:
+                oc = order[i]
+                if frequency[oc] > 0:
+                    res += oc
+                    frequency[oc] -= 1
+                    if frequency[oc] == 0:
+                        i += 1
+        return res
+        
