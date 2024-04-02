@@ -11,7 +11,10 @@ def swapPair(root: Node):
         first = cur
         second = cur.next 
 
-        # swap
+        # swap 
+        # prev -> first -> second -> second.next
+        # to
+        # prev -> second -> first -> second.next
         first.next = second.next
         second.next = first 
         if prev:
