@@ -14,7 +14,6 @@ def swapPair(root: Node):
         # swap
         first.next = second.next
         second.next = first 
-
         if prev:
             prev.next = second
         
