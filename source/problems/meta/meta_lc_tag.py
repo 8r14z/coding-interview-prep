@@ -538,3 +538,23 @@ class Solution:
                 j += 1
 
         return res
+
+# https://leetcode.com/problems/binary-tree-right-side-view/
+from collections import deque
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
+        res = []
+        queue = deque([root])
+        while queue:
+            res.append(queue[-1].val)
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+        return res
