@@ -687,3 +687,4 @@ class Solution:
         self.ans = 0
         getHeight(root)
         return self.ans
+
