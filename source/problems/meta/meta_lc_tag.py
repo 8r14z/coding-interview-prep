@@ -558,3 +558,40 @@ class Solution:
                     queue.append(node.right)
 
         return res
+
+# https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/
+class Solution:
+    def insert(self, head: 'Optional[Node]', insertVal: int) -> 'Node':
+        newNode = Node(insertVal)
+        if not head:
+            newNode.next = newNode
+            return newNode
+        
+        min = head
+        max = head
+
+        cur = head
+        count = 0
+        
+        while True:
+            count += 1
+            if cur.val < min.val:
+                min = cur
+            if cur.val >= max.val:
+                max = cur
+            cur = cur.next
+            if cur == head:
+                break
+
+        pre = max
+        cur = min
+        for _ in range(count):
+            if cur.val > insertVal:
+                break
+            pre = cur
+            cur = cur.next
+            
+        pre.next = newNode
+        newNode.next = cur
+
+        return head
