@@ -672,6 +672,8 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/diameter-of-binary-tree/
+# calc diameter at each node => get max
+# diameter = leftHeight + rightHeight
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         def getHeight(node):
@@ -680,7 +682,7 @@ class Solution:
             leftHeight = getHeight(node.left)
             rightHeight = getHeight(node.right)
 
-            self.ans = max(self.ans, leftHeight + rightHeight)
+            self.ans = max(self.ans, leftHeight + rightHeight) 
             return max(leftHeight, rightHeight) + 1
         self.ans = 0
         getHeight(root)
