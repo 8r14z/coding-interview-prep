@@ -625,6 +625,18 @@ class Solution:
 
             return key
         
+        # ** S.2 **
+        # def hashKey(string):
+        #     shift = ord(string[0]) - ord('a')
+        #     key = []
+
+        #     for c in string:
+        #         mapped = ord(c) - ord('a')
+        #         located = (mapped - shift + 26) % 26
+        #         key.append(str(located))
+
+        #     return '.'.join(key)
+        
         groups = defaultdict(list)
 
         for string in strings:
