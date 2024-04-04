@@ -644,3 +644,30 @@ class Solution:
             groups[key].append(string)
 
         return list(groups.values())
+
+# https://leetcode.com/problems/maximum-swap/
+# Intuition: largest possible number is when digits in decreasing order
+class Solution:
+    def maximumSwap(self, num: int) -> int:
+        digits = []
+        while num != 0:
+            digits.append(num % 10)
+            num = num // 10
+
+        digits.reverse()
+        n = len(digits)
+        for i in range(n):
+            max = i
+            for j in range(i, n):
+                if digits[j] >= digits[max]:
+                    max = j
+
+            if digits[max] > digits[i]:
+                digits[max],digits[i] = digits[i], digits[max]
+                break
+
+        res = 0
+        for digit in digits:
+            res = res * 10 + digit
+        return res
+
