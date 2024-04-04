@@ -671,3 +671,17 @@ class Solution:
             res = res * 10 + digit
         return res
 
+# https://leetcode.com/problems/diameter-of-binary-tree/
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        def getHeight(node):
+            if not node:
+                return 0
+            leftHeight = getHeight(node.left)
+            rightHeight = getHeight(node.right)
+
+            self.ans = max(self.ans, leftHeight + rightHeight)
+            return max(leftHeight, rightHeight) + 1
+        self.ans = 0
+        getHeight(root)
+        return self.ans
