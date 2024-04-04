@@ -608,3 +608,27 @@ class Solution:
                 new_intervals[-1][1] = max(new_intervals[-1][1], interval[1])
         
         return new_intervals
+
+# https://leetcode.com/problems/group-shifted-strings/
+from collections import defaultdict
+class Solution:
+    def groupStrings(self, strings: List[str]) -> List[List[str]]:
+        def hashKey(string):
+            # shift all characters by `shift` number
+            # imagine scale them on array of a -> z [0,...,25]
+            # must floor 26, and then mod 26 to find the index after shifting
+            shift = ord(string[0]) - ord('a')
+            key = ''
+
+            for c in string:
+                key += chr((ord(c) - shift + 26) % 26)
+
+            return key
+        
+        groups = defaultdict(list)
+
+        for string in strings:
+            key = hashKey(string)
+            groups[key].append(string)
+
+        return list(groups.values())
