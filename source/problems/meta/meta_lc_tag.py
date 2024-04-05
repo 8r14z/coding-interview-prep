@@ -688,3 +688,23 @@ class Solution:
         getHeight(root)
         return self.ans
 
+
+# https://leetcode.com/problems/exclusive-time-of-functions/
+class Solution:
+    def exclusiveTime(self, n: int, logs: List[str]) -> List[int]:
+        ans = [0 for _ in range(n)]
+        stack = []
+        for log in logs:
+            taskId, state, timestamp = log.split(':')
+            if state == 'start':
+                stack.append((taskId, timestamp))
+            else:
+                endTs = timestamp
+                endedTaskId, startTs = stack.pop()
+                assert endedTaskId == taskId
+                time = int(endTs) - int(startTs) + 1
+                ans[int(endedTaskId)] += time
+                if stack:
+                    ans[int(stack[-1][0])] -= time
+
+        return ans
