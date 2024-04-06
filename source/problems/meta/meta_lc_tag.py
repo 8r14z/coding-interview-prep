@@ -736,3 +736,25 @@ class Solution:
             leftToRight = not leftToRight
 
         return ans
+        
+# https://leetcode.com/problems/closest-binary-search-tree-value/
+class Solution:
+    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
+        cur = root
+        ans = root.val
+        dist = float('inf')
+
+        while cur:
+            newDist = cur.val - target if cur.val > target else target - cur.val
+            if newDist < dist:
+                ans = cur.val
+                dist = newDist
+            elif newDist == dist:
+                ans = min(ans, cur.val)
+
+            if float(cur.val) > target:
+                cur = cur.left
+            else:
+                cur = cur.right
+
+        return ans
