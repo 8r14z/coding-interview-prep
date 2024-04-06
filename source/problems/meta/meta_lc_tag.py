@@ -708,3 +708,41 @@ class Solution:
                     ans[int(stack[-1][0])] -= time
 
         return ans
+
+# https://leetcode.com/problems/diagonal-traverse/
+# BFS level by level
+class Solution:
+    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
+        m = len(mat)
+        n = len(mat[0])
+
+        ans = []
+        leftToRight = True
+        level = [(0,0)]
+
+        while level:
+            nextLevel = []
+            for i in range(len(level)-1, -1, -1):
+                x,y = level[i]
+                ans.append(mat[x][y])
+
+                newX = x
+                newY = y
+                if leftToRight:
+                    newX += 1
+                else:
+                    newY += 1
+                
+                if newX >= 0 and newX <= m-1 and newY >= 0 and newY <= n-1:
+                    nextLevel.append((newX,newY))
+
+                if i == 0: 
+                    newX = x if leftToRight else x+1
+                    newY = y+1 if leftToRight else y
+                    if newX >= 0 and newX <= m-1 and newY >= 0 and newY <= n-1:
+                        nextLevel.append((newX,newY))
+
+            level = nextLevel
+            leftToRight = not leftToRight
+
+        return ans
