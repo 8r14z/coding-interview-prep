@@ -726,14 +726,11 @@ class Solution:
                 x,y = level[i]
                 ans.append(mat[x][y])
 
-                newX = x+1 if leftToRight else x
-                newY = y if leftToRight else y+1
-                nextLevel.append((newX,newY))
+                nextLevel.append((x+1,y) if leftToRight else (x, y+1))
 
                 if i == 0: 
-                    newX = x if leftToRight else x+1
-                    newY = y+1 if leftToRight else y
-                    nextLevel.append((newX,newY))
+                    lastPos = (x, y+1) if leftToRight else (x+1, y)
+                    nextLevel.append(lastPos)
                         
             level = [(x, y) for x,y in nextLevel if x >= 0 and x <= m-1 and y >= 0 and y <= n-1]
             leftToRight = not leftToRight
