@@ -787,3 +787,71 @@ class Solution:
 #         nums[rtlFirstDecreaseIndex+1...n-1].reverse()
 #     }
 # }
+
+# https://leetcode.com/problems/copy-list-with-random-pointer/
+# DFS iteration 
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
+            return None
+
+        newHead = Node(head.val)
+        copiedNodes = {head : newHead}
+        
+        stack = [head]
+        while stack:
+            node = stack.pop()
+            newNode = copiedNodes[node]
+            
+            if node.next:
+                if node.next in copiedNodes:
+                    newNode.next = copiedNodes[node.next]
+                else:
+                    newNext = Node(node.next.val)
+                    newNode.next = newNext
+                    copiedNodes[node.next] = newNext
+                    stack.append(node.next)
+            if node.random:
+                if node.random in copiedNodes:
+                    newNode.random = copiedNodes[node.random]
+                else:
+                    newRandom = Node(node.random.val)
+                    newNode.random = newRandom
+                    copiedNodes[node.random] = newRandom
+                    stack.append(node.random)
+
+        return newHead
+# DFS recursion 
+# class Solution {
+#     var oldToNewMap: [Node: Node] = [:]
+#     func copyRandomList(_ head: Node?) -> Node? {
+#         guard let head else {
+#             return nil
+#         }
+
+#         let newHead = Node(head.val)
+#         oldToNewMap[head] = newHead
+
+#         if let next = head.next {
+#             let copiedNext = if let copiedNext = oldToNewMap[next] {
+#                 copiedNext
+#             } else {
+#                 copyRandomList(next)
+#             }
+#             newHead.next = copiedNext
+#         }
+
+#         if let random = head.random {
+#             let copiedRandom = if let copiedRandom = oldToNewMap[random] {
+#                 copiedRandom
+#             } else { 
+#                 copyRandomList(random)
+#             }
+#             newHead.random = copiedRandom
+#         }
+
+#         return newHead
+#     }
+# }
+
+
