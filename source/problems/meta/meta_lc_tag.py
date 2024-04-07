@@ -758,3 +758,32 @@ class Solution:
                 cur = cur.right
 
         return ans
+
+# https://leetcode.com/problems/next-permutation/
+# class Solution {
+#     func nextPermutation(_ nums: inout [Int]) {
+#         let n = nums.count
+#         guard n > 0 else {
+#             return
+#         }
+        
+#         var rtlFirstDecreaseIndex = -1
+#         for i in (0..<n-1).reversed() {
+#             if nums[i] < nums[i+1] {
+#                 rtlFirstDecreaseIndex = i
+#                 break
+#             }
+#         }
+
+#         if rtlFirstDecreaseIndex != -1 {
+#             for i in (rtlFirstDecreaseIndex..<n).reversed() {
+#                 if nums[i] > nums[rtlFirstDecreaseIndex] {
+#                     nums.swapAt(i, rtlFirstDecreaseIndex)
+#                     break
+#                 }
+#             }
+#         }
+
+#         nums[rtlFirstDecreaseIndex+1...n-1].reverse()
+#     }
+# }
