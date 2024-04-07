@@ -872,3 +872,31 @@ class Solution {
         return indices[randIdx]
     }
 }
+
+# https://leetcode.com/problems/design-tic-tac-toe/
+from collections import defaultdict
+class TicTacToe:
+    def __init__(self, n: int):
+        self.n = n
+        self.rowPoints = {}
+        self.colPoints = {}
+        self.diagonalPoints = defaultdict(int)
+        self.antiDiagonalPoints = defaultdict(int)
+
+    def move(self, row: int, col: int, player: int) -> int:
+        if player not in self.rowPoints:
+            self.rowPoints[player] = [0 for _ in range(self.n)]
+        self.rowPoints[player][row] += 1
+        
+        if player not in self.colPoints:
+            self.colPoints[player] = [0 for _ in range(self.n)]
+        self.colPoints[player][col] += 1
+
+        if row == col:
+            self.diagonalPoints[player] += 1
+        if self.n-1-row == col:
+            self.antiDiagonalPoints[player] += 1
+        
+        if self.rowPoints[player][row] == self.n or self.colPoints[player][col] == self.n or self.diagonalPoints[player] == self.n or self.antiDiagonalPoints[player] == self.n:
+            return player
+        return 0
