@@ -1009,3 +1009,47 @@ class Solution:
             res.append(vals)
             
         return res
+
+# https://leetcode.com/problems/remove-invalid-parentheses/
+# BFS to find shortest path to a valid state which is equivalent to min removal 
+# O(2^N) -- at each char, we either remove or keep, also use a set to avoid duplicates so it's not N!
+class Solution:
+    def isValidString(self, s):
+        count = 0
+        for c in s:
+            if c == '(':
+                count += 1
+            elif c == ')':
+                if count > 0:
+                    count -= 1
+                else:
+                    return False
+
+        return count == 0
+
+    def removeInvalidParentheses(self, s: str) -> List[str]:
+        level = [s]
+        visit = set([s])
+
+        ans = []
+        while level:
+            nextLevel = []
+            found = False
+            for s in level:
+                if self.isValidString(s):
+                    ans.append(s)
+                    found = True
+                    continue
+                
+                for i in range(len(s)):
+                    temp = s[0:i] + s[i+1:len(s)]
+                    if temp not in visit:
+                        nextLevel.append(temp)
+                        visit.add(temp)
+            
+            if found:
+                break
+
+            level = nextLevel
+
+        return ans
