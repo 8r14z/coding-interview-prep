@@ -1144,3 +1144,38 @@ class Solution:
 #         return ans
 #     }
 # }
+
+# https://leetcode.com/problems/valid-palindrome/
+#  Alphanumeric characters include letters and numbers.
+# extension Character {
+#     var isNumberOrLetter: Bool {
+#         return isNumber || isLetter
+#     }
+# }
+# class Solution {
+#     func isPalindrome(_ s: String) -> Bool {
+#         let chars = Array(s)
+#         var left = 0
+#         var right = chars.count - 1
+
+#         while left < right {
+#             if !chars[left].isNumberOrLetter && !chars[right].isNumberOrLetter {
+#                 left += 1
+#                 right -= 1
+#             } else if !chars[left].isNumberOrLetter {
+#                 left += 1
+#             } else if !chars[right].isNumberOrLetter {
+#                 right -= 1
+#             } else {
+#                 if chars[left].lowercased() != chars[right].lowercased() {
+#                     return false
+#                 } else {
+#                     left += 1
+#                     right -= 1
+#                 }
+#             }
+#         }
+
+#         return true
+#     }
+# }
