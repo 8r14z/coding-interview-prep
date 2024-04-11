@@ -1118,3 +1118,29 @@ class Solution:
 #         return ans
 #     }
 # }
+
+# S.2 less space
+# Keep the same window size moving forward.
+# class Solution {
+#     func longestOnes(_ nums: [Int], _ k: Int) -> Int {
+#         var k = k
+#         var start = 0
+#         var ans = 0
+#         for (end, num) in nums.enumerated() {
+#             if num == 0 {
+#                 k -= 1
+#             }
+
+#             if k < 0 {
+#                 if nums[start] == 0 {
+#                     k += 1
+#                 }
+#                 start += 1
+#             }
+
+#             ans = Swift.max(ans, end-start+1)
+#         }
+
+#         return ans
+#     }
+# }
