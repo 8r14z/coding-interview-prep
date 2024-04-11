@@ -1053,3 +1053,43 @@ class Solution:
             level = nextLevel
 
         return ans
+
+# S.2 DFS, less space complexity, need to track depth level to find min depth
+class Solution:
+    def isValidString(self, s):
+        count = 0
+        for c in s:
+            if c == '(':
+                count += 1
+            elif c == ')':
+                if count > 0:
+                    count -= 1
+                else:
+                    return False
+
+        return count == 0
+
+    def removeInvalidParentheses(self, s: str) -> List[str]:
+        self.visit = set([s])
+        self.ans = []
+        self.minDepth = len(s)
+
+        def dfs(s, depth):
+            if depth > self.minDepth:
+                return
+            
+            if self.isValidString(s):
+                if depth < self.minDepth:
+                    self.minDepth = depth
+                    self.ans = [s]
+                elif depth == self.minDepth:
+                    self.ans.append(s)
+            else:
+                for i in range(len(s)):
+                    temp = s[:i] + s[i+1:]
+                    if temp not in self.visit:
+                        self.visit.add(temp)
+                        dfs(temp, depth+1)
+        
+        dfs(s, 0)
+        return self.ans
