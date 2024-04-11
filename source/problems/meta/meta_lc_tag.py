@@ -900,3 +900,71 @@ class TicTacToe:
         if self.rowPoints[player][row] == self.n or self.colPoints[player][col] == self.n or self.diagonalPoints[player] == self.n or self.antiDiagonalPoints[player] == self.n:
             return player
         return 0
+
+# https://leetcode.com/problems/making-a-large-island/
+# class Solution {
+#     func dfs(_ i: Int, _ j: Int, _ island: Int, _ grid: inout [[Int]]) -> Int {
+#         guard i >= 0 && i < grid.count && j >= 0 && j < grid[0].count else {
+#             return 0
+#         }
+
+#         guard grid[i][j] == 1 else {
+#             return 0
+#         }
+
+#         grid[i][j] = island
+
+#         return 1 + dfs(i+1, j, island, &grid) + dfs(i-1, j, island, &grid) + dfs(i, j+1, island, &grid) + dfs(i, j-1, island, &grid)
+#     }
+
+#     func largestIsland(_ grid: [[Int]]) -> Int {
+#         let m = grid.count
+#         let n = grid[0].count
+#         guard m > 0 && n > 0 else {
+#             return 0
+#         }
+
+#         var grid = grid
+#         var islandSizes: [Int : Int] = [:]
+#         var island = 2
+#         for i in 0..<m {
+#             for j in 0..<n {
+#                 guard grid[i][j] == 1 else {
+#                     continue
+#                 }
+
+#                 islandSizes[island] = dfs(i, j, island, &grid)
+#                 island += 1
+#             }
+#         }
+
+#         var ans = -1
+#         for i in 0..<m {
+#             for j in 0..<n {
+#                 guard grid[i][j] == 0 else {
+#                     continue
+#                 }
+
+#                 var newSize = 1
+#                 let directions: [(i: Int, j: Int)] = [(1,0), (-1,0), (0,1), (0,-1)]
+#                 var neighborIslands = Set<Int>()
+#                 for direction in directions {
+#                     let newI = i + direction.i
+#                     let newJ = j + direction.j
+#                     guard newI >= 0 && newI < m && newJ >= 0 && newJ < n else {
+#                         continue
+#                     }
+#                     let island = grid[newI][newJ]
+#                     if let islandSize = islandSizes[island], !neighborIslands.contains(island) {
+#                         newSize += islandSize
+#                         neighborIslands.insert(island)
+#                     }
+#                 }
+
+#                 ans = Swift.max(ans, newSize)
+#             }
+#         }
+
+#         return ans == -1 ? n*m : ans
+#     }
+# }
