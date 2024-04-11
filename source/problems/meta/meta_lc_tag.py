@@ -1093,3 +1093,28 @@ class Solution:
         
         dfs(s, 0)
         return self.ans
+
+# https://leetcode.com/problems/max-consecutive-ones-iii/
+# class Solution {
+#     func longestOnes(_ nums: [Int], _ k: Int) -> Int {
+#         var ans = 0
+#         var start = 0
+#         var zeroIndices = [Int]() // improve by using a queue -> space = O(k)
+#         var i = 0
+
+#         for (end, num) in nums.enumerated() {
+#             if num == 0 {
+#                 zeroIndices.append(end)
+#             }
+
+#             if zeroIndices.count - i > k {
+#                 start = zeroIndices[i] + 1
+#                 i += 1   
+#             }
+
+#             ans = Swift.max(ans, end-start+1)
+#         }
+
+#         return ans
+#     }
+# }
