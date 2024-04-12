@@ -1205,17 +1205,21 @@ class Solution:
 
     def minStickers(self, stickers: List[str], target: str) -> int:
         queue = deque([target])
-        stickerNums = {target: 0}
+        visit = set([target])
+        level = 0
         
         while queue:
-            string = queue.popleft()
-            frequencies = Counter(string)
-            for sticker in stickers:
-                newStr = self.solve(sticker, string)
-                if len(newStr) == 0:
-                    return stickerNums[string] + 1
-                elif newStr not in stickerNums:
-                    stickerNums[newStr] = stickerNums[string] + 1
-                    queue.append(newStr)
+            n = len(queue)
+            for i in range(n):
+                string = queue.popleft()
+                for sticker in stickers:
+                    newStr = self.solve(sticker, string)
+                    if len(newStr) == 0:
+                        return level  + 1
+                    elif newStr not in visit:
+                        visit.add(newStr)
+                        queue.append(newStr)
+
+            level += 1
         
         return -1
