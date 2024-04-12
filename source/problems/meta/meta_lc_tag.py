@@ -1213,7 +1213,7 @@ class Solution:
             for i in range(n):
                 string = queue.popleft()
                 for sticker in stickers:
-                    newStr = self.solve(sticker, string)
+                    newStr = self.solve(sticker, string) # use char frequencies to make complexity of this line 16 = O(1)
                     if len(newStr) == 0:
                         return level  + 1
                     elif newStr not in visit:
