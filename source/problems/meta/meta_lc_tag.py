@@ -1182,7 +1182,8 @@ class Solution:
 
 # https://leetcode.com/problems/stickers-to-spell-word/
 # similar to remove-invalid-parentheses/
-# num of subset of target length n = 2^n
+# num of subset of target length n = 2^n -- similar to bitmask 2^N subset
+# O(2^n * m) which m is stickers.length
 from collections import Counter
 from collections import deque
 class Solution:
