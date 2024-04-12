@@ -1179,3 +1179,42 @@ class Solution:
 #         return true
 #     }
 # }
+
+# https://leetcode.com/problems/stickers-to-spell-word/
+# similar to remove-invalid-parentheses/
+from collections import Counter
+from collections import deque
+class Solution:
+    def solve(self, sticker, string):
+        strF = Counter(string)
+        stickerF = Counter(sticker)
+    
+        for c in strF:
+            if c in stickerF:
+                strF[c] -= stickerF[c]
+
+        res = ''
+        for c in string:
+            if strF[c] > 0:
+                res += c
+                strF[c] -= 1
+
+        return res
+
+    def minStickers(self, stickers: List[str], target: str) -> int:
+        queue = deque([target])
+        stickerNums = {target: 0}
+        ans = float('inf')
+        
+        while queue:
+            string = queue.popleft()
+            frequencies = Counter(string)
+            for sticker in stickers:
+                newStr = self.solve(sticker, string)
+                if len(newStr) == 0:
+                    return stickerNums[string] + 1
+                elif newStr not in stickerNums:
+                    stickerNums[newStr] = stickerNums[string] + 1
+                    queue.append(newStr)
+        
+        return -1
