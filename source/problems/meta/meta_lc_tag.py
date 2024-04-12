@@ -1182,6 +1182,7 @@ class Solution:
 
 # https://leetcode.com/problems/stickers-to-spell-word/
 # similar to remove-invalid-parentheses/
+# num of subset of target length n = 2^n
 from collections import Counter
 from collections import deque
 class Solution:
@@ -1204,7 +1205,6 @@ class Solution:
     def minStickers(self, stickers: List[str], target: str) -> int:
         queue = deque([target])
         stickerNums = {target: 0}
-        ans = float('inf')
         
         while queue:
             string = queue.popleft()
