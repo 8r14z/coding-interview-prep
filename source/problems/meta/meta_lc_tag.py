@@ -1012,7 +1012,8 @@ class Solution:
 
 # https://leetcode.com/problems/remove-invalid-parentheses/
 # BFS to find shortest path to a valid state which is equivalent to min removal 
-# O(2^N) -- at each char, we either remove or keep, also use a set to avoid duplicates so it's not N!
+# O(2^N) -- at each char, we either remove or keep, also use a set to avoid duplicates so it's not O(N!)
+# Explaination: https://leetcode.com/problems/remove-invalid-parentheses/description/comments/1771291
 class Solution:
     def isValidString(self, s):
         count = 0
@@ -1223,3 +1224,97 @@ class Solution:
             level += 1
         
         return -1
+
+# https://leetcode.com/problems/valid-palindrome-iii/
+# O(n^2 * k)
+from functools import cache
+class Solution:
+    def isValidPalindrome(self, s: str, k: int) -> bool:
+        @cache
+        def isValid(left, right, k):
+            if k < 0:
+                return False
+            elif left >= right:
+                return True
+            
+            if s[left] == s[right]:
+                return isValid(left+1, right-1, k)
+    
+            return isValid(left+1, right, k-1) or isValid(left, right-1, k-1)
+            
+        return isValid(0, len(s)-1, k)
+
+# DP bottom up O(n^2)
+# class Solution {
+#     func isValidPalindrome(_ s: String, _ k: Int) -> Bool {
+#         let n = s.length
+#         var dp = Array(repeating: Array(repeating: 0, count: n), count: n)
+#         let chars = Array(s)
+
+#         for i in (0..<n-1).reversed() {
+#             for j in i+1..<n {
+#                 if chars[i] == chars[j] {
+#                     dp[i][j] = dp[i+1][j-1]
+#                 } else {
+#                     dp[i][j] = 1 + Swift.min(dp[i+1][j], dp[i][j-1])
+#                 }
+#             }
+#         }
+
+#         return dp[0][n-1] <= k
+#     }
+# }
+
+# BFS with child states are the string after removing left+1 or right-1 
+# class Solution {
+#     func isValidPalindrome(_ s: String, _ k: Int) -> Bool {
+#         let n = s.length
+#         let chars = Array(s)
+
+#         var bfsQueue: [[Int]] = [[0, n-1, 0]]
+#         var visited = Array(repeating: Array(repeating: false, count: n), count: n)
+#         visited[0][n-1] = true
+
+#         while bfsQueue.count != 0 {
+#             var nextQueue = [[Int]]()
+
+#             for item in bfsQueue {
+#                 var left = item[0]
+#                 var right = item[1]
+#                 let removal = item[2]
+
+#                 guard removal <= k else {
+#                     continue
+#                 }
+
+#                 if left >= right {
+#                     return true
+#                 }
+
+#                 if chars[left] == chars[right] {
+#                     if !visited[left+1][right-1] {
+#                         visited[left+1][right-1] = true
+#                         nextQueue.append([left+1, right-1, removal])
+#                     }
+                    
+#                 } else {
+#                     if !visited[left+1][right] {
+#                         visited[left+1][right] = true
+#                         nextQueue.append([left+1, right, removal+1])
+#                     } 
+                                        
+#                     if !visited[left][right-1] {
+#                         visited[left][right-1] = true
+#                         nextQueue.append([left, right-1, removal+1])
+#                     }
+#                 }
+
+                
+#             }
+
+#             bfsQueue = nextQueue
+#         }
+
+#         return false
+#     }
+# }
