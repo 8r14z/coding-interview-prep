@@ -375,20 +375,24 @@ class Solution:
         return '/' + '/'.join(pathStack)
 
 # https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
-class Solution:
-    def minAddToMakeValid(self, s: str) -> int:
-        stack = []
-        res = 0
-        for c in s:
-            if c == '(':
-                stack.append(c)
-            else:
-                if stack:
-                    stack.pop()
-                else:
-                    res += 1
-
-        return res + len(stack)
+# class Solution {
+#     func minAddToMakeValid(_ s: String) -> Int {
+#         var openCount = 0
+#         var closeCount = 0
+#         for char in s {
+#             if char == "(" {
+#                 openCount += 1
+#             } else {
+#                 if openCount == 0 {
+#                     closeCount += 1
+#                 } else {
+#                     openCount -= 1
+#                 }
+#             }
+#         }
+#         return openCount + closeCount
+#     }
+# }
 
 # https://leetcode.com/problems/moving-average-from-data-stream/
 from collections import deque
@@ -496,7 +500,52 @@ class Solution:
                 return mid
 
         return low
+
+# https://leetcode.com/problems/k-closest-points-to-origin
+# Use quick select O(n) on average - O(n^2) in worst case
+# Use heap O(nlog(k)) or O(n + klog(n))
+
+# import Collections
+# class Solution {
+#     func kClosest(_ points: [[Int]], _ k: Int) -> [[Int]] {
+#         func calcDistance(_ point: [Int]) -> Int {
+#             return point[0] * point[0] + point[1] * point[1]
+#         }
+
+#         func partition(_ points: inout [[Int]], _ left: Int, _ right: Int) -> Int {
+#             var pivot = calcDistance(points[right])
+#             var pIndex = left // <= pivot
             
+#             for i in left...right {
+#                 if calcDistance(points[i]) > pivot {
+#                     points.swapAt(i, pIndex)
+#                     pIndex += 1
+#                 }
+#             }
+
+#             points.swapAt(pIndex, right)
+#             return pIndex
+#         }
+
+#         var points = points
+#         var left = 0
+#         var right = points.count - 1
+
+#         while left <= right {
+#             let pIndex = partition(&points, left, right)
+#             if pIndex == points.count-k {
+#                 return Array(points[pIndex...])
+#             } else if pIndex < points.count-k {
+#                 left = pIndex + 1
+#             } else {
+#                 right = pIndex - 1
+#             }
+#         }
+
+#         return []
+#     }
+# }
+
 # https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
 class Solution:
     def sumNumbers(self, root):
@@ -1224,6 +1273,57 @@ class Solution:
             level += 1
         
         return -1
+
+# https://leetcode.com/problems/shortest-path-in-binary-matrix/
+# Time: O(n*m), Space: O(n*m)
+# class Solution {
+#     func shortestPathBinaryMatrix(_ grid: [[Int]]) -> Int {
+#         func neighbors(_ x: Int, _ y: Int) -> [(x: Int, y:Int)] {
+#             let directions = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]
+#             return directions.map { 
+#                 (x: x + $0.0, y: y + $0.1)
+#             }.filter {
+#                 $0.x >= 0 && $0.x < grid.count && $0.y >= 0 && $0.y < grid[0].count
+#             }.filter {
+#                 grid[$0.x][$0.y] == 0
+#             }
+#         }
+
+#         guard grid.count > 0 && grid[0].count > 0 && grid[0][0] == 0 else {
+#             return -1
+#         }
+
+#         var visited = Set([[0,0]])
+#         var queue = [(0,0)]
+#         var shortestPath = 1
+        
+#         while queue.count > 0 {
+#             var nextQueue = [(Int,Int)]()
+#             for coor in queue {
+#                 let x = coor.0
+#                 let y = coor.1
+
+#                 if x == grid.count-1 && y == grid[0].count - 1 {
+#                     return shortestPath
+#                 }
+
+#                 for neighbor in neighbors(x,y) {
+#                     guard !visited.contains([neighbor.x, neighbor.y]) else {
+#                         continue
+#                     }
+
+#                     visited.insert([neighbor.x, neighbor.y])
+#                     nextQueue.append(neighbor)
+#                 }
+#             }
+
+#             queue = nextQueue
+#             shortestPath += 1
+#         }
+
+#         return -1
+#     }
+# }
 
 # https://leetcode.com/problems/valid-palindrome-iii/
 # O(n^2 * k)
