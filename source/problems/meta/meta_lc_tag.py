@@ -688,6 +688,42 @@ class Solution:
         return res
 
 # https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/
+# class Solution {
+#     func insert(_ head: Node?, _ insertVal: Int) -> Node? {
+#         let newNode = Node(insertVal)
+#         guard head != nil else {
+#             newNode.next = newNode
+#             return newNode
+#         }
+
+#         var cur = head?.next
+#         var prev = head
+
+#         while true {
+#             if prev!.val <= insertVal && cur!.val >= insertVal {
+#                 break
+#             }
+
+#             if prev!.val > cur!.val { // max - min nodes
+#                 if prev!.val <= insertVal || cur!.val >= insertVal {
+#                     break
+#                 }
+#             }
+
+#             prev = cur
+#             cur = cur?.next
+#             if prev === head {
+#                 break
+#             }
+#         }
+
+#         prev?.next = newNode
+#         newNode.next = cur
+
+#         return head
+#     }
+# }
+
 class Solution:
     def insert(self, head: 'Optional[Node]', insertVal: int) -> 'Node':
         newNode = Node(insertVal)
