@@ -1090,6 +1090,57 @@ class Solution:
 #     }
 # }
 
+# https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+# class Solution {
+#     func distanceK(_ root: TreeNode?, _ target: TreeNode?, _ k: Int) -> [Int] {
+#         func dfs(_ node: TreeNode?, _ k: Int, _ visited: inout Set<TreeNode>, _ ans: inout [Int], _ parent: [TreeNode : TreeNode]) {
+#             guard let node, !visited.contains(node) else {
+#                 return
+#             }
+            
+#             visited.insert(node)
+
+#             if k == 0 {
+#                 ans.append(node.val)
+#                 return
+#             }
+
+#             dfs(parent[node], k-1, &visited, &ans, parent)
+#             dfs(node.left, k-1, &visited, &ans, parent)
+#             dfs(node.right, k-1, &visited, &ans, parent)
+#         }
+
+#         func makeParentMap(_ root: TreeNode) -> [TreeNode : TreeNode] {
+#             var stack = [root]
+#             var parent = [TreeNode : TreeNode]()
+#             while stack.count > 0 {
+#                 let node = stack.removeLast()
+#                 if let left = node.left {
+#                     stack.append(left)
+#                     parent[left] = node
+#                 }
+#                 if let right = node.right {
+#                     stack.append(right)
+#                     parent[right] = node
+#                 }
+#             }
+
+#             return parent
+#         }
+
+#         guard let root, let target else {
+#             return []
+#         }
+        
+#         var ans = [Int]()
+#         var visited = Set<TreeNode>()
+#         let parent = makeParentMap(root)
+#         dfs(target, k, &visited, &ans, parent)
+
+#         return ans
+#     }
+# }
+
 # https://leetcode.com/problems/design-tic-tac-toe/
 from collections import defaultdict
 class TicTacToe:
