@@ -1165,8 +1165,8 @@ class TicTacToe:
         self.n = n
         self.rowPoints = {}
         self.colPoints = {}
-        self.diagonalPoints = defaultdict(int)
-        self.antiDiagonalPoints = defaultdict(int)
+        self.diagonalPoints = defaultdict(int) # [0,0] [1,1] [2,2]
+        self.antiDiagonalPoints = defaultdict(int) #[0,2] [1,1] [2,0] n-1-row = col
 
     def move(self, row: int, col: int, player: int) -> int:
         if player not in self.rowPoints:
