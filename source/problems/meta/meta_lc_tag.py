@@ -971,6 +971,40 @@ class Solution:
 #     }
 # }
 
+# https://leetcode.com/problems/top-k-frequent-elements/
+# import Collections
+# struct Pair: Comparable {
+#     let num: Int
+#     let count: Int
+
+#     static func == (left: Pair, right: Pair) -> Bool {
+#         return left.count == right.count
+#     }
+
+#     static func < (left: Pair, right: Pair) -> Bool {
+#         return left.count < right.count
+#     }
+# }
+# class Solution {
+#     func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+#         var frequency = [Int : Int]()
+#         for num in nums {
+#             frequency[num, default: 0] += 1
+#         }
+
+#         var heap = Heap<Pair>()
+#         for (num, count) in frequency {
+#             let pair = Pair(num: num, count: count)
+#             heap.insert(pair)
+#             if heap.count > k {
+#                 heap.popMin()
+#             }
+#         }
+
+#         return heap.unordered.map { $0.num }
+#     }
+# }
+
 # https://leetcode.com/problems/copy-list-with-random-pointer/
 # DFS iteration 
 class Solution:
