@@ -1464,6 +1464,35 @@ class Solution:
 #     }
 # }
 
+# https://leetcode.com/problems/binary-search-tree-iterator/
+# class BSTIterator {
+#     private var i = 0
+#     private var array = [Int]()
+#     init(_ root: TreeNode?) {
+#         preprocess(root)
+#     }
+
+#     private func preprocess(_ node: TreeNode?) {
+#         guard let node else {
+#             return
+#         }
+
+#         preprocess(node.left)
+#         array.append(node.val)
+#         preprocess(node.right)
+#     }
+    
+#     func next() -> Int {
+#         let val = array[i]
+#         i += 1
+#         return val
+#     }
+    
+#     func hasNext() -> Bool {
+#         i < array.count
+#     }
+# }
+
 # https://leetcode.com/problems/valid-palindrome/
 #  Alphanumeric characters include letters and numbers.
 # extension Character {
