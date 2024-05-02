@@ -1431,6 +1431,39 @@ class Solution:
 #     }
 # }
 
+# https://leetcode.com/problems/product-of-two-run-length-encoded-arrays/
+# class Solution {
+#     func findRLEArray(_ encoded1: [[Int]], _ encoded2: [[Int]]) -> [[Int]] {
+#         var encoded1 = encoded1
+#         var encoded2 = encoded2
+#         var i = 0, j = 0
+#         var ans = [[Int]]()
+
+#         while i < encoded1.count && j < encoded2.count {
+#             let first = encoded1[i]
+#             let second = encoded2[j]   
+#             let encoded = [first[0] * second[0], min(first[1], second[1])]
+#             if let last = ans.last, last[0] == encoded[0] {
+#                 ans[ans.count-1][1] += encoded[1]
+#             } else {
+#                 ans.append(encoded)
+#             }
+            
+#             encoded1[i][1] -= encoded[1]
+#             if encoded1[i][1] == 0 {
+#                 i += 1
+#             }
+
+#             encoded2[j][1] -= encoded[1]
+#             if encoded2[j][1] == 0 {
+#                 j += 1
+#             }
+#         }
+
+#         return ans
+#     }
+# }
+
 # https://leetcode.com/problems/valid-palindrome/
 #  Alphanumeric characters include letters and numbers.
 # extension Character {
