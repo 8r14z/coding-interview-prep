@@ -1072,23 +1072,23 @@ class Solution:
 # }
 
 # https://leetcode.com/problems/random-pick-index/
-class Solution {
-    private var indices: [Int: [Int]] = [:]
-    init(_ nums: [Int]) {
-        for (i, num) in nums.enumerated() {
-            indices[num, default: []].append(i)
-        }
-    }
+# class Solution {
+#     private var indices: [Int: [Int]] = [:]
+#     init(_ nums: [Int]) {
+#         for (i, num) in nums.enumerated() {
+#             indices[num, default: []].append(i)
+#         }
+#     }
     
-    func pick(_ target: Int) -> Int {
-        guard let indices = indices[target] else {
-            return -1
-        }
+#     func pick(_ target: Int) -> Int {
+#         guard let indices = indices[target] else {
+#             return -1
+#         }
 
-        let randIdx = Int.random(in: 0..<indices.count)
-        return indices[randIdx]
-    }
-}
+#         let randIdx = Int.random(in: 0..<indices.count)
+#         return indices[randIdx]
+#     }
+# }
 
 # https://leetcode.com/problems/design-tic-tac-toe/
 from collections import defaultdict
