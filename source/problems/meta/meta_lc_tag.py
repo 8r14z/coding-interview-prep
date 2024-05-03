@@ -1780,3 +1780,50 @@ class Solution:
 #         return false
 #     }
 # }
+
+# https://leetcode.com/problems/minimum-window-substring/
+# class Solution {
+#     func contains(_ f1: [Character : Int], _ f2: [Character : Int]) -> Bool {
+#         for (char, countIn2) in f2 {
+#             if let countIn1 = f1[char] {
+#                 if countIn1 < countIn2 {
+#                     return false
+#                 }
+#             } else {
+#                 return false
+#             }
+#         }
+#         return true
+#     }
+
+#     func length(_ start: Int, _ end: Int) -> Int {
+#         return end-start+1
+#     }
+#     func minWindow(_ s: String, _ t: String) -> String {
+#         var tFrequency = [Character : Int]()
+#         for c in t {
+#             tFrequency[c, default: 0] += 1
+#         }
+
+#         var sFrequency = [Character : Int]()
+#         var sChars = Array(s)
+#         var start = 0
+#         var rStart = -1, rEnd = -1
+
+#         for (end, char) in sChars.enumerated() {
+#             sFrequency[char, default: 0] += 1
+
+#             while contains(sFrequency, tFrequency) {
+#                 if (rStart == -1) || (length(start, end) < length(rStart, rEnd)) {
+#                     rStart = start
+#                     rEnd = end
+#                 }
+#                 let startChar = sChars[start]
+#                 sFrequency[startChar, default: 0] -= 1
+#                 start += 1
+#             }
+#         }
+
+#         return rStart == -1 ? "" : String(sChars[rStart...rEnd])
+#     }
+# }
