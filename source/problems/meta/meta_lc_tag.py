@@ -1716,3 +1716,38 @@ class Solution:
 #         return false
 #     }
 # }
+
+# https://leetcode.com/problems/word-break-ii/
+# class Solution {
+#     func wordBreak(_ s: String, _ wordDict: [String]) -> [String] {
+#         let wordSet = Set(wordDict)   
+#         var dp = Array(repeating: [String](), count: s.count)
+#         var chars = Array(s)
+
+#         for i in 0..<s.count {
+#             for j in (0...i).reversed() {
+#                 let word = String(chars[j...i])
+#                 if wordSet.contains(word) {
+#                     if j == 0 || dp[j-1].count > 0 {
+#                         dp[i].append(word)
+#                     }
+#                 }
+#             }
+#         }
+        
+#         var ans = [String]()
+#         func dfs(_ i: Int, _ word: String = "") {
+#             if i < 0 {
+#                 ans.append(word)
+#                 return
+#             }
+
+#             for s in dp[i] {
+#                 dfs(i-s.count, word.count != 0 ? (s + " " + word) : s)
+#             }
+#         }
+
+#         dfs(s.count-1)
+#         return ans
+#     }
+# }
