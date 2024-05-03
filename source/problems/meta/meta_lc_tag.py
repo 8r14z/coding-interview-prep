@@ -1751,3 +1751,32 @@ class Solution:
 #         return ans
 #     }
 # }
+
+# https://leetcode.com/problems/continuous-subarray-sum/
+# similar to subarray-sum-equals-k
+# class Solution {
+#     func checkSubarraySum(_ nums: [Int], _ k: Int) -> Bool {
+#         var prefixMods = [Int]()
+#         var prefixSum = 0
+#         for num in nums {
+#             prefixSum += num
+#             prefixMods.append(prefixSum % k)
+#         }
+
+#         var prevSeenMods = [Int : Int]()
+#         for (i, mod) in prefixMods.enumerated() {
+#             if mod == 0 && i >= 1 {
+#                 return true
+#             }
+#             if let index = prevSeenMods[mod] {
+#                 if i - index >= 2 {
+#                     return true
+#                 }
+#             } else {
+#                 prevSeenMods[mod] = i
+#             }
+#         }
+        
+#         return false
+#     }
+# }
