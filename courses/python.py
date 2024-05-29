@@ -1,5 +1,5 @@
-from _typeshed import OpenBinaryMode
-import abc
+# from _typeshed import OpenBinaryMode
+# import abc
 
 #  In Python, destructors are not needed as much needed in C++ 
 # because Python has a garbage collector that handles memory management automatically.
@@ -57,6 +57,7 @@ class ChildClass(OOP):
     def __init__(self, test: int, additional_param: int):
         super().__init__(test)
         self.additional_param = additional_param
+        self._protected_var = 11
         # self.__private_var = 12323232 this will create another instance method named __private_var for ChildClass
         # All variables which are assigned a value in the class declaration are class variables. 
         # And variables that are assigned values inside methods are instance variables.
@@ -66,7 +67,11 @@ class ChildClass(OOP):
 
 cde = ChildClass(123, 451)
 cde.foo()
-
+cde._protected_var = 10
+cde.__private_var = 11
+print('----')
+print(cde)
+print('----')
 
 cde.class_method()
 print(OOP.class_var)
@@ -86,17 +91,17 @@ for item in array:
     print(item)
 
 from collections import deque
-queue = deque()
+queue = deque([10])
 queue.popleft()
 
 range(4) # [0, 4)
 
 # Heap
 import heapq
-heap_array = []
+heap_array = [10]
 heapq.heapify(heap_array)
 min_value = heapq.heappop(heap_array)
-heapq.heappush(1)
+heapq.heappush(heap_array, 1)
 
 x = 4^2 # x = 4^2
 
