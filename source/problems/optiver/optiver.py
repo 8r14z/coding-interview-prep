@@ -53,7 +53,7 @@ class CheckoutManager:
         
     def _hande_line_updates(self, line_number, num_processed_items):
         # to improve speed, we can maintain a prefix sum of items in a queue and do binary search to find the index of customer we can jump to 
-        # so complexity of this op can be down to O(1), however it will make `basket_change` O(n) to re-calc the prefix sum array.
+        # so complexity of this op can be down to O(logn), however it will make `basket_change` O(n) to re-calc the prefix sum array.
         if num_processed_items <= 0:
             return
             
