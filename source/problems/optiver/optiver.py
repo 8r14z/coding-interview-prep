@@ -31,13 +31,10 @@ class CheckoutManager:
         if diff > 0:
             customer_queue.move_to_end(customer_id)
         
-        new_customer_num_items = customer_queue[customer_id] + diff
-        
-        if new_customer_num_items <= 0:
+        customer_queue[customer_id] = customer_queue[customer_id] + diff
+        if customer_queue[customer_id] <= 0:
             del customer_queue[customer_id]
             self._on_customer_leave(customer_id)
-        else:
-            customer_queue[customer_id] = new_customer_num_items
     
     def line_service(self, line_number, num_processed_items):
         queue = self._queues[line_number]
