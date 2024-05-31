@@ -51,6 +51,7 @@ class CheckoutManager:
         # alternatively, we can maintain a sorted list of lines
         # however, it's essentially the trade-off between when we want to sort the array
         # either when adding new line (customer_enter) or when servicing all lines.
+        # pratically, there are finite number of lines, so this op should be significant
         sorted_lines = sorted(self._queues.keys())
         for line in sorted_lines:
             self.line_service(line, 1)
