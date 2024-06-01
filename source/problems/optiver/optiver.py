@@ -52,28 +52,23 @@ class CheckoutManager:
             self.line_service(line, 1)
         
     def _hande_line_updates(self, line_number, num_processed_items):
-        # to improve speed, we can maintain a prefix sum of items in a queue and do binary search to find the index of customer we can jump to 
-        # so complexity of this op can be down to O(logn), however it will make `basket_change` O(n) to re-calc the prefix sum array.
-        if num_processed_items <= 0:
-            return
-            
         queue = self._queues[line_number]
         removed_customers = []
         
         for customer_id, customer_num_items in queue.items():
-            if num_processed_items == customer_num_items:
-                removed_customers.append(customer_id)
+            if num_processed_items <= 0:
                 break
-            elif num_processed_items > customer_num_items:
-                num_processed_items -= customer_num_items
+
+            if num_processed_items >= customer_num_items:
                 removed_customers.append(customer_id)
             else:
                 queue[customer_id] = customer_num_items - num_processed_items
-                break
-        
-        for customer in removed_customers:
-            queue.pop(customer)
-            self._on_customer_leave(customer)
+
+            num_processed_items -= customer_num_items
+            
+        for customer_id in removed_customers:
+            del queue[customer_id]
+            self._on_customer_leave(customer_id)
         
     def _on_customer_leave(self, customer_id):
         del self._customer_total_count[customer_id]
