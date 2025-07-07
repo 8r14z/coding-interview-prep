@@ -1,29 +1,49 @@
-In practice there are several considerations:
-- Quicksort is an in-place sort and so does not require any extra memory.
-- Straight quicksort is unreliable - due it its worst case performance of O( n2 ). So most programming libraries expose a hybrid variant. This can be as simple as quicksort and heapsort stapled together to form a sort that's guaranteed to be O(n log n).
-- Quicksort is adaptive - a good implementation can use preexisting order in the data to run faster (note - a naive implementation goes quadratic with preexisting order). But this can also be a curse - implementing a quicksort that is fast under various degenerate input files is actually quite difficult.
-- Quicksort is extremely cache efficient. Every memory access is sequential.
-- Key indexed counting is highly cache inefficient due to the random nature of the memory accesses.
-- Radix sort requires access to individual digits - which makes it harder to use.
-- Top down radix-2 sort is a special case. It can use the regular partition function from quicksort instead of key indexed counting, which tends to be much more efficient because it only needs to access the data once (and in order).
-- Radix-k sort where k > 2 requires extra memory in the order O(k) or O(n+k) depending on the implementation of the key indexed counting sort (in place or not).
+# Algorithms: Practical Considerations
 
+This document summarizes practical considerations and insights for common algorithms, especially sorting and related concepts.
 
-#### Locality of reference
-- Temporal locality: If at one point a particular memory location is referenced, then it is likely that the same location will be referenced again in the near future.
-- Spatial locality: If a particular storage location is referenced at a particular time, then it is likely that nearby memory locations will be referenced in the near future. 
+---
 
-Heapsort is a stable sort with O(nlogn) but it has big constant factor based on the randomness of picking items to swap. It makes the operating hard to predict what memory location that u should jump to next. But anyway this is minor 
+## Quicksort
 
-### Tail/Non-tail Recursion
-In traditional recursion, the typical model is that you perform your recursive calls first, and then you take the return value of the recursive call and calculate the result. In this manner, you don't get the result of your calculation until you have returned from every recursive call.
+- **In-place:** Quicksort sorts the array in place and does not require extra memory.
+- **Worst-case performance:** Straightforward quicksort can degrade to O(n²) in the worst case. Most libraries use a hybrid approach (e.g., combining quicksort and heapsort) to guarantee O(n log n) performance.
+- **Adaptivity:** A well-implemented quicksort can take advantage of preexisting order in the data to run faster. However, naive implementations may perform poorly on already sorted data.
+- **Cache efficiency:** Quicksort is extremely cache-efficient because it accesses memory sequentially.
 
-In tail recursion, you perform your calculations first, and then you execute the recursive call, passing the results of your current step to the next recursive step. This results in the last statement being in the form of (return (recursive-function params)). Basically, the return value of any given recursive step is the same as the return value of the next recursive call.
+## Key-Indexed Counting & Radix Sort
 
-The consequence of this is that once you are ready to perform your next recursive step, you don't need the current stack frame any more. This allows for some optimization. In fact, with an appropriately written compiler, you should never have a stack overflow snicker with a tail recursive call. Simply reuse the current stack frame for the next recursive step.
+- **Key-indexed counting:** This method is generally cache-inefficient due to random memory access patterns.
+- **Radix sort:** Requires access to individual digits, which can make it less flexible. Top-down radix-2 sort can use the partition function from quicksort, improving efficiency by accessing data sequentially.
+- **Radix-k sort (k > 2):** Needs extra memory, either O(k) or O(n + k), depending on whether the key-indexed counting sort is in-place.
 
-#### Rolling hash function
-To compute hash of based on existing hash value. Used for Rabin-Karp searching :) 
+## Heapsort
 
-#### MapReduce
-Includes Map step and Reduce step and input is splitted into multiple machines to enable parallel execution
+- **Stability:** Heapsort is a stable sort with O(n log n) time complexity.
+- **Cache behavior:** It has a higher constant factor due to the randomness of swaps, making memory access patterns less predictable. However, this is usually a minor concern in practice.
+
+---
+
+## Locality of Reference
+
+- **Temporal locality:** If a memory location is accessed, it is likely to be accessed again soon.
+- **Spatial locality:** If a memory location is accessed, nearby locations are likely to be accessed soon as well.
+
+---
+
+## Recursion: Tail vs. Non-tail
+
+- **Non-tail recursion:** The recursive call is not the last operation; results are computed after the call returns. This can lead to deep call stacks.
+- **Tail recursion:** The recursive call is the last operation. Calculations are done before the call, and the result is passed along. Compilers can optimize tail recursion to reuse stack frames, preventing stack overflow.
+
+---
+
+## Other Concepts
+
+### Rolling Hash Function
+
+- Computes a hash value based on the previous hash, enabling efficient substring search (e.g., Rabin-Karp algorithm).
+
+### MapReduce
+
+- Involves a Map step and a Reduce step. Input data is split across multiple machines to enable parallel processing.
