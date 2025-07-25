@@ -116,6 +116,8 @@ bisect.bisect_left(sorted_array, search_value) # left < i <= right => greater an
 
 c = ord('C') - ord('A') # 2
 
+c = chr(65) # 'A'
+
 array = []
 for item in array:
     pass
@@ -130,4 +132,26 @@ for key,value in dict.items():
 
 # Naming convention
 # https://peps.python.org/pep-0008/#prescriptive-naming-conventions
+
+
+
+stack_changes = [{}]
+last_stack_frame = stack_changes[-1]
+
+def apply_stack_changes(id, property, value):
+    if id not in last_stack_frame:
+        last_stack_frame[id] = {}
+
+    if property not in last_stack_frame[id]:
+        last_stack_frame[id][property] = ['prev', value]
+    else:
+        last_stack_frame[id][property][1] = value
+
+apply_stack_changes('a', 'property', 'new_1')
+apply_stack_changes('a', 'property', 'new_2')
+print(stack_changes)
+
+
+
+
 
