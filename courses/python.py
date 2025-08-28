@@ -152,6 +152,22 @@ apply_stack_changes('a', 'property', 'new_2')
 print(stack_changes)
 
 
+def routes(route_map, origin, destination):
+    visited_routes = {origin: [[origin]]}
+    queue = deque([origin])
 
+    while queue: 
+        cur = queue.popleft()
+        if cur == destination: 
+            break
+        next_nodes = route_map[cur]
+        for node in next_nodes:
+            if node not in visited_routes:
+                queue.append(node)
+            cur_routes = visited_routes[cur]
+            for route in cur_routes:
+                visited_routes[node].append(route + [node])
 
-
+    if destination in visited_routes:
+        return visited_routes[destination]
+    return []
