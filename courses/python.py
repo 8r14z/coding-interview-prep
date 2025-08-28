@@ -151,8 +151,11 @@ apply_stack_changes('a', 'property', 'new_1')
 apply_stack_changes('a', 'property', 'new_2')
 print(stack_changes)
 
+from collections import defaultdict
+
 def routes(route_map, origin, destination):
-    visited_routes = {origin: [[origin]]}
+    visited_routes = defaultdict(list)
+    visited_routes[origin].append([origin])
     queue = deque([origin])
 
     while queue: 
