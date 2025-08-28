@@ -157,8 +157,6 @@ def routes(route_map, origin, destination):
 
     while queue: 
         cur = queue.popleft()
-        if cur == destination: 
-            break
         next_nodes = route_map[cur]
         for node in next_nodes:
             if node not in visited_routes:
