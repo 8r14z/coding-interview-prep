@@ -151,7 +151,6 @@ apply_stack_changes('a', 'property', 'new_1')
 apply_stack_changes('a', 'property', 'new_2')
 print(stack_changes)
 
-
 def routes(route_map, origin, destination):
     visited_routes = {origin: [[origin]]}
     queue = deque([origin])
